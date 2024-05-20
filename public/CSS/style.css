@@ -47,6 +47,14 @@ img {
     margin-bottom: 20px;
 }
 
+h2 {
+    background-color: #f93;
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 30px;
+    color: #fff;
+    text-align: center;
+}
 /* ------------------------
         h3
 ------------------------ */
@@ -68,6 +76,7 @@ img {
 .wrapper {
     width: 960px;
     margin: 0 auto;
+
 }
 
 /* ------------------------
@@ -130,3 +139,4 @@ main {
     top: 40px;
     right: 30px;
 }
+
