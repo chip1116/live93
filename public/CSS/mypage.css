@@ -1,0 +1,101 @@
+html {
+    font-size: 100%;
+}
+
+body {
+    color: #000;
+    font-size: 0.9rem;
+    font-family: '', '', serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.mypage_main {
+    background-color: #aae139;
+}
+.mypage_inner {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.mypage_top {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.site_logo {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.mypage_content {
+    height: 800px;
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.mypage_content a {
+margin-top: 100px;
+}
+
+dl {
+    width: 700px;
+    margin: 0 auto;
+    padding-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+dd {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+dt {
+    text-align: left;
+    width: 40%;
+    padding-left: 170px;
+    margin-bottom: 10px;
+}
+
+.heart {
+    padding-left: 100px;
+}
+
+.flex {
+    width: 100%;justify-content: space-between;
+    display: flex;
+    align-items: center;
+
+}
+
+.flex_item {
+    width: 48%;
+    background-color: #000;
+    height: 300px;
+}
+
+h2 {
+    background-color: #f93;
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 30px;
+    color: #fff;
+    text-align: center;
+}   

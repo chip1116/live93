@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規投稿</title>
+    <link rel="stylesheet" href="../../public/CSS/kim4page.css">
+    <script>
+        (function(d) {
+          var config = {
+            kitId: 'cbi4ocw',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+      </script>
+</head>
+
+<body>
+    <main class="post-main">
+
+        <inner class="inner">
+
+            <div class="top">
+                <h2 class="buck">新規投稿</h2>
+            </div>
+
+            <div class="content">
+                <form action="#" class="form" id="form1">
+                    <p>投稿日</p>
+                    <input type="text" name="date" size="90" class="input-bg">
+
+                    <p>ジャンル</p>
+                    <input type="text" name="category" size="90" class="input-bg">
+                    
+                    <p>名称</p>
+                    <input type="text" name="name" size="90" class="input-bg">
+
+                    <p>住所</p>
+                    <input type="text" name="address" size="90" class="input-bg">
+
+                    <p>おすすめ度</p>
+                    <input type="checkbox" name="favorite" value="1">じゃが1
+                    <input type="checkbox" name="favorite" value="2">じゃが2
+                    <input type="checkbox" name="favorite" value="3">じゃが3
+                    <input type="checkbox" name="favorite" value="4">じゃが4
+
+                    <p>コメント</p>
+                    <textarea name="comment" rows="15" cols="93" class="area-bg"></textarea>
+                    <p>写真</p>
+                    <input type="file" src="" alt="投稿画像">
+                </form>
+            </div>
+            <button type="submit" form="form1" class="post-button">投稿</button>
+            <a href="toppage">
+                <h2 class="buck">戻る</h2>
+            </a>
+
+        </inner>
+
+    </main>
+</body>
+
+</html>
