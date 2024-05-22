@@ -1,0 +1,312 @@
+@charset "UTF-8";
+
+html {
+    font-size: 100%;
+}
+body {
+    font-family: 'Consolas',sans-serif; 
+    /* font-family: "ab-tombo-bold", sans-serif;
+
+    width: 100%;
+    background-color: #F5EC6F;
+    margin: 0; /* デフォルトのマージンをリセット */
+    padding: 0; /* デフォルトのパディングをリセット */
+
+}
+li{
+    list-style: none;
+    
+}
+p{
+   
+    font-weight: 200;
+   
+}
+a {
+    text-decoration: none;
+    display: initial;
+}
+
+img {
+    max-width: 100%;
+}
+/* ------------------------
+        main
+------------------------ */
+main {
+   
+    margin: 0 auto;
+   
+    background-color: #F5EC6F;
+}
+
+#top {
+    position: relative;
+    width: 1000px;
+    border-radius: 20px;
+    background-color: #fff;
+    margin: auto;
+}
+
+.wrapper ul li img {
+    width: 80%;
+    margin: auto;
+    display: block;
+}
+.wrapper ul {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    padding: 0;
+}
+.lank{
+    /* 1位 */
+
+font-family: "ab-tombo-bold", sans-serif;
+font-weight: 400;
+font-style: normal;
+font-size: 28px;
+line-height: 19px;
+text-align: center;
+letter-spacing: 0.3em;
+color: #F5EC6F;
+text-shadow: 
+		0.04em 0.04em 0 #fff, 
+		0.1em 0.1em 0 rgba(252, 157, 33, 0.949);
+
+
+}
+/* エリア表示 */
+.h2-taitle{
+   text-align: right;
+   margin-bottom: 0;
+}
+/* 宮崎市 */
+.cityname {
+display: inline-block;
+padding: 10px;
+margin-right: 150px;
+
+height: 25px;
+background-color: #AAE139;
+border-radius: 20px;
+/* 宮崎市テキスト */
+width: 160px;
+font-family:'Consolas',sans-serif;;
+font-style: normal;
+font-weight: 800;
+text-shadow: 0.2em;
+line-height: 1.5;
+text-align: center;
+letter-spacing: 5px;
+color: #FFFFFF;
+}
+
+/* ~おすすめTOP3~ */
+.side-title{
+    display: inline-block;
+    margin-top: 30px;
+    width: 300px;
+    font-family: 'Ifont-family:  "ab-tombo-bold", sans-serif;';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 19px;
+    /* ボックスの高さと同一 */
+    text-align: center;
+    color: #AAE139;
+    letter-spacing: 0.1em;
+}
+
+.list ul li a {
+
+    width: 150px;
+    height: 150px;
+    margin: 10 10 ;
+}
+/* ランキング横並び */
+.col3 >*{
+    width: 30%;
+}
+.col2 >*{
+    width: 45%;
+}
+.col2 > *:nth-child(n + 3){
+    margin-top: 40px;
+}
+/* 真ん中の点線 */
+hr {
+    margin: 30px 0 30px 0;
+    width: 930px;
+    height: 0px;
+    border: 1px dashed #FF9933;
+
+}
+
+/* 宮崎市周辺のお店 */
+#main {
+    text-align: center;
+}
+
+#main .side-title {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+/* 投稿 */
+/* 外枠 */
+
+.container {
+    padding: 10px;
+    border: 3px solid #AAE139;
+    /* transform: scale(0.70); 縮小 */
+    /* transform-origin: top left; 縮小の基準点を左上に設定 */
+    /* width: 100%; /* 元の幅を維持 */
+    /* height: auto; /* 元の高さを維持 */
+    /* position: relative; */ 
+  } 
+    /* 写真 */
+.magazin-image{
+    margin-top: 10px;
+   
+
+ }
+    /* 横並びに */
+ .container-wrapper{
+    display:flex;
+    align-items: center; 
+    justify-content: center;
+    }
+    /* 名称 */
+.container-title{
+    font-size: 20px;
+    margin-top: 10px;
+    margin: 0 auto;
+    }
+span {
+
+     background: linear-gradient(transparent 60%, #F5EC6F 60%);
+     margin-top: 0;     
+    }
+.side-title span{
+    font-family:  "ab-tombo-bold", sans-serif;
+}
+    /* 観光地 */
+.category{
+    width: 80px;
+    background: #AAE139;
+    border-radius: 40px;
+    color:#FFFFFF;
+    text-align: center;
+    margin-right: 20px;
+    margin-bottom: 0;
+    }
+        /* 詳細 */
+    .wrapper .access {
+        display: block;
+        padding: 0;
+   
+    }
+  /* おすすめポイント */
+  .coment-title {
+    
+    margin: 0;
+    color: #AAE139;
+  }
+
+.comment-box {
+    border: 2px solid #FF9933;
+    margin: 10px 0 0 0;
+}
+.comment-box p {
+    padding: 5px;
+}
+/* ページボタン */
+.pagination{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+}
+
+ .pagination a {
+    color: #fff;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    background: #AAE139;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    line-height: 30px;
+    display: block;
+    font-family: 'ab-tombo-bold", sans-seri';
+ }
+
+  /* 戻るボタン */
+#return a p {
+    display: block;
+    margin: 0 auto;
+    background-color: #AAE139;
+    border-radius: 20px;
+    /* テキスト */
+    width: 160px;
+    font-family: 'ab-tombo-bold", sans-seri';
+    font-weight: 400;
+    line-height: 2;
+    text-align: center;
+    letter-spacing: 5px;
+    color: #FFFFFF;
+  }
+      /* ------------------------
+        フッター
+------------------------ */
+#footer {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+/* detail-main */
+/* 詳細のBOX */
+.ditail-title{
+    margin: 20px auto;
+    padding: 10px;
+   
+    width: 95px;
+    height: 25px;
+    background-color: #AAE139;
+    border-radius: 20px;
+    /* 宮崎市テキスト */
+    width: 160px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 5px;
+    color: #FFFFFF;
+    }
+
+#detail-top{
+    width: 1000px;
+    border-radius: 20px;
+    background-color: #fff;
+    margin: auto;
+    }
+
+    
+.detail-container{
+    padding: 10px;
+    margin: 20px auto;
+    
+    width: 500px;
+    border: 5px solid #AAE139;
+    max-width: 1000px;
+    }
+
+.margin {
+    margin-bottom: 20px;
+}
