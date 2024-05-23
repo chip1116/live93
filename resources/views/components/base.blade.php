@@ -14,7 +14,7 @@
         })(document);
       </script>
     <title>ベース</title>
-    <!-- <link rel="icon" href="search_orange.ico"> -->
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
     @if(Request::routeIs('user.detail-screen'))
