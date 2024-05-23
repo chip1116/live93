@@ -16,7 +16,7 @@
     <title>ベース</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
-    @if(Request::routeIs('user.detail-screen'))
+    @if(Request::routeIs('user.detail-screen') || Request::routeIs('user.detail-main'))
     <link rel="stylesheet" href="css/detail-style.css">
     @elseif(Request::routeIs('user.contact'))
     <link rel="stylesheet" href="css/kim4page.css">
