@@ -80,13 +80,13 @@ text-shadow:
 /* エリア表示 */
 .h2-taitle{
    text-align: right;
-   margin-bottom: 0;
+   margin-bottom: 40px;
 }
 /* 宮崎市 */
 .cityname {
 display: inline-block;
 padding: 10px;
-margin-right: 150px;
+
 
 height: 25px;
 background-color: #AAE139;
@@ -137,7 +137,7 @@ color: #FFFFFF;
 }
 /* 真ん中の点線 */
 hr {
-    margin: 30px 0 30px 0;
+    margin: 30px auto;
     width: 930px;
     height: 0px;
     border: 1px dashed #FF9933;
@@ -234,7 +234,6 @@ span {
     color: #fff;
     text-align: center;
     width: 30px;
-    height: 30px;
     background: #AAE139;
     border-radius: 50%;
     margin: 0 auto;
@@ -242,6 +241,7 @@ span {
     line-height: 30px;
     display: block;
     font-family: 'ab-tombo-bold", sans-seri';
+    font-weight: 800;
  }
 
   /* 戻るボタン */
@@ -253,7 +253,7 @@ span {
     /* テキスト */
     width: 160px;
     font-family: 'ab-tombo-bold", sans-seri';
-    font-weight: 400;
+    font-weight: 800;
     line-height: 2;
     text-align: center;
     letter-spacing: 5px;
@@ -263,8 +263,8 @@ span {
         フッター
 ------------------------ */
 #footer {
-    width: 100%;
-    margin-bottom: 20px;
+    /* width: 100%; */
+    /* margin-bottom: 20px; */
 }
 
 

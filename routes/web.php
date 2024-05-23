@@ -18,4 +18,12 @@ Route::middleware([
 
 Route::get('/place',function(){
     return view('user.detail-screen');
-});
+})->name('user.detail-screen');
+
+Route::get('/contact',function(){
+    return view('user.contact');
+})->name('user.contact');
+
+Route::get('/detail',function(){
+    return view('user.detail-main');
+})->name('user.detail-main');
