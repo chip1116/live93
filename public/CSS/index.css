@@ -98,24 +98,6 @@ h3 {
     position: relative;
 }
 
-.place-top, .place-bottom {
-    display: flex;
-}
-.place-top li:nth-child(-n+3) {
-    background-color: #F5EC6F;
-    border-radius: 20px;
-    padding: 10px;
-    margin-right: 10px;
-}
-.category ul {
-    display: flex;
-}
-.category li {
-    background-color: #F5EC6F;
-    border-radius: 20px;
-    padding: 10px;
-    margin-right: 10px;
-}
 .scene ul {
     display: flex;
 }
