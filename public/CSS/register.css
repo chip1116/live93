@@ -14,6 +14,12 @@ body {
     background-color: #F5EC6F;
 }
 
+.base-wrapper {
+    background-color: var(--sub-color);
+    padding: 30px 0;
+    
+}
+
 .inner {
     width: 960px;
     margin: 0 auto;
@@ -21,17 +27,17 @@ body {
 
 .top {
     text-align: center;
-    margin-bottom: 60px;
 }
 
 
 .content {
-    /* height: 800px; */
-    width: 800px;
-    padding: 25px 0 25px 0;
-    margin: 0 auto 60px auto;
+   
+    width: 80%;
+    padding: 25px 10%;
+    margin: 30px auto;
     background-color: #fff;
     border-radius: 20px;
+    box-sizing: border-box;
 }
 
 .content p {
@@ -51,12 +57,17 @@ body {
     margin-bottom: 25px;
 }
 
+input:not([type="checkbox"]), textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+}
 .area-bg {
     background-color: rgb(211, 211, 211);
 }
 
 .submit {
-    margin-left: 594px;
+    text-align: right;
 }
 
 .button {
@@ -71,7 +82,6 @@ body {
 
 .form {
     text-align: left;
-    margin-left: 82px;
 }
 
 .form p {
@@ -105,12 +115,13 @@ a {
 .flex {
     display: flex;
     justify-content: flex-end;
+    gap: 5px;
 }
 
 .reg1-button {
     background-color: #AAE139;
     width: 150px;
-    margin: 10px 10px 10px 0;
+    margin: 10px 0 10px 0;
     border-radius: 30px;
     color: #fff;
     border: none;
@@ -119,48 +130,8 @@ a {
 .reg2-button {
     background-color: #21C9F3;
     width: 55px;
-    margin: 10px 80px 10px 0;
+    margin: 10px 0 10px 0;
     border-radius: 30px;
     color: #fff;
     border: none;
-}
-
-/*=====　ログインページCSS　=====*/
-.login-main {
-    background-color: #F5EC6F;
-}
-
-.login1-button {
-    background-color: #AAE139;
-    width: 150px;
-    margin: 10px 10px 10px 0;
-    border-radius: 30px;
-    color: #fff;
-    border: none;
-}
-
-.login2-button {
-    background-color: #21C9F3;
-    width: 70px;
-    margin: 10px 80px 10px 0;
-    border-radius: 30px;
-    color: #fff;
-    border: none;
-}
-
-/*=====　新規投稿ページCSS　=====*/
-.post-main {
-    background-color: #F5EC6F;
-}
-
-.post-button {
-    background-color: #21C9F3;
-    width: 370px;
-    height: 50px;
-    font-size: 200%;
-    border-radius: 30px;
-    color: #fff;
-    border: none;
-    margin-bottom: 20px;
-    margin-left: 35%;
 }
