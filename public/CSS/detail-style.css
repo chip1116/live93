@@ -246,10 +246,11 @@ span {
 
   /* 戻るボタン */
 #return a p {
+    
     display: block;
-    margin: 0 auto;
+    margin: 30px auto;
     background-color: #AAE139;
-    border-radius: 20px;
+    border-radius: 30px ;
     /* テキスト */
     width: 160px;
     font-family: 'ab-tombo-bold", sans-seri';
@@ -259,14 +260,6 @@ span {
     letter-spacing: 5px;
     color: #FFFFFF;
   }
-      /* ------------------------
-        フッター
------------------------- */
-#footer {
-    /* width: 100%; */
-    /* margin-bottom: 20px; */
-}
-
 
 /* detail-main */
 /* 詳細のBOX */
@@ -291,17 +284,18 @@ span {
     }
 
 #detail-top{
-    width: 1000px;
+    display: block;
+    width: 80%;
     border-radius: 20px;
     background-color: #fff;
     margin: auto;
+    padding: 30px 10px;
     }
 
-    
-.detail-container{
+/* 外枠 */
+.detail-container {
     padding: 10px;
     margin: 20px auto;
-    
     width: 500px;
     border: 5px solid #AAE139;
     max-width: 1000px;
