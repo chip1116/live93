@@ -27,3 +27,7 @@ Route::get('/contact',function(){
 Route::get('/detail',function(){
     return view('user.detail-main');
 })->name('user.detail-main');
+
+Route::get('/mypage',function(){
+    return view('user.mypage');
+})->name('user.mypage');
