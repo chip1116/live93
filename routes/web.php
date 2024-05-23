@@ -31,3 +31,9 @@ Route::get('/detail',function(){
 Route::get('/mypage',function(){
     return view('user.mypage');
 })->name('user.mypage');
+
+Route::get('/toppage',function(){
+    return view('user.index');
+})->name('user.index');
+
+
