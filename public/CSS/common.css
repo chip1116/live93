@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+:root {
+    --base-color: #F5EC6F;
+    --sub-color: #AAE139;
+    --accent-color: #F93;
+    --third-color: #A4EFF7;
+
+    --base-font-size: 14px;  /* <p> */
+    --small-font-size: 10px;
+    --middle-font-size: 16px; /* <h1> */
+    --large-font-size: 20px;
+    --xl-font-size: 24px;
+}
