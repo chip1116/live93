@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css/style.css">
     @if(Request::routeIs('user.detail-screen'))
     <link rel="stylesheet" href="css/detail-style.css">
-    @elseif(Request::routeIs('user.contact'))
+    @elseif(Request::routeIs('user.contact') || Request::routeIs('user.post') || Request::routeIs('user.login') || Request::routeIs('user.register'))
     <link rel="stylesheet" href="css/kim4page.css">
     @elseif(Request::routeIs('user.mypage'))
     <link rel="stylesheet" href="css/mypage.css">
