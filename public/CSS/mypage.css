@@ -22,8 +22,8 @@ img {
     max-width: 100%;
 }
 
-.mypage_main {
-    background-color: #aae139;
+.base-wrapper {
+    background-color: var(--sub-color);
 }
 .mypage_inner {
     width: 960px;
@@ -87,7 +87,7 @@ dt {
 
 .flex_item {
     width: 48%;
-    background-color: #000;
+    border: 1px solid var(--sub-color);
     height: 300px;
 }
 
