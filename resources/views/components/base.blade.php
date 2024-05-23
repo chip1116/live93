@@ -14,8 +14,15 @@
         })(document);
       </script>
     <title>ベース</title>
+    
     <link rel="stylesheet" href="css/style.css">
+    @if(Request::routeIs('user.detail-screen'))
     <link rel="stylesheet" href="css/detail-style.css">
+    @elseif(Request::routeIs('user.contact'))
+    <link rel="stylesheet" href="css/kim4page.css">
+@endif
+
+   
 </head>
 <body>
     <header id="header">
@@ -23,7 +30,9 @@
         <div class="hf_bottom"></div>
         <div><img src="img/logo.png" alt="じゃがじゃがみやざき"></div>
     </header>
+    <div class="base-wrapper">
 {{ $slot }}
+    </div>
     <footer id="footer">
         <div class="hf_top"></div>
         <div class="hf_bottom"></div>
