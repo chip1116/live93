@@ -1,0 +1,323 @@
+body {
+    /* width: 1440px; */
+    color: white;
+    background-color: #F5EC6F;
+}
+ul,
+ol {
+    padding: 0;
+}
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+span {
+    font-size: 10px;
+}
+h3 {
+    font-family: "ab-tombo-bold", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #54B435;
+}
+.menu_tab {
+    width: 1000px;
+}
+.mypage a {
+    background-color: #AAE139;
+    border-radius: 40px;
+    display: block;
+    width: 180px;
+    height: 50px;
+    text-align: center;
+    /* margin: 0 0 0 670px; */
+    line-height: 40px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    /* transform: translate(-50%); */
+}
+.menu_list {
+    width: 1000px;
+    /* margin: 0 auto; */
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.menu_list ul {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.menu_list li {
+    background-color: #FF9933;
+    border-radius: 40px;
+    display: block;
+    width: 180px;
+    height: 65px;
+    /* padding: 10px 50px; */
+}
+.back {
+    margin-bottom: 50px;
+    position: relative;
+}
+.top {
+    position: absolute;
+    width: 1000px;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.main {
+    width: 1000px;
+    position: relative;
+    margin: 0 auto;
+    background-color: white;
+    height: 950px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+.main img {
+    margin: 0 auto;
+}
+.top_img {
+    background-image: url(img.png);
+    position: relative;
+}
+
+.place-top, .place-bottom {
+    display: flex;
+}
+.place-top li:nth-child(-n+3) {
+    background-color: #F5EC6F;
+    border-radius: 20px;
+    padding: 10px;
+    margin-right: 10px;
+}
+.category ul {
+    display: flex;
+}
+.category li {
+    background-color: #F5EC6F;
+    border-radius: 20px;
+    padding: 10px;
+    margin-right: 10px;
+}
+.scene ul {
+    display: flex;
+}
+.scene li {
+    background-color: #F5EC6F;
+    border-radius: 20px;
+    padding: 10px;
+    margin-right: 10px;
+}
+.section {
+    position: absolute;
+    top: 5%;
+    right: 30%;
+    border-color: #F5EC6F;
+    border-width: thin;
+    border-style: solid;
+    border-radius: 20px;
+    padding: 10px;
+    width: 680px;
+}
+.section a {
+    color: #54B435;
+}
+
+/* サブメニュー */
+.submenu {
+    width: 275px;
+    /* height: 600px; */
+    text-align: center;
+    padding: 30px;
+    margin: 10px;
+    border-color: #F5EC6F;
+    border-width: thin;
+    border-style: solid;
+    border-radius: 20px;
+    color: #54B435;
+}
+.login {
+    display       : inline-block;
+    border-radius : 5px;          /* 角丸       */
+    font-size     : 15pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 19px 24px;   /* 余白       */
+    background    : #FF9933;     /* 背景色     */
+    color         : #ffffff;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 4px 4px #ff7f00;  /* 影の設定 */
+    border        : 2px solid #FF9933;    /* 枠の指定 */
+    margin-bottom: 10px;
+}
+.login:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    color         : #FF9933;     /* 背景色     */
+    background    : #ffffff;     /* 文字色     */
+}
+.signin {
+    display       : inline-block;
+    border-radius : 5px;          /* 角丸       */
+    font-size     : 15pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 19px 24px;   /* 余白       */
+    background    : #AAE139;     /* 背景色     */
+    color         : #ffffff;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 4px 4px #54B435;  /* 影の設定 */
+    border        : 2px solid #AAE139;    /* 枠の指定 */
+    margin-top: 10px;
+}
+.signin:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    color         : #AAE139;     /* 背景色     */
+    background    : #ffffff;     /* 文字色     */
+}
+.search_button {
+    font-family: "ab-tombo-bold", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background: #AAE139 url(search.png) right 1em center no-repeat;
+    background-size: 16px;
+    font-size: 0.8em;
+    color: white;
+    border: none;
+    padding: 1em 2.5em 1em 1em;
+    border-radius: 2em;
+}
+.search input {
+    background-color: #F5EC6F;
+    border: none;
+    margin-right: 15px;
+    margin-left: 40px;
+}
+.small_logo{
+    margin-bottom: 40px;
+}
+.small_logo img {
+    display: inline-block;
+    width: 40px;
+    vertical-align: middle;
+}
+ol {
+    padding-left: 0;
+}
+.ranking {
+    margin-top: 50px;
+} 
+.ranking_detail {
+    display: flex;
+    align-items: center; 
+    justify-content: center;   
+}
+.ranking_detail img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #C8DBEA;
+}
+.ranking_detail p {
+    margin: 10px;
+    color: #FF9933;
+}
+.ranking h3 {
+    color: #FF9933;
+
+}
+.align {
+    align-self: center;
+}
+.new_post_detail {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 0;
+}
+.new_post_detail img {
+    background-color: #C8DBEA;
+    width: 200px;
+    height: 150px;
+    border: 1px solid #54B435;
+}
+.new_post_detail p {
+    text-align: center;
+    color: #54B435;
+}
+.more {
+    display: block;
+    margin: 0 auto;    
+}
+
+/* ABOUTのポップアップ */
+#popup {
+    display: none; /* label でコントロールするので input は非表示に */
+  }
+  
+  .popup-open {
+    cursor: pointer; /* マウスオーバーでカーソルの形状を変えることで、クリックできる要素だとわかりやすいように */
+  }
+  
+  .popup-overlay {
+    display: none; /* input にチェックが入るまでは非表示に */
+  }
+  
+  #popup:checked ~ .popup-overlay {
+    display: block;
+    z-index: 99999;
+    background-color: #00000070;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+  }
+  
+  .popup-window {
+    width: 90vw;
+    max-width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    position: fixed;
+    top: 320%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .popup-text {
+    margin: 0;
+  }
+  
+  .popup-text:not(:last-of-type) {
+    margin-bottom: 1em
+  }
+  
+  .popup-close {
+    cursor: pointer;
+    position: absolute;
+    top: -26px;
+    right: 0;
+  }
+
+
+
+
+@media screen and (max-width:960px) {
+    .top, .menu_list, .main, .section, .submenu {
+        width: 100%;
+    }
+
+}
