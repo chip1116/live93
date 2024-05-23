@@ -2,8 +2,8 @@
     <x-base>
         <div class="toppage">
             <div class="top_img">
-                <img src="img.png" alt="top_img" class="back">
-                <img src="top_image.png" alt="top_img2" class="top">
+                <img src="/img/img.png" alt="top_img" class="back">
+                <img src="/img/top_image.png" alt="top_img2" class="top">
             </div>
             <div class="menu_tab">
                 <div class="mypage">
@@ -38,7 +38,7 @@
             <!-- <img src="square.png" alt="background-image"> -->
             <div class="section">
                 <section class="search small_logo">
-                    <h3>キーワードでさがす<img src="search_green.png" alt="img"></h3>
+                    <h3>キーワードでさがす<img src="/img/jagaアイコン03.png" alt="img"></h3>
                     <form action="#">
                         <p>
                             <input type="text" name="search">
@@ -47,7 +47,7 @@
                     </form>
                 </section>
                 <section class="place small_logo">
-                    <h3>エリアからさがす<img src="search_orange.png" alt="img"></h3>
+                    <h3>エリアからさがす<img src="/img/jagaアイコン02.png" alt="img"></h3>
                     <div class="background-square"></div>
                     <ul class="place-top">
                         <li><a href="">宮崎市</a></li>
@@ -68,7 +68,7 @@
                     </ul>
                 </section>
                 <section class="category small_logo">
-                    <h3>ジャンルからさがす<img src="search_green.png" alt="img"></h3>
+                    <h3>ジャンルからさがす<img src="/img/jagaアイコン03.png" alt="img"></h3>
                     <ul>
                         <li><a href="">カフェ</a></li>
                         <li><a href="">居酒屋</a></li>

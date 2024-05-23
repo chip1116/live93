@@ -191,7 +191,7 @@ h3 {
     font-family: "ab-tombo-bold", sans-serif;
     font-weight: 400;
     font-style: normal;
-    background: #AAE139 url(search.png) right 1em center no-repeat;
+    background: #AAE139 url(/img/search.png) right 1em center no-repeat;
     background-size: 16px;
     font-size: 0.8em;
     color: white;
