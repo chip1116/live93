@@ -3,6 +3,12 @@ body {
     color: white;
     background-color: #F5EC6F;
 }
+
+.base-wrapper {
+    background-color: var(--base-color);
+    padding: 0;
+}
+
 ul,
 ol {
     padding: 0;

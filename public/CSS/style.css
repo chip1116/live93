@@ -7,7 +7,7 @@ html {
 body {
     color: #000;
     font-size: 0.9rem;
-    font-family: '', '', serif;
+    font-family: var(--base-font-family);
     margin: 0;
 }
 
@@ -109,7 +109,7 @@ h2 {
 ------------------------ */
 .base-wrapper {
      background-color: var(--base-color);
-     padding: 30px 0; 
+     padding: 60px 0; 
 }
 
 main {

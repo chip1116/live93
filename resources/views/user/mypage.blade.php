@@ -19,11 +19,11 @@
                     <dd class="heart">54じゃが&#9825;</dd>
                     <dt>お気に入り&#9825;</dt>
                     <dd class="heart">5件登録済み</dd>
-                    <dt>投稿履歴</dt>
-                    <dd class="flex">
-                        <div class="flex_item"></div>
-                        <div class="flex_item"></div>
-                    </dd>
+                        <dl class="flex">
+                            <dt>投稿ログ</dt>    
+                            <dd class="flex_item"></div>
+                            <dd class="flex_item"></div>
+                        </dl>
                 </dl>
             </div>
 
