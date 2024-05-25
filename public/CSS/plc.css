@@ -57,7 +57,7 @@ body {
     margin-bottom: 25px;
 }
 
-input:not([type="checkbox"]), textarea {
+input:not([type="radio"]), textarea {
     width: 100%;
     box-sizing: border-box;
 

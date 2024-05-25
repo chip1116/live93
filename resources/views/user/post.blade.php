@@ -23,11 +23,17 @@
                     <input type="text" name="address" class="input-bg">
 
                     <p>おすすめ度</p>
-                    <input type="checkbox" name="favorite" value="1">じゃが1
-                    <input type="checkbox" name="favorite" value="2">じゃが2
-                    <input type="checkbox" name="favorite" value="3">じゃが3
-                    <input type="checkbox" name="favorite" value="4">じゃが4
+                    <input type="radio" id="favorite1" name="favorite" value="1" />
+                    <label for="contactChoice1">てげ1</label>
+              
+                    <input type="radio" id="favorite2" name="favorite" value="2" />
+                    <label for="contactChoice2">てげ2</label>
+              
+                    <input type="radio" id="favorite3" name="favorite" value="3" />
+                    <label for="contactChoice3">てげ3</label>
 
+                    <input type="radio" id="favorite4" name="favorite" value="4" />
+                    <label for="contactChoice3">てげ4</label>
                     <p>コメント</p>
                     <textarea name="comment" class="area-bg"></textarea>
                     <p>写真</p>
