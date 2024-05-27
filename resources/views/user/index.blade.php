@@ -2,10 +2,8 @@
     <x-base>
         <div class="toppage">
             <div class="top_img">
-                <img src="/img/img.png" alt="top_img" class="back">
-                <img src="/img/top_image.png" alt="top_img2" class="top">
-            </div>
-            <div class="menu_tab">
+                <!-- <img src="/img/img.png" alt="top_img" class="back"> -->
+                <div class="menu_tab">
                 <div class="mypage">
                     <a href="#">マイページ</a>
                 </div>
@@ -32,7 +30,12 @@
                         <li><a href="#"><span>CONTACT</span><br>お問い合わせ</a></li>
                     </ul>
                 </div>
+                <div>
+                    <img src="/img/top_image.png" alt="top_img2" class="top">
+                </div>
             </div>
+            </div>
+            
         </div>
         <div class="main">
             <!-- <img src="square.png" alt="background-image"> -->
@@ -139,7 +142,5 @@
                     </ol>
                 </div>
             </aside>
-        </div>
-        </div>
         </div>
     </x-base>
