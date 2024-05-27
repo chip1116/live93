@@ -47,6 +47,13 @@ img {
     margin-bottom: 60px;
     background-color: #fff;
     border-radius: 20px;
+    font-family: var(--base-font-family);
+}
+.mypage_content dt {
+    font-family: var(--main-font-family);
+}
+.mypage_content dd {
+    border-bottom: 0.1em solid var(--sub-color);
 }
 
 .mypage_content a {
@@ -93,9 +100,11 @@ dt {
 }
 
 h2 {
+    font-family: var(--main-font-family);
     background-color: #f93;
     width: 300px;
     margin: 0 auto;
+    padding: 1em;
     border-radius: 30px;
     color: #fff;
     text-align: center;

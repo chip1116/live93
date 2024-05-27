@@ -36,4 +36,14 @@ Route::get('/toppage',function(){
     return view('user.index');
 })->name('user.index');
 
+Route::get('/login',function(){
+    return view('user.login');
+})->name('user.login');
 
+Route::get('/post',function(){
+    return view('user.post');
+})->name('user.post');
+
+Route::get('/register',function(){
+    return view('user.register');
+})->name('user.register');

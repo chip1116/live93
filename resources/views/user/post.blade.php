@@ -11,25 +11,31 @@
             <div class="content">
                 <form action="#" class="form" id="form1">
                     <p>投稿日</p>
-                    <input type="text" name="date" size="90" class="input-bg">
+                    <input type="date" name="date" class="input-bg">
 
                     <p>ジャンル</p>
-                    <input type="text" name="category" size="90" class="input-bg">
+                    <input type="text" name="category" class="input-bg">
 
                     <p>名称</p>
-                    <input type="text" name="name" size="90" class="input-bg">
+                    <input type="text" name="name" class="input-bg">
 
                     <p>住所</p>
-                    <input type="text" name="address" size="90" class="input-bg">
+                    <input type="text" name="address" class="input-bg">
 
                     <p>おすすめ度</p>
-                    <input type="checkbox" name="favorite" value="1">じゃが1
-                    <input type="checkbox" name="favorite" value="2">じゃが2
-                    <input type="checkbox" name="favorite" value="3">じゃが3
-                    <input type="checkbox" name="favorite" value="4">じゃが4
+                    <input type="radio" id="favorite1" name="favorite" value="1" />
+                    <label for="contactChoice1">てげ1</label>
+              
+                    <input type="radio" id="favorite2" name="favorite" value="2" />
+                    <label for="contactChoice2">てげ2</label>
+              
+                    <input type="radio" id="favorite3" name="favorite" value="3" />
+                    <label for="contactChoice3">てげ3</label>
 
+                    <input type="radio" id="favorite4" name="favorite" value="4" />
+                    <label for="contactChoice3">てげ4</label>
                     <p>コメント</p>
-                    <textarea name="comment" rows="15" cols="93" class="area-bg"></textarea>
+                    <textarea name="comment" class="area-bg"></textarea>
                     <p>写真</p>
                     <input type="file" src="" alt="投稿画像">
                 </form>
