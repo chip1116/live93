@@ -6,7 +6,8 @@ body {
 
 .base-wrapper {
     background-color: var(--base-color);
-    padding: 0;
+    padding-top: 0;
+    padding-bottom: 150px;
 }
 
 ul,
@@ -30,30 +31,32 @@ h3 {
     font-style: normal;
     color: #54B435;
 }
-.menu_tab {
+/* .menu_tab {
     width: 1000px;
+    height: 1000px;
+} */
+.mypage {
+    text-align: right;
+    padding-top: 20px;
 }
 .mypage a {
     background-color: #AAE139;
     border-radius: 40px;
-    display: block;
+    display: inline-block;
     width: 180px;
     height: 50px;
     text-align: center;
     /* margin: 0 0 0 670px; */
     line-height: 40px;
-    position: absolute;
-    top: 10px;
-    right: 0;
     /* transform: translate(-50%); */
 }
 .menu_list {
-    width: 1000px;
-    /* margin: 0 auto; */
+    /* width: 1000px;
+    margin: 0 auto;
     position: absolute;
-    top: 60px;
+    top: 200px;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%); */
 }
 .menu_list ul {
     display: flex;
@@ -68,22 +71,18 @@ h3 {
     height: 65px;
     /* padding: 10px 50px; */
 }
-.back {
-    margin-bottom: 50px;
-    position: relative;
-}
 .top {
-    position: absolute;
+    /* position: absolute;
     width: 1000px;
-    top: 200px;
+    top: 300px;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%); */
 }
 
 .main {
     width: 1000px;
     position: relative;
-    margin: 0 auto;
+    margin: 50px auto;
     background-color: white;
     height: 950px;
     border-radius: 20px;
@@ -93,9 +92,15 @@ h3 {
 .main img {
     margin: 0 auto;
 }
+.toppage {
+    background: url(../img/img.png) no-repeat;
+    background-size: cover;
+    /* position: relative; */
+    height: 900px;
+}
 .top_img {
-    background-image: url(img.png);
-    position: relative;
+    margin: auto;
+    width: 1000px;
 }
 
 .place-top, .place-bottom {
@@ -127,7 +132,7 @@ h3 {
 }
 .section {
     position: absolute;
-    top: 5%;
+    top: 1%;
     right: 30%;
     border-color: #F5EC6F;
     border-width: thin;
@@ -322,8 +327,22 @@ ol {
 
 
 @media screen and (max-width:960px) {
-    .top, .menu_list, .main, .section, .submenu {
+    .top, .menu_list {
         width: 100%;
     }
-
+    .main {
+        flex-direction: column;
+        height: auto;
+        margin-top: 20px;
+    }
+    .section {
+        order: 2;
+        margin-top: 20px;
+    }
+    .submenu {
+        order: 1;
+        display: block;
+        width: 100%;
+        margin: 0 auto 20px;
+    }
 }
