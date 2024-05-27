@@ -40,6 +40,10 @@ Route::get('/login',function(){
     return view('user.login');
 })->name('user.login');
 
+Route::get('/newpost',function(){
+    return view('user.newpost');
+})->name('user.newpost');
+
 Route::get('/post',function(){
     return view('user.post');
 })->name('user.post');

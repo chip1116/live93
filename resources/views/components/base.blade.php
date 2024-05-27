@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="css/style.css">
     @if(Request::routeIs('user.detail-screen') || Request::routeIs('user.detail-main'))
     <link rel="stylesheet" href="css/detail-style.css">
-    @elseif(Request::routeIs('user.contact') || Request::routeIs('user.login') || Request::routeIs('user.post'))
-    <link rel="stylesheet" href="css/plc.css">
+    @elseif(Request::routeIs('user.contact') || Request::routeIs('user.login') || Request::routeIs('user.newpost') || Request::routeIs('user.post'))
+    <link rel="stylesheet" href="css/pnplc.css">
     @elseif(Request::routeIs('user.register'))
     <link rel="stylesheet" href="css/register.css">
     @elseif(Request::routeIs('user.mypage'))
