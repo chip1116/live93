@@ -65,6 +65,7 @@ dd {
     width: 100%;
     text-align: center;
     margin-bottom: 10px;
+    border-bottom: 0.5em solid var(--sub-color);
 }
 
 dt {
