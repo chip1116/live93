@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('stores', function (Blueprint $table) {
             $table->id();
+            $table->user_id('bigInteger');
             $table->string('name',50);
             $table->string('postal-code',8);
             $table->string('address-level2');
