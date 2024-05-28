@@ -36,7 +36,7 @@
     <header id="header">
         <div class="header_top"></div>
         <div class="header_bottom"></div>
-        <div><img src="img/logo.png" alt="じゃがじゃがみやざき"></div>
+        <div><img src="/img/logo.png" alt="じゃがじゃがみやざき"></div>
     </header>
     <div class="base-wrapper">
 {{ $slot }}
