@@ -26,9 +26,8 @@ Route::get('/contact',function(){
 })->name('user.contact');
 
 Route::controller(DetailMainController::class)->group(function(){
-    Route::get('/detail/{id}','show')->name('user.detail-main');
+    Route::get('/detail/{id}', 'show')->name('user.detail-main');
 });
-
 
 
 Route::get('/mypage',function(){
