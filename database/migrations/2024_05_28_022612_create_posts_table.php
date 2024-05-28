@@ -11,16 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('stores', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id');
-            $table->string('name',50);
-            $table->string('postal-code',8);
-            $table->string('address-level2');
-            $table->string('address-level3');
-            $table->string('tel');
-            $table->string('web');
-            $table->string('access',50);
+            $table->dateTime('date');
+            $table->string('comment', 1000);
+            $table->foreignId('store_id');
+            $table->foreignId('user_id');
             $table->dateTime('deleted_at')->nullable();
             $table->timestamps();
         });
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('stores');
+        Schema::dropIfExists('posts');
     }
 };

@@ -183,20 +183,33 @@ a {
     display: block;
 }
 
-/* ファイル挿入部の設定 */
-.file-button{ 
-    /* 「選択されていません（選択後はファイル名）」のスタイル */
-    font-size: 16px;
-  }
-  
-  .file-button::file-selector-button {
-    /* 「ファイルを選択」ボタンのスタイル */
-    font-weight: bold;
-    color: white;
-    background: rgb(151, 151, 151);
-    font-size: 14px;
-    border: 0;
-    border-radius: 5px;
-    text-align: center;
+/* ファイル挿入部分のCSS設定 */
+.deco-file {
+text-align: center;
+}
+
+.deco-file label{
     display: block;
-  }
+    border: 1px dotted #000000;
+    /* color: #1E88E5; */
+    text-align: center;
+    /* padding: 50px 80px; */
+    background-image: url(../img/ファイル添付用.png);
+
+    width: 80%;
+    background-size: 290px;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 0;
+    height: 190px;
+}
+
+.deco-file label:hover{
+    cursor: pointer;
+}
+
+.deco-file input[type="file"]{
+    display: none;
+}
