@@ -14,14 +14,12 @@ return new class extends Migration
         Schema::create('stores', function (Blueprint $table) {
             $table->id();
             $table->string('name',50);
-            $table->string('address-level2',255);
-            $table->string('address-level3',255);
-            $table->string('locations',50);
-            $table->integer('tell');
-            $table->string('web',255);
+            $table->string('postal-code',8);
+            $table->string('address-level2');
+            $table->string('address-level3');
+            $table->string('tel');
+            $table->string('web');
             $table->string('access',50);
-            $table->integer('good');
-            $table->integer('favorite');
             $table->dateTime('deleted_at')->nullable();
             $table->timestamps();
         });
