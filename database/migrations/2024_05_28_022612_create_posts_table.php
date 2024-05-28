@@ -16,7 +16,7 @@ return new class extends Migration
             $table->dateTime('date');
             $table->string('comment', 1000);
             $table->foreignId('store_id');
-            $table->foreignId('user_id');
+            $table->foreignId('member_id');
             $table->dateTime('deleted_at')->nullable();
             $table->timestamps();
         });

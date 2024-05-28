@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('favorites', function (Blueprint $table) {
             $table->id();
             $table->integer('store_id');
-            $table->integer('user_id');
+            $table->integer('member_id');
             $table->dateTime('deleted_at')->nullable();
             $table->timestamps();
         });
