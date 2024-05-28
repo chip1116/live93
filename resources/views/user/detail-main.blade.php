@@ -15,7 +15,7 @@
         <p class="category">観光地</p>
         </div>
         <div>
-        <h3 class="container-title"><span>鵜戸神宮</span></h3>
+        <h3 class="container-title"><span>{{ $item->name }}</span></h3>
         </div>
         
         <div>
