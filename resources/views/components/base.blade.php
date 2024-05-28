@@ -15,19 +15,19 @@
       </script>
     <title>じゃがじゃがみやざき</title>
     <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/style.css">
     @if(Request::routeIs('user.detail-screen') || Request::routeIs('user.detail-main'))
-    <link rel="stylesheet" href="css/detail-style.css">
+    <link rel="stylesheet" href="/css/detail-style.css">
     @elseif(Request::routeIs('user.contact') || Request::routeIs('user.login') || Request::routeIs('user.newpost') || Request::routeIs('user.post'))
-    <link rel="stylesheet" href="css/pnplc.css">
+    <link rel="stylesheet" href="/css/pnplc.css">
     @elseif(Request::routeIs('user.register'))
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="/css/register.css">
     @elseif(Request::routeIs('user.mypage'))
-    <link rel="stylesheet" href="css/mypage.css">
+    <link rel="stylesheet" href="/css/mypage.css">
     @elseif(Request::routeIs('user.index'))
     <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="/css/index.css">
     @endif
 
    
