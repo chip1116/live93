@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DetailMainController;
+use App\Http\Controllers\MypageController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,6 +29,10 @@ Route::get('/contact',function(){
 
 Route::controller(DetailMainController::class)->group(function(){
     Route::get('/detail/{id}', 'show')->name('user.detail-main');
+});
+
+Route::controller(MypageController::class)->group(function(){
+    Route::get('/mypage/{id}', 'show')->name('user.mypage');
 });
 
 

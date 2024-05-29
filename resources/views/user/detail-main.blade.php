@@ -38,8 +38,7 @@
 
         <h4 class="coment-title"><span>てげよかポイント</span></h4>
         <div class="comment-box">
-            <p>とっても珍しい鍾乳洞の中にある鵜戸神宮は
-                めちゃくちゃオーラのあるパワースポットです！</p>
+            <p>{{ $item2->comment }}</p>
         </div>
         
     </div>
