@@ -10,9 +10,8 @@
             <h3 class="side-title"><span>おすすめTOP3</span></h3>
             <div class="wrapper">
                 <ul class="col3">
-                <p class="lank">1位</p>
                     @foreach($rank as $item)
-                    <li><a href="{{ route('user.detail-main', [$item->id]) }}">
+                    <li><p class="lank">{{$loop->iteration}}位</p><a href="{{ route('user.detail-main', [$item->id]) }}">
                         <div class="container">
                             <div class="magazin-image"><img src="img/スクリーンショット 2024-05-15 165324.png" alt="Image" class="image"></div>
                             <div class="container-wrapper">
@@ -90,7 +89,7 @@
 
         
         <div id="return">
-            <a href="{{ route('user.index', [$item->id]) }}"><p>戻る</p></a>
+            <a href="{{ route('user.detail-main', [$item->id]) }}"><p>戻る</p></a>
         </div>
         
     </main>
