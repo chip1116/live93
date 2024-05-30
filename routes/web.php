@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DetailMainController;
+use App\Http\Controllers\DetailScreenController;
+use App\Http\Controllers\MypageController;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\CategoryController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -13,30 +19,43 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
+   
+   
     })->name('dashboard');
 });
 
-Route::get('/place',function(){
-    return view('user.detail-screen');
-})->name('user.detail-screen');
+Route::controller(DetailScreenController::class)->group(function(){
+    
+    Route::get('/place/area/{id}', [DetailScreenController::class,'show'])->name('user.detail-screen');
+});
+
+Route::controller(CategoryController::class)->group(function(){
+    
+    Route::get('/category/{id}', [CategoryController::class,'show'])->name('user.category');
+});
 
 Route::get('/contact',function(){
     return view('user.contact');
 })->name('user.contact');
 
-Route::get('/detail',function(){
-    return view('user.detail-main');
-})->name('user.detail-main');
+Route::controller(DetailMainController::class)->group(function(){
+    Route::get('/detail/{id}', [DetailMainController::class,'show'])->name('user.detail-main');
+});
+
+Route::controller(MypageController::class)->group(function(){
+    Route::get('/mypage/{id}', 'show')->name('user.mypage');
+});
+
 
 Route::get('/mypage',function(){
     return view('user.mypage');
 })->name('user.mypage');
 
-Route::get('/toppage',function(){
-    return view('user.index');
-})->name('user.index');
+Route::controller(IndexController::class)->group(function(){
+    Route::get('/toppage/area/{id}', [IndexController::class, 'show'])->name('user.index');
+});
 
-Route::get('/login',function(){
+Route::get('/user-login',function(){
     return view('user.login');
 })->name('user.login');
 
@@ -48,6 +67,6 @@ Route::get('/post',function(){
     return view('user.post');
 })->name('user.post');
 
-Route::get('/register',function(){
+Route::get('/user-register',function(){
     return view('user.register');
 })->name('user.register');

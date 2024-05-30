@@ -5,7 +5,7 @@
                 <!-- <img src="/img/img.png" alt="top_img" class="back"> -->
                 <div class="menu_tab">
                 <div class="mypage">
-                    <a href="#">マイページ</a>
+                    <a href="">マイページ</a>
                 </div>
                 <div class="menu_list">
                     <ul>
@@ -27,7 +27,7 @@
                         <!-- <a href="#"><span>ABOUT</span><br>サイトについて</a></li> -->
                         <li><a href="#"><span>SEARCH</span><br>さがす</a></li>
                         <li><a href="#"><span>POST</span><br>投稿する</a></li>
-                        <li><a href="#"><span>CONTACT</span><br>お問い合わせ</a></li>
+                        <li><a href="{{ route('user.contact') }}"><span>CONTACT</span><br>お問い合わせ</a></li>
                     </ul>
                 </div>
                 <div>
@@ -53,12 +53,15 @@
                     <h3>エリアからさがす<img src="/img/jagaアイコン02.png" alt="img"></h3>
                     <div class="background-square"></div>
                     <ul class="place-top">
-                        <li><a href="">宮崎市</a></li>
-                        <li><a href="">都城市</a></li>
-                        <li><a href="">延岡市</a></li>
+                        @for($i = 0; $i < 3; $i++)
+                        <li><a href="{{ route('user.detail-screen', [$locations[$i]['id']]) }}">{{ $locations[$i]['name'] }}</a></li>
+                        @endfor
                     </ul>
                     <ul class="place-bottom">
-                        <li><a href="">日南市</a></li>
+                        @for($i = 3; $i < count($locations); $i++)
+                        <li><a href="{{ route('user.detail-screen', [$locations[$i]['id']]) }}">{{ $locations[$i]['name'] }}</a></li>
+                        @endfor
+                        <!-- <li><a href="">日南市</a></li>
                         <li><a href="">新富町</a></li>
                         <li><a href="">日向市</a></li>
                         <li><a href="">西都市</a></li>
@@ -67,39 +70,29 @@
                         <li><a href="">国富町</a></li>
                         <li><a href="">木城町</a></li>
                         <li><a href="">門川町</a></li>
-                        <li><a href="">都農町</a></li>
+                        <li><a href="">都農町</a></li> -->
                     </ul>
                 </section>
                 <section class="category small_logo">
                     <h3>ジャンルからさがす<img src="/img/jagaアイコン03.png" alt="img"></h3>
-                    <ul>
-                        <li><a href="">カフェ</a></li>
-                        <li><a href="">居酒屋</a></li>
-                        <li><a href="">レストラン</a></li>
+                    <ul class="category_top">
+                        @foreach($categories as $category)
+                        <li><a href="">{{ $category->category_name }}</a></li>
+                        @endforeach
                     </ul>
                 </section>
                 <div class="new_post">
                     <section class="new_post small_logo">
                         <h3>新着投稿&emsp;NEW!</h3>
                         <ul class="new_post_detail">
+                            @foreach($items as $item)
                             <li>
                                 <img src="" alt="img1">
-                                <p>date</p>
-                                <p>shop_name</p>
-                                <p>address</p>
+                                <p>{{ $item->created_at->format('Y.n.j') }}</p>
+                                <p>{{ $item->name }}</p>
+                                <p>{{ $item->name }}</p>
                             </li>
-                            <li>
-                                <img src="" alt="img2">
-                                <p>date</p>
-                                <p>shop_name</p>
-                                <p>address</p>
-                            </li>
-                            <li>
-                                <img src="" alt="img3">
-                                <p>date</p>
-                                <p>shop_name</p>
-                                <p>address</p>
-                            </li>
+                            @endforeach
                         </ul>
                         <button class="more search_button">もっと見る</button>
                     </section>

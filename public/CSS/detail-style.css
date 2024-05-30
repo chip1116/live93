@@ -15,6 +15,7 @@ body {
 }
 li{
     list-style: none;
+    padding-left: 0;
     
 }
 p{
@@ -77,6 +78,13 @@ text-shadow:
 
 
 }
+
+.container-wrapper {
+    display:flex;
+    align-items: center; 
+    justify-content:space-between;
+}
+
 /* エリア表示 */
 .h2-taitle{
    text-align: right;
@@ -154,6 +162,7 @@ hr {
     margin: 0 auto;
 }
 
+
 /* 投稿 */
 /* 外枠 */
 
@@ -169,43 +178,50 @@ hr {
     /* 写真 */
 .magazin-image{
     margin-top: 10px;
-   
+}
 
- }
     /* 横並びに */
- .container-wrapper{
+
+.detail-wrapper {
+
     display:flex;
     align-items: center; 
-    justify-content: center;
-    }
+    justify-content:space-between;
+}
     /* 名称 */
-.container-title{
-    font-size: 20px;
+.container-title span{
+    font-size: 50px;
     margin-top: 10px;
     margin: 0 auto;
+    background: linear-gradient(transparent 60%, #F5EC6F 60%);
     }
-span {
 
+
+.button{
+    width: 50px;
+}
+.span {
      background: linear-gradient(transparent 60%, #F5EC6F 60%);
      margin-top: 0;     
     }
+
 .side-title span{
     font-family:  "ab-tombo-bold", sans-serif;
 }
     /* 観光地 */
 .category{
-    width: 80px;
+    width: 100px;
     background: #AAE139;
     border-radius: 40px;
     color:#FFFFFF;
     text-align: center;
-    margin-right: 20px;
-    margin-bottom: 0;
+    margin-bottom: 90px;
     }
         /* 詳細 */
     .wrapper .access {
         display: block;
         padding: 0;
+        
    
     }
   /* おすすめポイント */
@@ -252,7 +268,7 @@ span {
     background-color: #AAE139;
     border-radius: 30px ;
     /* テキスト */
-    width: 160px;
+    width: 150px;
     font-family: 'ab-tombo-bold", sans-seri';
     font-weight: 800;
     line-height: 2;
