@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DetailMainController;
 use App\Http\Controllers\DetailScreenController;
 use App\Http\Controllers\MypageController;
+use App\Http\Controllers\IndexController;
 
 
 Route::get('/', function () {
@@ -47,9 +48,9 @@ Route::get('/mypage',function(){
     return view('user.mypage');
 })->name('user.mypage');
 
-Route::get('/toppage',function(){
-    return view('user.index');
-})->name('user.index');
+Route::controller(IndexController::class)->group(function(){
+    Route::get('/toppage/area/{id}', [IndexController::class, 'show'])->name('user.index');
+});
 
 Route::get('/user-login',function(){
     return view('user.login');
