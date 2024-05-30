@@ -16,6 +16,6 @@ class Store extends Model
         return $this->belongsTo(Location::class);
     }
     public function like() {
-        return $this->hasOne(Like::class);
+        return $this->hasMany(Like::class);
     }
 }

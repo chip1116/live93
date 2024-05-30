@@ -17,7 +17,7 @@
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/style.css">
-    @if(Request::routeIs('user.detail-screen') || Request::routeIs('user.detail-main'))
+    @if(Request::routeIs('user.detail-screen') || Request::routeIs('user.detail-main') || Request::routeIs('user.category'))
     <link rel="stylesheet" href="/css/detail-style.css">
     @elseif(Request::routeIs('user.contact') || Request::routeIs('user.login') || Request::routeIs('user.newpost') || Request::routeIs('user.post'))
     <link rel="stylesheet" href="/css/pnplc.css">

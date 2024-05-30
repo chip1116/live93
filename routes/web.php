@@ -5,6 +5,7 @@ use App\Http\Controllers\DetailMainController;
 use App\Http\Controllers\DetailScreenController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\CategoryController;
 
 
 Route::get('/', function () {
@@ -27,9 +28,11 @@ Route::controller(DetailScreenController::class)->group(function(){
     
     Route::get('/place/area/{id}', [DetailScreenController::class,'show'])->name('user.detail-screen');
 });
-// Route::get('/place',function(){
-//     return view('user.detail-screen');
-// })->name('user.detail-screen');
+
+Route::controller(CategoryController::class)->group(function(){
+    
+    Route::get('/category/{id}', [CategoryController::class,'show'])->name('user.category');
+});
 
 Route::get('/contact',function(){
     return view('user.contact');
