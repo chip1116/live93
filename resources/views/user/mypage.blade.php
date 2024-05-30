@@ -10,11 +10,11 @@
             <div class="mypage_content">
                 <dl>
                     <dt>アカウント名</dt>
-                    <dd>じゃがこ</dd>
+                    <dd>{{ $item->name }}</dd>
                     <dt>メールアドレス</dt>
-                    <dd>miyazaki@gmail.com</dd>
+                    <dd>{{ $item->mail }}</dd>
                     <dt>パスワード</dt>
-                    <dd>1111111111</dd>
+                    <dd>{{ $item->password }}</dd>
                     <dt>じゃが数&#9825;</dt>
                     <dd class="heart">54じゃが&#9825;</dd>
                     <dt>お気に入り&#9825;</dt>
