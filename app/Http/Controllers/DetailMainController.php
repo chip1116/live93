@@ -12,9 +12,9 @@ class DetailMainController extends Controller
     ) {
         $this->store = $store;
     }
-
     public function show($id){
         $item = $this->store->find($id);
         return view('user.detail-main', compact('item'));
     }
 }
+

@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('member_id');
             $table->string('name',50);
-            $table->string('postal-code',8);
-            $table->string('address-level2');
-            $table->string('address-level3');
+            $table->string('postal_code',8);
+            $table->string('address_level2');
+            $table->string('address_level3');
             $table->string('tel');
             $table->string('web');
             $table->string('access',50);

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DetailMainController;
+use App\Http\Controllers\DetailScreenController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,19 +15,25 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
+   
+   
     })->name('dashboard');
 });
 
-Route::get('/place',function(){
-    return view('user.detail-screen');
-})->name('user.detail-screen');
+Route::controller(DetailScreenController::class)->group(function(){
+    
+    Route::get('/place/area/{id}', [DetailScreenController::class,'show'])->name('user.detail-screen');
+});
+// Route::get('/place',function(){
+//     return view('user.detail-screen');
+// })->name('user.detail-screen');
 
 Route::get('/contact',function(){
     return view('user.contact');
 })->name('user.contact');
 
 Route::controller(DetailMainController::class)->group(function(){
-    Route::get('/detail/{id}', 'show')->name('user.detail-main');
+    Route::get('/detail/{id}', [DetailMainController::class,'show'])->name('user.detail-main');
 });
 
 

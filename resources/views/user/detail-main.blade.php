@@ -30,9 +30,9 @@
         <p><button><img src="/img/moai@2x.png" alt="いいねボタン"></button></p>
        
         <ul class="access">
-            <li>アクセス:宮崎空港から車で35分</li>
-            <li>住所:〒887-0101宮崎県日南市宮浦</li>
-            <li>TEL:0987-29-1001</li>
+            <li>アクセス:{{ $item->access}}</li>
+            <li>住所:{{ $item->postal_code }}{{ $item->location->name }}{{ $item->address_level3 }}</li>
+            <li>TEL:{{ $item->tel }}</li>
         </ul>
         </div>
 
