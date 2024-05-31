@@ -18,4 +18,7 @@ class Store extends Model
     public function like() {
         return $this->hasMany(Like::class);
     }
+    public function StoreCategory() {
+        return $this->hasMany(StoreCategory::class);
+}
 }
