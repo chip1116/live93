@@ -30,7 +30,8 @@
     <link rel="stylesheet" href="/css/index.css">
     @endif
 
-   
+   @livewireStyles
+
 </head>
 <body>
     <header id="header">
@@ -46,5 +47,6 @@
         <div class="footer_bottom"></div>
         <div class="copyright">&copy;Live93 2024</div>
     </footer>
+    @livewireScripts
 </body>
 </html>
