@@ -82,12 +82,8 @@ dt {
     margin-bottom: 10px;
 }
 
-.heart {
-    padding-left: 100px;
-}
-
 .flex {
-    width: 100%;justify-content: space-between;
+    width: 100%;justify-content: space-around;
     display: flex;
     align-items: center;
 
@@ -102,7 +98,7 @@ dt {
 h2 {
     font-family: var(--main-font-family);
     background-color: #f93;
-    width: 300px;
+    width: 20%;
     margin: 0 auto;
     padding: 1em;
     border-radius: 30px;

@@ -5,7 +5,7 @@
                 <!-- <img src="/img/img.png" alt="top_img" class="back"> -->
                 <div class="menu_tab">
                 <div class="mypage">
-                    <a href="">マイページ</a>
+                    <a href="../../mypage/1">マイページ</a>
                 </div>
                 <div class="menu_list">
                     <ul>

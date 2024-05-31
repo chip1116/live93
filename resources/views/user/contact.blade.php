@@ -24,7 +24,7 @@
                 </form>
             </div>
 
-            <a href="toppage">
+            <a href="toppage/area/1">
                 <h2 class="buck">戻る</h2>
             </a>
 
