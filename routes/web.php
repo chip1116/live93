@@ -53,7 +53,7 @@ Route::get('/mypage',function(){
 })->name('user.mypage');
 
 Route::controller(IndexController::class)->group(function(){
-    Route::get('/toppage/area/{id}', [IndexController::class, 'show'])->name('user.index');
+    Route::get('/toppage', [IndexController::class, 'show'])->name('user.index');
 });
 
 Route::get('/user-login',function(){
