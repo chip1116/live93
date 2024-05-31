@@ -58,7 +58,7 @@
                             </div>
                         <ul class="access">
                             <li>アクセス:{{ $item->access }}</li>
-                            <li>住所:〒{{ $item->postal_code }}{{ $item->location->name }}{{ $item->address_level3 }}</li>
+                            <li>住所:〒{{ $item->postal_code }}{{ $item->name }}{{ $item->address_level3 }}</li>
                             <li>{{ $item->tel}}</li>
                         </ul>
                 

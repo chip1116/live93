@@ -7,7 +7,9 @@
         </div>
 
     <section id="detail-top">
-
+@if (session('message'))
+{{ session('message') }}
+@endif
     <div class="detail-container">
 
     <div class="container-wrapper">
