@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
+            $table->string('title');
             $table->text('comment');
             $table->dateTime('deleted_at')->nullable();
             $table->timestamps();

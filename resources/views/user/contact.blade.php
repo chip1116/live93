@@ -13,13 +13,13 @@
                     <input type="text" name="name" class="input-bg" required>
 
                     <p>メールアドレス<span class="required">*必須</span></p>
-                    <input type="email" name="mail" class="input-bg" required>
+                    <input type="email" name="email" class="input-bg" required>
                     
                     <p>件 名</p>
                     <input type="text" name="title" class="input-bg">
                     
                     <p>お問い合わせ内容<span class="required">*必須</span></p>
-                    <textarea name="text" class="area-bg"></textarea>
+                    <textarea name="comment" class="area-bg"></textarea>
                     <p class="submit"><button type="submit" class="button">登 録</button></p>
                 </form>
             </div>
