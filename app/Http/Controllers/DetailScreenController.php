@@ -4,16 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Store;
+use App\Models\Location;
 
 
 class DetailScreenController extends Controller
 {
-   
-        protected Store $store;
-        
-        public function __construct(store $store)
+       
+        public function __construct(
+            store $store,
+            Location $location)
         {
         $this->store = $store;
+        $this->location = $location;
+       
        
     }
 
@@ -23,7 +26,8 @@ class DetailScreenController extends Controller
         $items = $this->store
             ->where('location_id', '=', $id)
             ->get();
-        return view('user.detail-screen', compact('items','rank'));
+       $locations = $this->location->find($id)->toArray();
+        return view('user.detail-screen', compact('items','rank','locations'));
 
     }
 }

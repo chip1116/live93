@@ -10,7 +10,8 @@ class CategoryController extends Controller
 {
     public function __construct(
         Store $store
-            ) {
+    ) {
+        
         $this->store = $store;
     }
 
