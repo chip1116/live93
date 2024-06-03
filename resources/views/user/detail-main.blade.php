@@ -21,10 +21,13 @@
         </div>
         
         <div>
-        <p class="button"><button><img src="/img/bookmark02@2x.png" alt="お気に入りボタン"></button></p>
+        @livewire('favorite',[
+            'toreID' => $item->id 
+            ])
+       
         </div>
      </div>
-
+        
         <div class="magazin-image"><img src="/img/udo.png" alt="Image" class="image"></div>
         
         <div class="detail">
