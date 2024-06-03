@@ -94,7 +94,7 @@
                             </li>
                             @endforeach
                         </ul>
-                        <button class="more search_button">もっと見る</button>
+                        <button class="more search_button" onclick="location.href='{{ route('user.recent') }}'">もっと見る</button>
                     </section>
                 </div>
             </div>

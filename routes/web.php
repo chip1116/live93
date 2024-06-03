@@ -7,7 +7,7 @@ use App\Http\Controllers\MypageController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
-
+use App\Http\Controllers\RecentPostController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -34,6 +34,12 @@ Route::controller(CategoryController::class)->group(function(){
     
     Route::get('/category/{id}', [CategoryController::class,'show'])->name('user.category');
 });
+
+Route::controller(RecentPostController::class)->group(function(){
+    
+    Route::get('/recent', [RecentPostController::class,'show'])->name('user.recent');
+});
+
 
 Route::get('/contact',function(){
     return view('user.contact');

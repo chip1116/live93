@@ -3,19 +3,34 @@
 
     <main>
         <div class="h2-taitle">
+        @if (Request::routeIs('user.detail-screen'))
         <h2 class="cityname">{{ $items[0]->location->name }}</h2>
+        @elseif (Request::routeIs('user.category'))
+        <h2 class="cityname">{{ $items[0]->category[0]->category_name }}</h2>
+        @elseif (Request::routeIs('user.recent'))
+        <h2 class="cityname">新着投稿</h2>
+        @endif
         </div>
        
         <section id="top">
             <h3 class="side-title"><span>おすすめTOP3</span></h3>
             <div class="wrapper">
                 <ul class="col3">
+                    @if (Request::routeIs('user.detail-screen') || Request::routeIs('user.category'))
                     @foreach($rank as $item)
                     <li><p class="lank">{{$loop->iteration}}位</p><a href="{{ route('user.detail-main', [$item->id]) }}">
                         <div class="container">
                             <div class="magazin-image"><img src="img/スクリーンショット 2024-05-15 165324.png" alt="Image" class="image"></div>
                             <div class="container-wrapper">
                             <h3 class="container-title"><span>{{$item->name}}</span></h3>
+                            @endforeach
+                            <!-- <p class="category">観光地</p> -->
+                            @elseif (Request::routeIs('user.recent'))
+                            <div class="container">
+                            <div class="magazin-image"><img src="img/スクリーンショット 2024-05-15 165324.png" alt="Image" class="image"></div>
+                            <div class="container-wrapper">
+                            <h3 class="container-title"><span>udo</span></h3>
+                            @endif
                             <p class="category">観光地</p>
                             </div>
                             <div class="detail">
@@ -35,7 +50,7 @@
                             </div>
                         </div>
                         </a></li>
-                        @endforeach
+
                 </ul>
             </div>
     <hr>
