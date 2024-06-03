@@ -7,6 +7,9 @@ use App\Http\Controllers\MypageController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\MemberController;
+
+
 
 
 Route::get('/', function () {
@@ -56,10 +59,6 @@ Route::controller(IndexController::class)->group(function(){
     Route::get('/toppage', [IndexController::class, 'show'])->name('user.index');
 });
 
-Route::get('/user-login',function(){
-    return view('user.login');
-})->name('user.login');
-
 Route::get('/newpost',function(){
     return view('user.newpost');
 })->name('user.newpost');
@@ -67,6 +66,11 @@ Route::get('/newpost',function(){
 Route::controller(PostController::class)->group(function(){
     Route::get('/post', [PostController::class, 'create'])->name('user.post');
     Route::post('/post', [PostController::class, 'store'])->name('post.store');
+});
+
+Route::controller(MemberController::class)->group(function(){
+    Route::get('/user-login', [MemberController::class, 'index'])->name('user.login');
+    Route::post('/user-login', [MemberController::class, 'login'])->name('login');
 });
 
 Route::get('/user-register',function(){

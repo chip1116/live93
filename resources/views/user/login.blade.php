@@ -8,12 +8,13 @@
             </div>
 
             <div class="content">
-                <form action="#" class="form">
+                <form action="{{ route('login') }}" class="form" method="POST">
+                    @csrf
                     <p>メールアドレス<span class="required">*必須</span></p>
-                    <input type="text" name="name" class="input-bg" required>
+                    <input type="email" name="email" class="input-bg" required>
 
                     <p>パスワード<span class="required">*必須</span></p>
-                    <input type="email" name="mail" class="input-bg" required>
+                    <input type="password" name="password" class="input-bg" required>
                     <div class="flex">
                         <button type="submit" class="login1-button">パスワードを忘れた方</button>
                         <button type="submit" class="login2-button">ログイン</button>
