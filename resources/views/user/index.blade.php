@@ -91,7 +91,7 @@
                                 <img src="" alt="img1">
                                 <p>{{ $item->created_at->format('Y.n.j') }}</p>
                                 <p>{{ $item->name }}</p>
-                                <p>{{ $item->location_id }}</p>
+                                <p>〒{{ $item->postal_code }} {{ $item->location->name }}{{ $item->address_level3 }}</p>
                             </li>
                             @endforeach
                         </ul>

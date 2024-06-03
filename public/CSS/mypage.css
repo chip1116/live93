@@ -78,16 +78,12 @@ dd {
 dt {
     text-align: left;
     width: 40%;
-    padding-left: 170px;
+    padding-left: 20%;
     margin-bottom: 10px;
 }
 
-.heart {
-    padding-left: 100px;
-}
-
 .flex {
-    width: 100%;justify-content: space-between;
+    width: 100%;justify-content: space-around;
     display: flex;
     align-items: center;
 
@@ -97,6 +93,14 @@ dt {
     width: 48%;
     border: 1px solid var(--sub-color);
     height: 300px;
+}
+
+.back {
+    width: 25%;
+    margin: 0 auto;
+}
+.flex_item dt {
+    padding-left: 40%;
 }
 
 h2 {
