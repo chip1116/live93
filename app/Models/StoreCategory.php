@@ -9,5 +9,5 @@ class StoreCategory extends Model
 {
     use HasFactory;
 
-    // protected $table = 'store_category';
+    protected $table = 'store_category';
 }
