@@ -17,8 +17,9 @@ class CategoryController extends Controller
     {
         $rank = $this->store->withCount('like')->orderBy('like_count', 'desc')->limit(3)->get();
         $items = $this->store
-            ->where('location_id', '=', $id)
-            ->get();
+        ->whereHas('category', function($query) use ($id){
+            $query->where('category_id', $id);
+        })->get();
         return view('user.detail-screen', compact('items','rank'));
 
     }

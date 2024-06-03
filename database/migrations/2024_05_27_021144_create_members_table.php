@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('members', function (Blueprint $table) {
             $table->id('id');
             $table->string('name', 50);
-            $table->string('mail', 50);
+            $table->string('email', 50);
             $table->string('password');
             $table->string('thumbnail', 50);
             $table->dateTime('deleted_at')->nullable();
