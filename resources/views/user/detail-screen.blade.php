@@ -1,11 +1,11 @@
 
-
    <x-base>
 
     <main>
         <div class="h2-taitle">
-        <h2 class="cityname">宮崎市</h2>
+        <h2 class="cityname">{{ $items[0]->location->name }}</h2>
         </div>
+       
         <section id="top">
             <h3 class="side-title"><span>おすすめTOP3</span></h3>
             <div class="wrapper">
@@ -58,7 +58,7 @@
                             </div>
                         <ul class="access">
                             <li>アクセス:{{ $item->access }}</li>
-                            <li>住所:〒{{ $item->postal_code }}{{ $item->location->name }}{{ $item->address_level3 }}</li>
+                            <li>住所:〒{{ $item->postal_code }}{{ $item->name }}{{ $item->address_level3 }}</li>
                             <li>{{ $item->tel}}</li>
                         </ul>
                 

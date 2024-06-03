@@ -19,9 +19,8 @@ class IndexController extends Controller
         $this->category = $category;
     }
 
-    public function show($id){
-        $items = $this->store->where('location_id', '=', $id)->get();
-        // $location1 = $this->store->get();
+    public function show(){
+        $items = $this->store->orderBy('created_at', 'desc')->limit(3)->get();
         $locations = $this->location->get()->toArray();
         $categories = $this->category->get();
         return view('user.index', compact('items','locations', 'categories'));

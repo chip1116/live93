@@ -9,7 +9,9 @@
             </div>
 
             <div class="content">
-                <form action="#" class="form" id="form1">
+                <form action="{{ route('post.store') }}" class="form" id="form1" method="POST">
+                    @csrf
+                    <input type="hidden" name="store_id" value="1">
                     <p>写真</p>
                     <div class="deco-file">
                         <label>

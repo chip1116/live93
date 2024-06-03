@@ -43,7 +43,7 @@ main {
 
 #top {
     position: relative;
-    width: 1000px;
+    width: 80%;
     border-radius: 20px;
     background-color: #fff;
     margin: auto;
@@ -92,10 +92,8 @@ text-shadow:
 }
 /* 宮崎市 */
 .cityname {
-display: inline-block;
+display: block;
 padding: 10px;
-
-
 height: 25px;
 background-color: #AAE139;
 border-radius: 20px;
@@ -109,6 +107,7 @@ line-height: 1.5;
 text-align: center;
 letter-spacing: 5px;
 color: #FFFFFF;
+
 }
 
 /* ~おすすめTOP3~ */
@@ -125,6 +124,8 @@ color: #FFFFFF;
     text-align: center;
     color: #AAE139;
     letter-spacing: 0.1em;
+    background: linear-gradient(transparent 60%, #F5EC6F 60%);
+
 }
 
 .list ul li a {
@@ -308,7 +309,7 @@ hr {
 
 #detail-top{
     display: block;
-    width: 80%;
+    width: 60%;
     border-radius: 20px;
     background-color: #fff;
     margin: auto;
