@@ -11,7 +11,7 @@ class Like extends Component
 
     public function render()
     {
-        //ここでソフトでリートチェックする
+        //ここでソフトでルートチェックする
         $this->count = LikeModel::where('store_id', $this->storeID)
                         ->whereNull('deleted_at')
                         ->count();
