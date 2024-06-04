@@ -59,7 +59,7 @@ h3 {
     display: block;
     width: 180px;
     height: 65px;
-    /* padding: 10px 50px; */
+    padding: 5px;
 }
 
 .main {
@@ -88,6 +88,7 @@ h3 {
 
 .place-top, .place-bottom {
     display: flex;
+    margin-left: 35px;
 }
 .place-top li:nth-child(-n+3) {
     background-color: #F5EC6F;
@@ -97,6 +98,7 @@ h3 {
 }
 .category ul {
     display: flex;
+    margin-left: 35px;
 }
 .category li {
     background-color: #F5EC6F;

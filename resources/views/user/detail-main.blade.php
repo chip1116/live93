@@ -7,7 +7,9 @@
         </div>
 
     <section id="detail-top">
-
+@if (session('message'))
+{{ session('message') }}
+@endif
     <div class="detail-container">
 
     <div class="container-wrapper">
@@ -19,15 +21,20 @@
         </div>
         
         <div>
-        <p class="button"><button><img src="/img/bookmark02@2x.png" alt="お気に入りボタン"></button></p>
+        @livewire('favorite',[
+            'toreID' => $item->id 
+            ])
+       
         </div>
      </div>
-
+        
         <div class="magazin-image"><img src="/img/udo.png" alt="Image" class="image"></div>
         
         <div class="detail">
         <div class="detail-wrapper">
-        <p><button><img src="/img/moai@2x.png" alt="いいねボタン"></button></p>
+        @livewire('like', [
+            'storeID' => $item->id    
+        ])
        
         <ul class="access">
             <li>アクセス:{{ $item->access}}</li>

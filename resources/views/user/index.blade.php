@@ -1,11 +1,12 @@
 
     <x-base>
         <div class="toppage">
+            {{ Session::get('member') }}
             <div class="top_img">
                 <!-- <img src="/img/img.png" alt="top_img" class="back"> -->
                 <div class="menu_tab">
                 <div class="mypage">
-                    <a href="">マイページ</a>
+                    <a href="{{ route('user.mypage') }}">マイページ</a>
                 </div>
                 <div class="menu_list">
                     <ul>
@@ -25,8 +26,8 @@
                             </div>
                         </li>
                         <!-- <a href="#"><span>ABOUT</span><br>サイトについて</a></li> -->
-                        <li><a href="#"><span>SEARCH</span><br>さがす</a></li>
-                        <li><a href="#"><span>POST</span><br>投稿する</a></li>
+                        <li><a href="#search"><span>SEARCH</span><br>さがす</a></li>
+                        <li><a href="{{ route('user.newpost') }}"><span>POST</span><br>投稿する</a></li>
                         <li><a href="{{ route('user.contact') }}"><span>CONTACT</span><br>お問い合わせ</a></li>
                     </ul>
                 </div>
@@ -37,7 +38,7 @@
             </div>
             
         </div>
-        <div class="main">
+        <div class="main" id="search">
             <!-- <img src="square.png" alt="background-image"> -->
             <div class="section">
                 <section class="search small_logo">
@@ -77,7 +78,7 @@
                     <h3>ジャンルからさがす<img src="/img/jagaアイコン03.png" alt="img"></h3>
                     <ul class="category_top">
                         @foreach($categories as $category)
-                        <li><a href="">{{ $category->category_name }}</a></li>
+                        <li><a href="{{ route('user.category', ['id' => $category->id]) }}">{{ $category->category_name }}</a></li>
                         @endforeach
                     </ul>
                 </section>
@@ -90,7 +91,7 @@
                                 <img src="" alt="img1">
                                 <p>{{ $item->created_at->format('Y.n.j') }}</p>
                                 <p>{{ $item->name }}</p>
-                                <p>{{ $item->name }}</p>
+                                <p>〒{{ $item->postal_code }} {{ $item->location->name }}{{ $item->address_level3 }}</p>
                             </li>
                             @endforeach
                         </ul>
@@ -100,9 +101,9 @@
             </div>
             <aside class="submenu">
                 <div>
-                    <p><button class="login">ログイン</button></p>
+                    <p><button class="login" onclick="location.href='{{ route('user.login') }}'">ログイン</button></p>
                     <p>OR</p>
-                    <p><button class="signin">新規登録</button></p>
+                    <p><button class="signin" onclick="location.href='{{ route('user.register') }}'">新規登録</button></p>
                 </div>
                 <div class="ranking">
                     <h3>ユーザーランキング</h3>
