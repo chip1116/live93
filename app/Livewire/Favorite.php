@@ -20,10 +20,10 @@ class Favorite extends Component
     public function toggleFavorite(){
 
         // Favoriteモデルからmember_idとstore_idが一致するデータを取得　... ①
-        $memberID = Auth::id(); 
+        // $memberID = Auth::id(); 
 
         // ①のデータが存在しない場合
-        　// 新規作成（INSERT）
+            // 新規作成（INSERT）
 
         // ①が存在する&&deleted_atがnullの場合 ... ②
             // 現在日時をセットする（UPDATE）→ 削除扱い
