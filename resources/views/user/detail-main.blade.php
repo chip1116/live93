@@ -21,7 +21,9 @@
         </div>
         
         <div>
-   @livewire('favorite')
+   @livewire('favorite', [
+            'storeID' => $item->id    
+        ])
         </div>
      </div>
         
