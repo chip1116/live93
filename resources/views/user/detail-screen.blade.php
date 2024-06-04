@@ -89,7 +89,7 @@
 
         
         <div id="return">
-            <a href="{{ route('user.detail-main', [$item->id]) }}"><p>戻る</p></a>
+            <a href="{{ 'user.detail-main' }}"><p>戻る</p></a>
         </div>
         
     </main>

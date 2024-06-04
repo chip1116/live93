@@ -21,10 +21,7 @@
         </div>
         
         <div>
-        @livewire('favorite',[
-            'toreID' => $item->id 
-            ])
-       
+   @livewire('favorite')
         </div>
      </div>
         
@@ -53,7 +50,7 @@
     </section>
     
     <div id="return">
-        <a href="#"><p>戻る</p></a></div>
+        <a href="{{ route('user.index') }}"><p>戻る</p></a></div>
 </main>
 
 </x-base>
