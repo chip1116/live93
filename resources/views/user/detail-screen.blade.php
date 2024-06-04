@@ -16,21 +16,12 @@
             <h3 class="side-title"><span>おすすめTOP3</span></h3>
             <div class="wrapper">
                 <ul class="col3">
-                    @if (Request::routeIs('user.detail-screen') || Request::routeIs('user.category'))
                     @foreach($rank as $item)
                     <li><p class="lank">{{$loop->iteration}}位</p><a href="{{ route('user.detail-main', [$item->id]) }}">
                         <div class="container">
                             <div class="magazin-image"><img src="img/スクリーンショット 2024-05-15 165324.png" alt="Image" class="image"></div>
                             <div class="container-wrapper">
                             <h3 class="container-title"><span>{{$item->name}}</span></h3>
-                            @endforeach
-                            <!-- <p class="category">観光地</p> -->
-                            @elseif (Request::routeIs('user.recent'))
-                            <div class="container">
-                            <div class="magazin-image"><img src="img/スクリーンショット 2024-05-15 165324.png" alt="Image" class="image"></div>
-                            <div class="container-wrapper">
-                            <h3 class="container-title"><span>udo</span></h3>
-                            @endif
                             <p class="category">観光地</p>
                             </div>
                             <div class="detail">
@@ -50,7 +41,7 @@
                             </div>
                         </div>
                         </a></li>
-
+                        @endforeach
                 </ul>
             </div>
     <hr>
@@ -60,7 +51,6 @@
         <div class="wrapper">
             <ul class="col2">
                 @foreach($items as $item)
-
                 <li><a href="{{ route('user.detail-main', [$item->id]) }}">
                     <div class="container">
                         <div class="magazin-image"><img src="img/スクリーンショット 2024-05-15 165324.png" alt="Image" class="image"></div>
@@ -86,13 +76,9 @@
                     </div>
                 </a></li>
                 @endforeach
-                
             </ul>
-
         </div>
-
         </section>
-
 
     <ul class="pagination">
         <li><a href="#">1</a></li>
@@ -101,7 +87,6 @@
         <li><a href="#">></a></li>
       </ul>
         </section>
-
         
         <div id="return">
             <a href="{{ route('user.detail-main', [$item->id]) }}"><p>戻る</p></a>

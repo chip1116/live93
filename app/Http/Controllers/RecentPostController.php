@@ -16,8 +16,8 @@ class RecentPostController extends Controller
 
 public function show()
 {
+    $rank = $this->store->withCount('like')->orderBy('like_count', 'desc')->limit(3)->get();
     $items = $this->store->orderBy('created_at', 'desc')->get();
-    $rank = $this->store->orderBy('created_at', 'desc')->limit(3)->get();
     return view('user.detail-screen', compact('items', 'rank'));
 }
 

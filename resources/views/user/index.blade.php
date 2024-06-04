@@ -1,7 +1,7 @@
 
     <x-base>
         <div class="toppage">
-            {{ Session::get('member') }}
+            {{ Session::get('member_id') }}
             <div class="top_img">
                 <!-- <img src="/img/img.png" alt="top_img" class="back"> -->
                 <div class="menu_tab">
@@ -108,15 +108,19 @@
                 <div class="ranking">
                     <h3>ユーザーランキング</h3>
                     <ol>
+                    @foreach($rank as $item)
+
                         <li class="ranking_detail">
                             <p>1</p>
                             <p><img src="" alt="user1"></p>
                             <div>
-                                <p>name</p>
+                                <p>{{ $item->member_id }}</p>
                                 <p>view</p>
                             </div>
                         </li>
-                        <li class="ranking_detail">
+                        @endforeach
+
+                        <!-- <li class="ranking_detail">
                             <p>2</p>
                             <p><img src="" alt="user2"></p>
                             <div>
@@ -132,7 +136,7 @@
                                 <p>view</p>
                             </div>
                         </li>
-                        </li>
+                        </li> -->
                     </ol>
                 </div>
             </aside>
