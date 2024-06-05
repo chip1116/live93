@@ -214,10 +214,14 @@ CREATE TABLE `likes` (
 --
 
 INSERT INTO `likes` (`id`, `store_id`, `member_id`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, NULL, '2024-06-03 00:39:34', NULL),
-(2, 2, 2, '2024-06-05 00:42:29', '2024-06-03 00:39:34', '2024-06-04 15:42:29'),
-(3, 3, 3, NULL, '2024-06-03 00:39:34', NULL),
-(4, 1, 2, NULL, '2024-06-03 00:39:34', NULL);
+(1, 1, 1, NULL, '2024-06-03 01:05:50', '2024-06-04 15:52:06'),
+(2, 2, 2, NULL, '2024-06-03 01:05:50', NULL),
+(3, 3, 3, NULL, '2024-06-03 01:05:50', NULL),
+(4, 1, 3, NULL, '2024-06-03 01:05:50', NULL),
+(5, 2, 4, NULL, '2024-06-03 01:05:50', NULL),
+(6, 2, 6, NULL, '2024-06-03 01:05:50', NULL),
+(7, 1, 2, NULL, '2024-06-03 01:05:50', NULL),
+(8, 2, 3, NULL, '2024-06-03 01:05:50', NULL);
 
 -- --------------------------------------------------------
 
@@ -638,7 +642,7 @@ ALTER TABLE `jobs`
 -- テーブルの AUTO_INCREMENT `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- テーブルの AUTO_INCREMENT `locations`
