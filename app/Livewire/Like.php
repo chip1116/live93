@@ -16,10 +16,10 @@ class Like extends Component
                 ->where('store_id', $this->storeID)->first();
 
         // すでにいいねされている場合色付きの画像にする
-        if (!$like === null) {
-            $this->file = 'moai@2x.png';
+        if (!$like->trashed()) {
+            $this->file = 'moai03@2x.png';
         } else {
-            $this->file = 'moai02@2x.png';
+            $this->file = 'moai@2x.png';
         }
     }
     
@@ -58,7 +58,7 @@ class Like extends Component
                 $like->restore();
             }
 
-        $this->file = $this->isLike() ? 'moai@2x.png' : 'moai02@2x.png';
+        $this->file = $this->isLike() ? 'moai03@2x.png' : 'moai@2x.png';
         $this->count++ ;
     }
 
