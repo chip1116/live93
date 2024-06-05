@@ -26,7 +26,6 @@
                     @foreach(App\Models\Location::all() as $location)
                         <option value="{{ $location->id }}">{{ $location->name }}</option>
                     @endforeach
-                    
                     </select>
                     <p>町・村・番地</p>
                     <input type="text" name="address" class="input-bg">
@@ -39,6 +38,7 @@
                         <p class="file-names"></p>
                         ＋ファイルを追加
                     </div>
+
                     <p>コメント</p>
                     <textarea name="comment" class="area-bg"></textarea>
                 </form>
