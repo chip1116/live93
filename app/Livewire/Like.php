@@ -9,6 +9,7 @@ class Like extends Component
 {   
     public $file, $count, $storeID;
 
+    
     public function mount() {
         $this->file = 'moai02@2x.png';
     }
