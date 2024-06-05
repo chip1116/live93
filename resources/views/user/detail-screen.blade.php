@@ -3,7 +3,13 @@
 
     <main>
         <div class="h2-taitle">
+        @if (Request::routeIs('user.detail-screen'))
         <h2 class="cityname">{{ $items[0]->location->name }}</h2>
+        @elseif (Request::routeIs('user.category'))
+        <h2 class="cityname">{{ $items[0]->category[0]->category_name }}</h2>
+        @elseif (Request::routeIs('user.recent'))
+        <h2 class="cityname">新着投稿</h2>
+        @endif
         </div>
        
         <section id="top">
@@ -45,7 +51,6 @@
         <div class="wrapper">
             <ul class="col2">
                 @foreach($items as $item)
-
                 <li><a href="{{ route('user.detail-main', [$item->id]) }}">
                     <div class="container">
                         <div class="magazin-image"><img src="img/スクリーンショット 2024-05-15 165324.png" alt="Image" class="image"></div>
@@ -71,13 +76,9 @@
                     </div>
                 </a></li>
                 @endforeach
-                
             </ul>
-
         </div>
-
         </section>
-
 
     <ul class="pagination">
         <li><a href="#">1</a></li>
@@ -86,10 +87,9 @@
         <li><a href="#">></a></li>
       </ul>
         </section>
-
         
         <div id="return">
-            <a href="{{ route('user.detail-main', [$item->id]) }}"><p>戻る</p></a>
+            <a href="{{ 'user.detail-main' }}"><p>戻る</p></a>
         </div>
         
     </main>
