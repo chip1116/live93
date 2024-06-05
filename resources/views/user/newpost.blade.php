@@ -9,7 +9,8 @@
             </div>
 
             <div class="content">
-                <form action="#" class="form" id="form1">
+                <form action="{{ route('post.newstore') }}" class="form" id="form1" method="POST">
+                    @csrf
                     <p>名称</p>
                     <input type="search" name="name" class="input-bg">
 
@@ -17,6 +18,11 @@
                     <input type="text" name="category" class="input-bg">
 
                     <p>住所</p>
+                    <select>
+                    @foreach(App\Models\Location::all() as $location)
+                        <option value="{{ $location->id }}">{{ $location->name }}</option>
+                    @endforeach
+                    </select>
                     <input type="text" name="address" class="input-bg">
 
                     <p>写真</p>

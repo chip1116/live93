@@ -9,6 +9,9 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RecentPostController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\NewPostController;
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -67,11 +70,19 @@ Route::get('/newpost',function(){
     return view('user.newpost');
 })->name('user.newpost');
 
+// 新規投稿DB保存処理
+Route::controller(NewPostController::class)->group(function(){
+    Route::get('/newpost', [NewPostController::class, 'create'])->name('user.newpost');
+    Route::post('/newpost', [NewPostController::class, 'store'])->name('post.newstore');
+});
+
+// 口コミページページDB保存処理
 Route::controller(PostController::class)->group(function(){
     Route::get('/post', [PostController::class, 'create'])->name('user.post');
     Route::post('/post', [PostController::class, 'store'])->name('post.store');
 });
 
+// ログイン処理
 Route::controller(MemberController::class)->group(function(){
     Route::get('/user-login', [MemberController::class, 'index'])->name('user.login');
     Route::post('/user-login', [MemberController::class, 'login'])->name('login');
