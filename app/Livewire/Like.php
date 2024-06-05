@@ -9,6 +9,7 @@ class Like extends Component
 {   
     public $file, $count, $storeID;
 
+    
     public function mount() {
 
         $memberID = session()->get('member_id');
