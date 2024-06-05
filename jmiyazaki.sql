@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: 127.0.0.1
--- 生成日時: 2024-06-05 03:18:40
+-- 生成日時: 2024-06-05 04:00:33
 -- サーバのバージョン： 10.4.32-MariaDB
 -- PHP のバージョン: 8.2.12
 
@@ -64,9 +64,9 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `category_name`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'カフェ', NULL, '2024-06-03 01:05:50', NULL),
-(2, 'ランチ', NULL, '2024-06-03 01:05:50', NULL),
-(3, '居酒屋', NULL, '2024-06-03 01:05:50', NULL);
+(1, 'カフェ', NULL, '2024-06-03 00:39:33', NULL),
+(2, 'ランチ', NULL, '2024-06-03 00:39:33', NULL),
+(3, '居酒屋', NULL, '2024-06-03 00:39:33', NULL);
 
 -- --------------------------------------------------------
 
@@ -90,9 +90,9 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `name`, `email`, `title`, `comment`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'コシジロヤマドリ', '123@gmail.com', '赤', 'こんにちは', NULL, '2024-06-03 01:05:50', NULL),
-(2, 'らいぶびじねす', 'abc@gmail.com', '青', 'Hello', NULL, '2024-06-03 01:05:50', NULL),
-(3, 'KOBAYASHI', 'abc123@gmail.com', '黄', 'お問い合わせしたいことがあります。', NULL, '2024-06-03 01:05:50', NULL);
+(1, 'コシジロヤマドリ', '123@gmail.com', '赤', 'こんにちは', NULL, '2024-06-03 00:39:33', NULL),
+(2, 'らいぶびじねす', 'abc@gmail.com', '青', 'Hello', NULL, '2024-06-03 00:39:33', NULL),
+(3, 'KOBAYASHI', 'abc123@gmail.com', '黄', 'お問い合わせしたいことがあります。', NULL, '2024-06-03 00:39:33', NULL);
 
 -- --------------------------------------------------------
 
@@ -130,9 +130,9 @@ CREATE TABLE `favorites` (
 --
 
 INSERT INTO `favorites` (`id`, `store_id`, `member_id`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(2, 2, 2, NULL, '2024-06-03 01:05:50', NULL),
-(3, 3, 3, NULL, '2024-06-03 01:05:50', NULL),
-(4, 1, 1, '2024-06-05 00:51:01', '2024-06-03 17:48:03', '2024-06-04 15:51:01');
+(1, 1, 1, NULL, '2024-06-03 00:39:34', NULL),
+(2, 2, 2, '2024-06-05 00:42:22', '2024-06-03 00:39:34', '2024-06-04 15:42:22'),
+(3, 3, 3, NULL, '2024-06-03 00:39:34', NULL);
 
 -- --------------------------------------------------------
 
@@ -155,9 +155,9 @@ CREATE TABLE `images` (
 --
 
 INSERT INTO `images` (`id`, `file`, `store_id`, `user_id`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'cafe.png', 1, 1, NULL, '2024-06-03 01:05:50', NULL),
-(2, 'coffee.png', 2, 2, NULL, '2024-06-03 01:05:50', NULL),
-(3, 'live.png', 3, 3, NULL, '2024-06-03 01:05:50', NULL);
+(1, 'cafe.png', 1, 1, NULL, '2024-06-03 00:39:34', NULL),
+(2, 'coffee.png', 2, 2, NULL, '2024-06-03 00:39:34', NULL),
+(3, 'live.png', 3, 3, NULL, '2024-06-03 00:39:34', NULL);
 
 -- --------------------------------------------------------
 
@@ -214,14 +214,10 @@ CREATE TABLE `likes` (
 --
 
 INSERT INTO `likes` (`id`, `store_id`, `member_id`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, NULL, '2024-06-03 01:05:50', '2024-06-04 15:52:06'),
-(2, 2, 2, NULL, '2024-06-03 01:05:50', NULL),
-(3, 3, 3, NULL, '2024-06-03 01:05:50', NULL),
-(4, 1, 3, NULL, '2024-06-03 01:05:50', NULL),
-(5, 2, 4, NULL, '2024-06-03 01:05:50', NULL),
-(6, 2, 6, NULL, '2024-06-03 01:05:50', NULL),
-(7, 1, 2, NULL, '2024-06-03 01:05:50', NULL),
-(8, 2, 3, NULL, '2024-06-03 01:05:50', NULL);
+(1, 1, 1, NULL, '2024-06-03 00:39:34', NULL),
+(2, 2, 2, '2024-06-05 00:42:29', '2024-06-03 00:39:34', '2024-06-04 15:42:29'),
+(3, 3, 3, NULL, '2024-06-03 00:39:34', NULL),
+(4, 1, 2, NULL, '2024-06-03 00:39:34', NULL);
 
 -- --------------------------------------------------------
 
@@ -242,9 +238,9 @@ CREATE TABLE `locations` (
 --
 
 INSERT INTO `locations` (`id`, `name`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, '宮崎市', NULL, '2024-06-03 01:05:50', NULL),
-(2, '延岡市', NULL, '2024-06-03 01:05:50', NULL),
-(3, '都城市', NULL, '2024-06-03 01:05:50', NULL);
+(1, '宮崎市', NULL, '2024-06-03 00:39:33', NULL),
+(2, '延岡市', NULL, '2024-06-03 00:39:33', NULL),
+(3, '都城市', NULL, '2024-06-03 00:39:33', NULL);
 
 -- --------------------------------------------------------
 
@@ -268,9 +264,9 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`id`, `name`, `email`, `password`, `thumbnail`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'kenken', 'aaaa@gmail.com', '$2y$12$gtVKvnxZRIfZ8xB81T5mX.fVoBGZ7x2UEJVb0RS2va3lBULYdo1OK', 'img', NULL, '2024-06-03 01:05:50', '2024-06-03 15:32:20'),
-(2, 'ponpon', 'bbbb@gmail.com', '$2y$12$gU5oxZmq3GDUjWjEeP01Zu6EdHjQ7x.7AC1qtb00WMt4uuwUBE5NC', 'img', NULL, '2024-06-03 01:05:50', '2024-06-03 15:39:30'),
-(3, 'tantan', 'cccc@gmail.com', '7777', 'img', NULL, '2024-06-03 01:05:50', NULL);
+(1, 'kenken', 'aaaa@gmail.com', '$2y$10$mZGXqI/Ox7Lp8JmDcA5.pO2lzjPNt8sHNw1Bo3qRJHeTg0dLp7aIS', 'img', NULL, '2024-06-03 00:34:59', NULL),
+(2, 'ponpon', 'bbbb@gmail.com', '$2y$12$Lb00uK.woBcd9xI.ln19GO29Q5pgkDXO8hjbVEiexU38Zz0DWwXp2', 'img', NULL, '2024-06-03 00:34:59', '2024-06-03 17:11:29'),
+(3, 'tantan', 'cccc@gmail.com', '7777', 'img', NULL, '2024-06-03 00:34:59', NULL);
 
 -- --------------------------------------------------------
 
@@ -358,9 +354,9 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `date`, `comment`, `store_id`, `member_id`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, '2024-05-28 00:00:00', 'testcomment1', 1, 1, NULL, '2024-06-03 01:05:50', NULL),
-(2, '2024-05-29 00:00:00', 'testcomment2', 2, 2, NULL, '2024-06-03 01:05:50', NULL),
-(3, '2024-05-30 00:00:00', 'testcomment3', 3, 3, NULL, '2024-06-03 01:05:50', NULL);
+(1, '2024-05-28 00:00:00', 'testcomment1', 1, 1, NULL, '2024-06-03 00:39:33', NULL),
+(2, '2024-05-29 00:00:00', 'testcomment2', 2, 2, NULL, '2024-06-03 00:39:33', NULL),
+(3, '2024-05-30 00:00:00', 'testcomment3', 3, 3, NULL, '2024-06-03 00:39:33', NULL);
 
 -- --------------------------------------------------------
 
@@ -382,7 +378,14 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('gXvWfBsv22MmUQosr579nDohsygoplyAVKcFBEZh', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiSVhtdTZSSU5pdWxnMHRFejY3dVY3UXZFSG8zNlNuNFV5TXh0TVFNaCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly9sb2NhbGhvc3QvZGV0YWlsL2Zhdmljb24uaWNvIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MzoibG9naW5fbWVtYmVyXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjk6Im1lbWJlcl9pZCI7aToxO30=', 1717548726);
+('2Kt9XGreHHNy6HDoKAO2agiR0jtCa3hKYZky4aQj', NULL, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiM3hQcmZTd0VxdGc0eVdPSU1DcURZTXRYcmdXUFRtcTVWRmNhdHY0USI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly9sb2NhbGhvc3QvY2F0ZWdvcnkvZmF2aWNvbi5pY28iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1717457951),
+('AgKWZ9KrBm2IginCmmdN29a6Egn0lxUfFNTmu2vS', NULL, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiODFKYThQN0prSFcxTVFtRTJWU2w3Sll6cTcwVnl1VGFPdWZhQ0w5SSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjk6Imh0dHA6Ly9sb2NhbGhvc3QvcGxhY2UvYXJlYS8xIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1717547340),
+('bSgO8GRsezQwcOVufEUkZvlzA0JEPayezqn8hATj', NULL, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUTljaFRidnd2enhDdExkdGpnWE82aW1tY0lvekVOM3dFdFlUOFhSUCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjk6Imh0dHA6Ly9sb2NhbGhvc3QvcGxhY2UvYXJlYS8xIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1717547340),
+('KHCgidGOt7dpXgnjPn479ZiTUIbeeaKEvrcllUTg', NULL, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiYzdWOUxjbDJQRmhuOGJFdnd0UFNGZ0NJOWJjYVpMUHAwRU1aeFdRTSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly9sb2NhbGhvc3QvY2F0ZWdvcnkvZmF2aWNvbi5pY28iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1717417243),
+('lgsksHgqyTfeYwLiAvOpjZ5dPi4MDF3PiOFzK7gG', NULL, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoieGlmcHVFWW5CTDBtTzlPYUJTOFJRS1RaU0hOWnVmWHZhY3BXcUFMSCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjM6Imh0dHA6Ly9sb2NhbGhvc3QvcmVjZW50Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1717398590),
+('oZCkGp0V3T3aeIEIbl4CUDH8VEWAICIz4uhJ4LO2', NULL, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiSFZJdWlKNE1qcHRNNDBjWTk1Vk0zMHdidW5FYW5kRFd2dExINkFqaSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjQ6Imh0dHA6Ly9sb2NhbGhvc3QvbmV3cG9zdCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTM6ImxvZ2luX21lbWJlcl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjI7czo5OiJtZW1iZXJfaWQiO2k6Mjt9', 1717548974),
+('vfylfDV2HaDxQH1WP2RZq0CJgwN8cG78hD1rYXqi', NULL, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiVVBUVGJ2YTNiOEJBQUlIQ2NjWFNJRXA1cndaVUhmb1Y5NTN0YlZWciI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjQ6Imh0dHA6Ly9sb2NhbGhvc3QvdG9wcGFnZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTM6ImxvZ2luX21lbWJlcl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjI7czo5OiJtZW1iZXJfaWQiO2k6Mjt9', 1717470413),
+('Z6Rs5myhicj7vgVnWetMvyctq9A9MkjNlBXbIe60', NULL, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWjJQNEx0Q0hRQkhtMnJSeDRCQ1c5N2NhaDZ3MXl6MFd4aXlMdDZFSCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly9sb2NhbGhvc3QvY2F0ZWdvcnkvZmF2aWNvbi5pY28iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1717399846);
 
 -- --------------------------------------------------------
 
@@ -410,9 +413,9 @@ CREATE TABLE `stores` (
 --
 
 INSERT INTO `stores` (`id`, `member_id`, `name`, `postal_code`, `location_id`, `address_level3`, `tel`, `web`, `access`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 'ひー', '8880000', 1, '佐土原町', '985880000', 'hi.jp', '駅から徒歩５分', NULL, '2024-06-03 01:05:50', NULL),
-(2, 2, 'ふー', '8880001', 2, '田野町', '985880001', 'fu.jp', '駅から車で５分', NULL, '2024-06-03 01:05:50', NULL),
-(3, 3, 'みー', '8880002', 1, '清武町', '985880002', 'mi.jp', '駅前', NULL, '2024-06-03 01:05:50', NULL);
+(1, 1, 'ひー', '8880000', 1, '佐土原町', '985880000', 'hi.jp', '駅から徒歩５分', NULL, '2024-06-03 02:37:50', NULL),
+(2, 2, 'ふー', '8880001', 2, '田野町', '985880001', 'fu.jp', '駅から車で５分', NULL, '2024-06-03 02:37:49', NULL),
+(3, 3, 'みー', '8880002', 1, '清武町', '985880002', 'mi.jp', '駅前', NULL, '2024-06-03 02:37:51', NULL);
 
 -- --------------------------------------------------------
 
@@ -434,9 +437,9 @@ CREATE TABLE `store_category` (
 --
 
 INSERT INTO `store_category` (`id`, `store_id`, `category_id`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, NULL, '2024-06-03 01:05:50', NULL),
-(2, 2, 2, NULL, '2024-06-03 01:05:50', NULL),
-(3, 3, 3, NULL, '2024-06-03 01:05:50', NULL);
+(1, 1, 1, NULL, '2024-06-03 00:39:10', NULL),
+(2, 2, 2, NULL, '2024-06-03 00:39:10', NULL),
+(3, 3, 3, NULL, '2024-06-03 00:39:10', NULL);
 
 -- --------------------------------------------------------
 
@@ -617,7 +620,7 @@ ALTER TABLE `failed_jobs`
 -- テーブルの AUTO_INCREMENT `favorites`
 --
 ALTER TABLE `favorites`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- テーブルの AUTO_INCREMENT `images`
@@ -635,7 +638,7 @@ ALTER TABLE `jobs`
 -- テーブルの AUTO_INCREMENT `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- テーブルの AUTO_INCREMENT `locations`
@@ -647,7 +650,7 @@ ALTER TABLE `locations`
 -- テーブルの AUTO_INCREMENT `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- テーブルの AUTO_INCREMENT `migrations`
