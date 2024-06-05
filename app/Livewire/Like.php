@@ -47,7 +47,7 @@ class Like extends Component
                 $like->restore();
             }
 
-        $this->file = $this->isLike() ? 'moai@2x.png' : 'moai02@2x.png';
+        $this->file = $this->isLike() ? 'moai03@2x.png' : 'moai@2x.png';
         $this->count++ ;
     }
 
