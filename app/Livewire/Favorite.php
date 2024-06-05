@@ -32,14 +32,16 @@ class Favorite extends Component
                     'member_id' => $memberID,
                     'store_id' => $this->storeID,
                 ]);
+                
         // ①が存在する&&deleted_atがnullの場合 ... ②
             // 現在日時をセットする（UPDATE）→ 削除扱い
-        } elseif ($favorite->trashed()) {
-            $favorite->restore();
+        } elseif (!$favorite->trashed()) {
+            $favorite->delete();
+
         // ②以外の場合
             // deletedt_atをnullにする（UPDATE）→ 再度ブックマークした扱い
         } else {
-            $favorite->delete();
+            $favorite->restore();
         }
 
         $this->file = $this->isFavorite() ? 'bookmark02@2x.png' : 'bookmark01@2x.png';

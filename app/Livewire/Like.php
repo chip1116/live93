@@ -38,13 +38,13 @@ class Like extends Component
 
         // 3. 1のデータが存在するかつソフトデリートされていない場合
             // 現在日時をセットする(ソフトデリートする)
-            } elseif ($like->trashed()) {
-                $like->restore();
+            } elseif (!$like->trashed()) {
+                $like->delete();
 
         // 4. それ以外の場合
             // ソフトデリートをなくす→再度ブックマークした扱い
             } else {
-                $like->delete();
+                $like->restore();
             }
 
         $this->file = $this->isLike() ? 'moai@2x.png' : 'moai02@2x.png';
