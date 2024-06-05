@@ -10,7 +10,17 @@ class Favorite extends Component
     public $file, $storeID;
 
     public function mount(){
-        $this->file = 'bookmark01@2x.png';
+
+        $memberID = session()->get('member_id'); 
+        $favorite = FavoriteModel::withTrashed()->where('member_id', $memberID)
+                  ->where('store_id', $this->storeID)->first();
+
+        // すでにお気に入りされている場合初期を色付きにする
+        if (!$favorite->trashed()) {
+            $this->file = 'bookmark02@2x.png';
+        } else {
+            $this->file = 'bookmark01@2x.png';
+        }
     }
 
     public function render()
