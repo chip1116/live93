@@ -16,8 +16,7 @@ class DetailScreenController extends Controller
         {
         $this->store = $store;
         $this->location = $location;
-       
-       
+              
     }
 
     public function show($id)
