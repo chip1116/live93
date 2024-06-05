@@ -10,25 +10,25 @@
 
             <div class="content">
                 <form action="{{ route('post.newstore') }}" class="form" id="form1" method="POST">
-                    @csrf
+                @csrf
                     <p>名称</p>
                     <input type="search" name="name" class="input-bg">
 
                     <p>ジャンル</p>
-                    <select class="input-bg">
+                    <select name="category_name" class="input-bg">
                     @foreach(App\Models\Category::all() as $category)
                         <option value="{{ $category->id }}">{{ $category->category_name }}</option>
                     @endforeach
                     </select>
 
                     <p>市・郡</p>
-                    <select class="input-bg">
+                    <select name="location_id" class="input-bg">
                     @foreach(App\Models\Location::all() as $location)
                         <option value="{{ $location->id }}">{{ $location->name }}</option>
                     @endforeach
                     </select>
                     <p>町・村・番地</p>
-                    <input type="text" name="address" class="input-bg">
+                    <input type="text" name="address_level3" class="input-bg">
 
                     <p>写真</p>
                     <div class="deco-file">

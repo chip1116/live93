@@ -9,9 +9,32 @@ class Like extends Component
 {   
     public $file, $count, $storeID;
 
+    
     public function mount() {
-        $this->file = 'moai02@2x.png';
+
+        $memberID = session()->get('member_id');
+        $like = LikeModel::withTrashed()->where('member_id', $memberID)
+                ->where('store_id', $this->storeID)->first();
+
+        // すでにいいねされている場合色付きの画像にする
+            // sessionのmemberIDと同じmemberIDのデータがあるとき
+        if ($like !== null) {
+            
+            if (!$like->trashed()) {
+                // ソフトデリートされていないとき色付き
+                $this->file = 'moai03@2x.png';
+
+            } else {
+                // ソフトデリートされているとき色なし
+                $this->file = 'moai@2x.png';
+            }
+
+            // sessionのmemberIDと同じmemberIDのデータがないとき
+        } else {
+            $this->file = 'moai@2x.png';
+        }
     }
+    
     public function render()
     {
         //ここでソフトでルートチェックする
