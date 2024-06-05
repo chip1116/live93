@@ -21,7 +21,7 @@ class Favorite extends Component
     public function toggleFavorite(){
 
         // Favoriteモデルからmember_idとstore_idが一致するデータを取得　... ①
-        $memberID = session()->get('member'); 
+        $memberID = session()->get('member_id'); 
         $favorite = FavoriteModel::withTrashed()->where('member_id', $memberID)
                   ->where('store_id', $this->storeID)->first();
 
@@ -49,7 +49,7 @@ class Favorite extends Component
 
     private function isFavorite(): bool
     {
-        $memberID = session()->get('member'); // 現在ログインしているユーザーのIDを取得
+        $memberID = session()->get('member_id'); // 現在ログインしているユーザーのIDを取得
         if (!$memberID) {
             return false;
         }

@@ -24,7 +24,7 @@ class Like extends Component
         public function toggleLike() {
         
         // 1. Likeモデルからmember_idとstore_idが一致するデータを取得
-        $memberID = session()->get('member');
+        $memberID = session()->get('member_id');
         $like = LikeModel::withTrashed()->where('member_id', $memberID)
                 ->where('store_id', $this->storeID)->first();
                 
@@ -53,7 +53,7 @@ class Like extends Component
 
     private function isLike(): bool
     {
-        $memberID = session()->get('member');
+        $memberID = session()->get('member_id');
         if (!$memberID) {
             return false;
         }
