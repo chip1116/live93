@@ -26,7 +26,7 @@ class PostController extends Controller
         'store_id' => $id,
         'member_id' => 2,
     ]); 
-    session()->flash('message', '登録できました。');
+    session()->flash('message', '投稿できました！');
     return redirect()->route('user.detail-main', ['id' => $id]);
 }
 }

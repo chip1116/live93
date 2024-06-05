@@ -15,14 +15,19 @@
                     <input type="search" name="name" class="input-bg">
 
                     <p>ジャンル</p>
-                    <input type="text" name="category" class="input-bg">
+                    <select class="input-bg">
+                    @foreach(App\Models\Category::all() as $category)
+                        <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                    @endforeach
+                    </select>
 
-                    <p>住所</p>
-                    <select>
+                    <p>市・郡</p>
+                    <select class="input-bg">
                     @foreach(App\Models\Location::all() as $location)
                         <option value="{{ $location->id }}">{{ $location->name }}</option>
                     @endforeach
                     </select>
+                    <p>町・村・番地</p>
                     <input type="text" name="address" class="input-bg">
 
                     <p>写真</p>
