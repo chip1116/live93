@@ -46,7 +46,7 @@
             <div class="section">
                 <section class="search small_logo">
                     <h3>キーワードでさがす<img src="/img/jagaアイコン03.png" alt="img"></h3>
-                    <form action="#">
+                    <form action="{{ route('user.search') }}" method="get">
                         <p>
                             <input type="text" name="search">
                             <button type="submit" class="search_button">Go!</button>
@@ -118,7 +118,7 @@
                             <p><img src="/img/no_img@2x.png" alt="thumbnail"></p>
                             <div>
                                 <p>{{ $item->member->name }}</p>
-                                <p>{{ $item->member_count }}</p>
+                                <p>{{ $item->member_count }}件投稿！</p>
                             </div>
                         </li>
                         @endforeach

@@ -24,7 +24,7 @@
                 </form>
             </div>
 
-            <a href="{{ route('user.index') }}">
+            <a href="toppage">
                 <h2 class="buck">戻る</h2>
             </a>
 

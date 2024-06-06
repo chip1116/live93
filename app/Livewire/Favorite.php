@@ -3,6 +3,7 @@
 namespace App\Livewire;
 use App\Models\Favorite as FavoriteModel;
 use Livewire\Component;
+use Auth;
 
 class Favorite extends Component
 {
