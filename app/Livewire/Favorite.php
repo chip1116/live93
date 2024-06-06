@@ -14,7 +14,6 @@ class Favorite extends Component
         $memberID = session()->get('member_id'); 
         $favorite = FavoriteModel::withTrashed()->where('member_id', $memberID)
                   ->where('store_id', $this->storeID)->first();
-
         // すでにお気に入りされている場合初期を色付きにする
         if (!$favorite->trashed()) {
             $this->file = 'bookmark02@2x.png';
