@@ -15,9 +15,19 @@ class Favorite extends Component
         $favorite = FavoriteModel::withTrashed()->where('member_id', $memberID)
                   ->where('store_id', $this->storeID)->first();
 
-        // すでにお気に入りされている場合初期を色付きにする
-        if (!$favorite->trashed()) {
-            $this->file = 'bookmark02@2x.png';
+    // すでにお気に入りされている場合初期を色付きにする
+        // sessionのmemberIDと同じmemberIDのデータがあるとき
+        if ($favorite !== null) {
+            if (!$favorite->trashed()) {
+                // ソフトデリートされていないとき色付き
+                $this->file = 'bookmark02@2x.png';
+
+            } else {
+                // ソフトデリートされていないとき色付き
+                $this->file = 'bookmark01@2x.png';
+            }
+
+        // sessionのmemberIDと同じmemberIDのデータがないとき色なし
         } else {
             $this->file = 'bookmark01@2x.png';
         }

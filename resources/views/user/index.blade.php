@@ -111,32 +111,15 @@
                     @foreach($rank as $item)
 
                         <li class="ranking_detail">
-                            <p>1</p>
-                            <p><img src="" alt="user1"></p>
+                            <p>{{$loop->iteration}}位:</p>
+                            <p><img src="/img/no_img@2x.png" alt="thumbnail"></p>
                             <div>
-                                <p>{{ $item->member_id }}</p>
-                                <p>view</p>
+                                <p>{{ $item->member->name }}</p>
+                                <p>{{ $item->member_count }}</p>
                             </div>
                         </li>
                         @endforeach
 
-                        <!-- <li class="ranking_detail">
-                            <p>2</p>
-                            <p><img src="" alt="user2"></p>
-                            <div>
-                                <p>name</p>
-                                <p>view</p>
-                            </div>
-                        </li>
-                        <li class="ranking_detail">
-                            <p>3</p>
-                            <p><img src="" alt="user3"></p>
-                            <div>
-                                <p>name</p>
-                                <p>view</p>
-                            </div>
-                        </li>
-                        </li> -->
                     </ol>
                 </div>
             </aside>

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
@@ -397,13 +396,13 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 CREATE TABLE `stores` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `member_id` bigint(20) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `postal_code` varchar(8) NOT NULL,
+  `name` varchar(50) NULL,
+  `postal_code` varchar(8) NULL,
   `location_id` bigint(20) NOT NULL,
   `address_level3` varchar(255) NOT NULL,
-  `tel` varchar(255) NOT NULL,
-  `web` varchar(255) NOT NULL,
-  `access` varchar(50) NOT NULL,
+  `tel` varchar(255) NULL,
+  `web` varchar(255) NULL,
+  `access` varchar(50) NULL,
   `deleted_at` datetime DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -693,5 +692,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-=======
->>>>>>> origin/main

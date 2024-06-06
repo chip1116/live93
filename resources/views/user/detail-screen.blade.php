@@ -47,7 +47,13 @@
     <hr>
     
         <section id="main">
-        <h3 class="side-title"><span>宮崎市周辺のお店</span></h3>
+        @if (Request::routeIs('user.detail-screen'))
+        <h3 class="side-title"><span>{{ $items[0]->location->name }}周辺のお店</span></h3>
+        @elseif (Request::routeIs('user.category'))
+        <h3 class="side-title"><span>ジャンル:{{ $items[0]->category[0]->category_name }}</span></h3>
+        @elseif (Request::routeIs('user.recent'))
+        <h3 class="side-title"><span>新着投稿一覧</span></h3>
+        @endif
         <div class="wrapper">
             <ul class="col2">
                 @foreach($items as $item)
@@ -89,7 +95,7 @@
         </section>
         
         <div id="return">
-            <a href="{{ 'user.detail-main' }}"><p>戻る</p></a>
+            <a href="{{ 'user.detail-main' }} "><p>戻る</p></a>
         </div>
         
     </main>
