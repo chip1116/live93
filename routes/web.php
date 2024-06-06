@@ -55,6 +55,7 @@ Route::controller(DetailMainController::class)->group(function(){
 
 Route::controller(MypageController::class)->group(function(){
     Route::get('/mypage', 'show')->name('user.mypage');
+    Route::get('/mypage/logout', 'logout')->name('user.logout');
 });
 
 Route::controller(IndexController::class)->group(function(){

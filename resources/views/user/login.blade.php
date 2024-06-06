@@ -2,7 +2,9 @@
     <main class="login-main">
 
         <inner class="inner">
-
+            @if (session('message'))
+                {{ session('message') }}
+            @endif
             <div class="top">
                 <h2 class="buck">ログイン</h2>
             </div>
