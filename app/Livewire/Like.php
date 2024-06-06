@@ -17,8 +17,19 @@ class Like extends Component
                 ->where('store_id', $this->storeID)->first();
 
         // すでにいいねされている場合色付きの画像にする
-        if (!$like->trashed()) {
-            $this->file = 'moai03@2x.png';
+            // sessionのmemberIDと同じmemberIDのデータがあるとき
+        if ($like !== null) {
+            
+            if (!$like->trashed()) {
+                // ソフトデリートされていないとき色付き
+                $this->file = 'moai03@2x.png';
+
+            } else {
+                // ソフトデリートされているとき色なし
+                $this->file = 'moai@2x.png';
+            }
+
+            // sessionのmemberIDと同じmemberIDのデータがないとき
         } else {
             $this->file = 'moai@2x.png';
         }

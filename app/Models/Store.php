@@ -14,6 +14,11 @@ use App\Models\Member;
 class Store extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'location_id',
+        'address_level3',
+        'member_id',
+    ];
 
     public function location() {
         return $this->belongsTo(Location::class);

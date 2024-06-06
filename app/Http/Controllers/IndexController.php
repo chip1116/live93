@@ -25,7 +25,7 @@ class IndexController extends Controller
         $categories = $this->category->get();
 
         $rank = $this->store->withCount('member')->orderBy('member_count', 'desc')->limit(3)->get();
-        
+        // dd( $rank);
         return view('user.index', compact('items','locations', 'categories','rank'));
     }
 
