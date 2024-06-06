@@ -10,7 +10,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\RecentPostController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\NewPostController;
-
+use App\Http\Controllers\ImageController;
 
 
 Route::get('/', function () {
@@ -91,3 +91,11 @@ Route::controller(MemberController::class)->group(function(){
 Route::get('/user-register',function(){
     return view('user.register');
 })->name('user.register');
+
+
+
+Route::get('upload-image', function () {
+    return view('upload-image');
+});
+
+Route::post('upload-image', [ImageController::class, 'store'])->name('image.store');
