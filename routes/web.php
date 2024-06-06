@@ -32,6 +32,8 @@ Route::middleware([
 Route::controller(DetailScreenController::class)->group(function(){
     
     Route::get('/place/area/{id}', [DetailScreenController::class,'show'])->name('user.detail-screen');
+    Route::get('/place/search', [DetailScreenController::class,'search'])->name('user.search');
+
 });
 
 Route::controller(CategoryController::class)->group(function(){

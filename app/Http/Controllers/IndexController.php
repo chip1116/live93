@@ -24,7 +24,13 @@ class IndexController extends Controller
         $locations = $this->location->get()->toArray();
         $categories = $this->category->get();
 
-        $rank = $this->store->withCount('member')->orderBy('member_count', 'desc')->limit(3)->get();
+        $rank = $this->store
+                   ->select('member_id', $this->store->raw('count(*) AS member_count'))
+                   ->groupBy('member_id')
+                   ->orderBy('member_count', 'desc')
+                   ->limit(3)
+                   ->get();
+
         // dd( $rank);
         return view('user.index', compact('items','locations', 'categories','rank'));
     }
