@@ -95,7 +95,7 @@
         </section>
         
         <div id="return">
-            <a href="{{ 'user.detail-main' }} "><p>戻る</p></a>
+            <a href="{{ route('user.index') }}"><p>戻る</p></a>
         </div>
         
     </main>

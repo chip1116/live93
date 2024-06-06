@@ -54,13 +54,8 @@ Route::controller(DetailMainController::class)->group(function(){
 });
 
 Route::controller(MypageController::class)->group(function(){
-    Route::get('/mypage/{id}', 'show')->name('user.mypage');
+    Route::get('/mypage', 'show')->name('user.mypage');
 });
-
-
-Route::get('/mypage',function(){
-    return view('user.mypage');
-})->name('user.mypage');
 
 Route::controller(IndexController::class)->group(function(){
     Route::get('/toppage', [IndexController::class, 'show'])->name('user.index');
