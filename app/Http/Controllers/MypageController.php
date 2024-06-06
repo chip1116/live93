@@ -18,7 +18,16 @@ class MypageController extends Controller
         $this->location = $location;
     }
 
-    public function show($id){
+    // public function show($id){
+    //     $items = $this->member->find($id);
+    //     $items2 = $this->store
+    //         ->where('location_id', '=', $id)
+    //         ->get();
+    //     return view('user.mypage', compact('items'));
+    // }
+
+    public function show(){
+        $id = session()->get('member_id');
         $items = $this->member->find($id);
         $items2 = $this->store
             ->where('location_id', '=', $id)
