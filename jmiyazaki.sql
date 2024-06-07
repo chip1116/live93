@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- ホスト: 127.0.0.1
--- 生成日時: 2024-06-05 04:00:33
--- サーバのバージョン： 10.4.32-MariaDB
--- PHP のバージョン: 8.2.12
+-- ホスト: localhost:8889
+-- 生成日時: 2024 年 6 月 07 日 05:36
+-- サーバのバージョン： 5.7.39
+-- PHP のバージョン: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cache` (
-  `key` varchar(255) NOT NULL,
-  `value` mediumtext NOT NULL,
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `expiration` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -40,8 +40,8 @@ CREATE TABLE `cache` (
 --
 
 CREATE TABLE `cache_locks` (
-  `key` varchar(255) NOT NULL,
-  `owner` varchar(255) NOT NULL,
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `owner` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `expiration` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -53,7 +53,7 @@ CREATE TABLE `cache_locks` (
 
 CREATE TABLE `categories` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `category_name` varchar(50) NOT NULL,
+  `category_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `deleted_at` datetime DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -76,10 +76,10 @@ INSERT INTO `categories` (`id`, `category_name`, `deleted_at`, `created_at`, `up
 
 CREATE TABLE `contacts` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `comment` text NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `comment` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `deleted_at` datetime DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -102,12 +102,12 @@ INSERT INTO `contacts` (`id`, `name`, `email`, `title`, `comment`, `deleted_at`,
 
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) NOT NULL,
-  `connection` text NOT NULL,
-  `queue` text NOT NULL,
-  `payload` longtext NOT NULL,
-  `exception` longtext NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -137,38 +137,13 @@ INSERT INTO `favorites` (`id`, `store_id`, `member_id`, `deleted_at`, `created_a
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `images`
---
-
-CREATE TABLE `images` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `file` varchar(50) NOT NULL,
-  `store_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `deleted_at` datetime DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- テーブルのデータのダンプ `images`
---
-
-INSERT INTO `images` (`id`, `file`, `store_id`, `user_id`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'cafe.png', 1, 1, NULL, '2024-06-03 00:39:34', NULL),
-(2, 'coffee.png', 2, 2, NULL, '2024-06-03 00:39:34', NULL),
-(3, 'live.png', 3, 3, NULL, '2024-06-03 00:39:34', NULL);
-
--- --------------------------------------------------------
-
---
 -- テーブルの構造 `jobs`
 --
 
 CREATE TABLE `jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `queue` varchar(255) NOT NULL,
-  `payload` longtext NOT NULL,
+  `queue` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `attempts` tinyint(3) UNSIGNED NOT NULL,
   `reserved_at` int(10) UNSIGNED DEFAULT NULL,
   `available_at` int(10) UNSIGNED NOT NULL,
@@ -182,13 +157,13 @@ CREATE TABLE `jobs` (
 --
 
 CREATE TABLE `job_batches` (
-  `id` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `total_jobs` int(11) NOT NULL,
   `pending_jobs` int(11) NOT NULL,
   `failed_jobs` int(11) NOT NULL,
-  `failed_job_ids` longtext NOT NULL,
-  `options` mediumtext DEFAULT NULL,
+  `failed_job_ids` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `options` mediumtext COLLATE utf8mb4_unicode_ci,
   `cancelled_at` int(11) DEFAULT NULL,
   `created_at` int(11) NOT NULL,
   `finished_at` int(11) DEFAULT NULL
@@ -227,7 +202,7 @@ INSERT INTO `likes` (`id`, `store_id`, `member_id`, `deleted_at`, `created_at`, 
 
 CREATE TABLE `locations` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(50) NOT NULL,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `deleted_at` datetime DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -250,10 +225,10 @@ INSERT INTO `locations` (`id`, `name`, `deleted_at`, `created_at`, `updated_at`)
 
 CREATE TABLE `members` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `thumbnail` varchar(50) NOT NULL,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `thumbnail` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `deleted_at` datetime DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -276,7 +251,7 @@ INSERT INTO `members` (`id`, `name`, `email`, `password`, `thumbnail`, `deleted_
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -308,8 +283,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `password_reset_tokens` (
-  `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -321,11 +296,11 @@ CREATE TABLE `password_reset_tokens` (
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) NOT NULL,
+  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `token` varchar(64) NOT NULL,
-  `abilities` text DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text COLLATE utf8mb4_unicode_ci,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -341,9 +316,10 @@ CREATE TABLE `personal_access_tokens` (
 CREATE TABLE `posts` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `date` datetime NOT NULL,
-  `comment` varchar(1000) NOT NULL,
+  `comment` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
   `store_id` bigint(20) UNSIGNED NOT NULL,
   `member_id` bigint(20) UNSIGNED NOT NULL,
+  `post_img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -353,10 +329,10 @@ CREATE TABLE `posts` (
 -- テーブルのデータのダンプ `posts`
 --
 
-INSERT INTO `posts` (`id`, `date`, `comment`, `store_id`, `member_id`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, '2024-05-28 00:00:00', 'testcomment1', 1, 1, NULL, '2024-06-03 00:39:33', NULL),
-(2, '2024-05-29 00:00:00', 'testcomment2', 2, 2, NULL, '2024-06-03 00:39:33', NULL),
-(3, '2024-05-30 00:00:00', 'testcomment3', 3, 3, NULL, '2024-06-03 00:39:33', NULL);
+INSERT INTO `posts` (`id`, `date`, `comment`, `store_id`, `member_id`, `post_img`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(1, '2024-05-28 00:00:00', 'testcomment1', 1, 1, NULL, NULL, '2024-06-03 00:39:33', NULL),
+(2, '2024-05-29 00:00:00', 'testcomment2', 2, 2, NULL, NULL, '2024-06-03 00:39:33', NULL),
+(3, '2024-05-30 00:00:00', 'testcomment3', 3, 3, NULL, NULL, '2024-06-03 00:39:33', NULL);
 
 -- --------------------------------------------------------
 
@@ -365,11 +341,11 @@ INSERT INTO `posts` (`id`, `date`, `comment`, `store_id`, `member_id`, `deleted_
 --
 
 CREATE TABLE `sessions` (
-  `id` varchar(255) NOT NULL,
+  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `ip_address` varchar(45) DEFAULT NULL,
-  `user_agent` text DEFAULT NULL,
-  `payload` longtext NOT NULL,
+  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_agent` text COLLATE utf8mb4_unicode_ci,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `last_activity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -396,13 +372,14 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 CREATE TABLE `stores` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `member_id` bigint(20) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `postal_code` varchar(8) NOT NULL,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `postal_code` varchar(8) COLLATE utf8mb4_unicode_ci NOT NULL,
   `location_id` bigint(20) NOT NULL,
-  `address_level3` varchar(255) NOT NULL,
-  `tel` varchar(255) NOT NULL,
-  `web` varchar(255) NOT NULL,
-  `access` varchar(50) NOT NULL,
+  `address_level3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tel` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `web` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `access` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `store_img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -412,10 +389,10 @@ CREATE TABLE `stores` (
 -- テーブルのデータのダンプ `stores`
 --
 
-INSERT INTO `stores` (`id`, `member_id`, `name`, `postal_code`, `location_id`, `address_level3`, `tel`, `web`, `access`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 'ひー', '8880000', 1, '佐土原町', '985880000', 'hi.jp', '駅から徒歩５分', NULL, '2024-06-03 02:37:50', NULL),
-(2, 2, 'ふー', '8880001', 2, '田野町', '985880001', 'fu.jp', '駅から車で５分', NULL, '2024-06-03 02:37:49', NULL),
-(3, 3, 'みー', '8880002', 1, '清武町', '985880002', 'mi.jp', '駅前', NULL, '2024-06-03 02:37:51', NULL);
+INSERT INTO `stores` (`id`, `member_id`, `name`, `postal_code`, `location_id`, `address_level3`, `tel`, `web`, `access`, `store_img`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(1, 1, 'ひー', '8880000', 1, '佐土原町', '985880000', 'hi.jp', '駅から徒歩５分', NULL, NULL, '2024-06-03 02:37:50', NULL),
+(2, 2, 'ふー', '8880001', 2, '田野町', '985880001', 'fu.jp', '駅から車で５分', NULL, NULL, '2024-06-03 02:37:49', NULL),
+(3, 3, 'みー', '8880002', 1, '清武町', '985880002', 'mi.jp', '駅前', NULL, NULL, '2024-06-03 02:37:51', NULL);
 
 -- --------------------------------------------------------
 
@@ -449,16 +426,16 @@ INSERT INTO `store_category` (`id`, `store_id`, `category_id`, `deleted_at`, `cr
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) NOT NULL,
-  `two_factor_secret` text DEFAULT NULL,
-  `two_factor_recovery_codes` text DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `two_factor_secret` text COLLATE utf8mb4_unicode_ci,
+  `two_factor_recovery_codes` text COLLATE utf8mb4_unicode_ci,
   `two_factor_confirmed_at` timestamp NULL DEFAULT NULL,
-  `remember_token` varchar(100) DEFAULT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `current_team_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `profile_photo_path` varchar(2048) DEFAULT NULL,
+  `profile_photo_path` varchar(2048) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -502,12 +479,6 @@ ALTER TABLE `failed_jobs`
 -- テーブルのインデックス `favorites`
 --
 ALTER TABLE `favorites`
-  ADD PRIMARY KEY (`id`);
-
---
--- テーブルのインデックス `images`
---
-ALTER TABLE `images`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -620,12 +591,6 @@ ALTER TABLE `failed_jobs`
 -- テーブルの AUTO_INCREMENT `favorites`
 --
 ALTER TABLE `favorites`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- テーブルの AUTO_INCREMENT `images`
---
-ALTER TABLE `images`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
