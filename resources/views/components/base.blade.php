@@ -17,7 +17,7 @@
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/style.css">
-    @if(Request::routeIs('user.detail-screen') || Request::routeIs('user.detail-main') || Request::routeIs('user.category') || Request::routeIs('user.recent'))
+    @if(Request::routeIs('user.detail-screen') || Request::routeIs('user.detail-main') || Request::routeIs('user.category') || Request::routeIs('user.recent') || Request::routeIs('user.search'))
     <link rel="stylesheet" href="/css/detail-style.css">
     @elseif(Request::routeIs('user.contact') || Request::routeIs('user.login') || Request::routeIs('user.newpost') || Request::routeIs('user.post'))
     <link rel="stylesheet" href="/css/pnplc.css">
@@ -45,7 +45,10 @@
     <footer id="footer">
         <div class="footer_top"></div>
         <div class="footer_bottom"></div>
-        <div class="copyright">&copy;Live93 2024</div>
+        <div class="copyright">
+          <p><img class="text_img" src="/img/logo93_1@2x.png" alt=""></p>
+          <small>&copy;live93 2024</small>
+        </div>
     </footer>
     @livewireScripts
 </body>

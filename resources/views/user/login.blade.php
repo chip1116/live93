@@ -2,7 +2,9 @@
     <main class="login-main">
 
         <inner class="inner">
-
+            @if (session('message'))
+                {{ session('message') }}
+            @endif
             <div class="top">
                 <h2 class="buck">ログイン</h2>
             </div>
@@ -22,7 +24,7 @@
                 </form>
             </div>
 
-            <a href="toppage">
+            <a href="{{ route('user.index') }}">
                 <h2 class="buck">戻る</h2>
             </a>
 

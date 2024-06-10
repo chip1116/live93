@@ -24,7 +24,6 @@ img {
     max-width: 100%;
 }
 
-
 /* ------------------------
         h1
 ------------------------ */
@@ -145,11 +144,43 @@ main {
 #footer {
     position: relative;
 }
-
+/* テキスト中に画像を埋め込む
+#footer .text_img {
+    width: 100%;
+    vertical-align: middle;
+} */
 .copyright {
     position: absolute;
-    font-size: 30px;
+    font-size: 1rem;
+    color: var(--base-font-color);
     top: 40px;
-    right: 30px;
+    right: 2rem;
+}
+.copyright p {
+    position: absolute;
+    top: 20px;
 }
 
+/* ======================= 
+    レスポンシブ
+======================== */
+@media (max-width:768px) {
+    #header img {
+        height: 50px;
+        top: 20px;
+        left: 20px;
+    }
+    .header_top, .header_bottom {
+        height: 50px;
+    }
+    .base-wrapper {
+        padding: 30px 0;
+    }
+    h2 {
+        width: 90px;
+        font-size: 1rem;
+    }
+    .copyright {
+        font-size: .8rem;
+    }
+}

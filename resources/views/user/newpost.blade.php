@@ -47,7 +47,7 @@
                 </form>
             </div>
             <button type="submit" form="form1" class="post-button">投稿</button>
-            <a href="toppage">
+            <a href="{{ route('user.index') }}">
                 <h2 class="buck">戻る</h2>
             </a>
 
