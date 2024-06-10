@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\Post;
 use App\Models\Store;
-use App\Models\Category;
+use App\Models\StoreCategory;
 
 
 class NewPostController extends Controller
@@ -30,14 +30,15 @@ class NewPostController extends Controller
             'member_id' => $memberId,
         ]); 
 
-        $address = Store::create([
+        $store = Store::create([
             'location_id' => $request->location_id,
-            'address_level3' => $request->address_level3,
+            'tel' => $request->tel,
             'member_id' => $memberId,
         ]);
 
-        $category = Category::create([
-            'category_name' => $request->category_name,
+        $category = StoreCategory::create([
+            'category_id' => $request->category_name,
+            'store_id' => 2,
         ]);
         session()->flash('message', '投稿できました！');
         return redirect()->route('user.detail-main', ['id' => $memberId]);
