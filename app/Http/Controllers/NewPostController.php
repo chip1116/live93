@@ -28,6 +28,7 @@ class NewPostController extends Controller
             'date' => $dt,
             'store_id' => $id,
             'member_id' => $memberId,
+            'post_image' => $imageName
         ]); 
 
         $address = Store::create([

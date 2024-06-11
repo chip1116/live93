@@ -1,7 +1,10 @@
 
     <x-base>
         <div class="toppage">
-            {{ Session::get('member_id') }}
+           
+            <p>ようこそ{{ Session::get('member_id') }}さん</p>
+        
+
             <div class="top_img">
                 <!-- <img src="/img/img.png" alt="top_img" class="back"> -->
                 <div class="menu_tab">

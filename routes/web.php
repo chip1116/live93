@@ -32,6 +32,7 @@ Route::middleware([
 Route::controller(DetailScreenController::class)->group(function(){
     
     Route::get('/place/area/{id}', [DetailScreenController::class,'show'])->name('user.detail-screen');
+   
 });
 
 Route::controller(CategoryController::class)->group(function(){
@@ -51,6 +52,8 @@ Route::get('/contact',function(){
 
 Route::controller(DetailMainController::class)->group(function(){
     Route::get('/detail/{id}', [DetailMainController::class,'show'])->name('user.detail-main');
+   
+
 });
 
 Route::controller(MypageController::class)->group(function(){
@@ -93,9 +96,3 @@ Route::get('/user-register',function(){
 })->name('user.register');
 
 
-
-Route::get('upload-image', function () {
-    return view('upload-image');
-});
-
-Route::post('upload-image', [ImageController::class, 'store'])->name('image.store');

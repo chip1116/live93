@@ -19,13 +19,14 @@
                     @foreach($rank as $item)
                     <li><p class="lank">{{$loop->iteration}}位</p><a href="{{ route('user.detail-main', [$item->id]) }}">
                         <div class="container">
-                            <div class="magazin-image"><img src="img/スクリーンショット 2024-05-15 165324.png" alt="Image" class="image"></div>
+                            <div class="magazin-image"><img src="{{ asset('img/'.$item->post_image) }}" alt="Image" class="image"></div>
+                           
                             <div class="container-wrapper">
                             <h3 class="container-title"><span>{{$item->name}}</span></h3>
                             <p class="category">観光地</p>
                             </div>
                             <div class="detail">
-                            <p>おすすめ度:●●●●</p>
+                           
 
                             <ul class="access">
                                 <li>アクセス:宮崎空港から車で35分</li>
@@ -59,7 +60,7 @@
                 @foreach($items as $item)
                 <li><a href="{{ route('user.detail-main', [$item->id]) }}">
                     <div class="container">
-                        <div class="magazin-image"><img src="img/スクリーンショット 2024-05-15 165324.png" alt="Image" class="image"></div>
+                        <div class="magazin-image"><img src="{{ asset('img/'.$item->post_image) }}" alt="Image" class="image"></div>
                         <div class="container-wrapper">
                         <h3 class="container-title"><span>{{ $item->name }}</span></h3>
                         <p class="category">観光地</p>

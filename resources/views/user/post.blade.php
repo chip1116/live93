@@ -9,13 +9,13 @@
             </div>
 
             <div class="content">
-                <form action="{{ route('post.store') }}" class="form" id="form1" method="POST">
+                <form action="{{ route('post.store') }}" enctype="multipart/form-data" class="form" id="form1" method="POST">
                     @csrf
                     <input type="hidden" name="store_id" value="1">
                     <p>写真</p>
                     <div class="deco-file">
                         <label>
-                            <input type="file" name="uploads[]" multiple>
+                            <input type="file" name="upload">
                         </label>
                         <p class="file-names"></p>
                         ＋ファイルを追加

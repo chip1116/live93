@@ -13,7 +13,7 @@ class ImageController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'store_id' => 'required|integer',
             'user_id' => 'required|integer',
-        ]);
+        ]);                                                                                                                                                                                                                                                                                                               
 
         $image = $request->file('image');
         $imageName = time().'.'.$image->getClientOriginalExtension();
