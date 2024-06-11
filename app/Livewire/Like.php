@@ -50,7 +50,7 @@ class Like extends Component
         $memberID = session()->get('member_id');
         $like = LikeModel::withTrashed()->where('member_id', $memberID)
                 ->where('store_id', $this->storeID)->first();
-                
+                // dd($memberID);
         // 2. 1のデータが存在しない場合
             // 新規作成
             if ($like === null) {

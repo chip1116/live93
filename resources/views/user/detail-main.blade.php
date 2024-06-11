@@ -26,8 +26,7 @@
         ])
         </div>
      </div>
-        
-        <div class="magazin-image"><img src="/img/udo.png" alt="Image" class="image"></div>
+        <div class="magazin-image"><img src="{{ asset('storage/storage/'.$item->image) }}" alt="Image" class="image"></div>
         
         <div class="detail">
         <div class="detail-wrapper">
@@ -36,7 +35,7 @@
         ])
        
         <ul class="access">
-            <li>アクセス:{{ $item->access}}</li>
+            <li>アクセス:{{ $item->access}}</li>`````````````````````````````````````````````````
             <li>住所:{{ $item->postal_code }}{{ $item->location->name }}{{ $item->address_level3 }}</li>
             <li>TEL:{{ $item->tel }}</li>
         </ul>
@@ -49,8 +48,12 @@
         
     </div>
     </div>
-    </section>
     
+
+    @foreach($item->post as $post) 
+           <p><img src="{{ asset('storage/storage/'.$item->post_image) }}">{{$post->comment}}</p>
+        @endforeach
+        </section>
     <div id="return">
         <a href="{{ route('user.index') }}"><p>戻る</p></a></div>
 </main>

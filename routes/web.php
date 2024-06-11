@@ -53,6 +53,8 @@ Route::get('/contact',function(){
 
 Route::controller(DetailMainController::class)->group(function(){
     Route::get('/detail/{id}', [DetailMainController::class,'show'])->name('user.detail-main');
+   
+
 });
 
 Route::controller(MypageController::class)->group(function(){
