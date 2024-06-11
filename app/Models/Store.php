@@ -37,6 +37,7 @@ class Store extends Model
             'id',
             'category_id'
         );
+        //リレーションしてつないでる
     }
     public function member() {
         return $this->belongsTo(Member::class);
