@@ -10,25 +10,10 @@
                 </div>
                 <div class="menu_list">
                     <ul>
-                        <li>
-                            <input type="checkbox" id="popup">
-                            <label class="popup-open" for="popup"><span>ABOUT</span><br>サイトについて</label>
-                            <div class="popup-overlay">
-                                <div class="popup-window">
-                                    <p class="popup-text"><img src="about.png" alt="about" class="popup-img"></p>
-                                    <label class="popup-close" for="popup">
-                                        <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
-                                            <line x1="0" y1="0" x2="18" y2="18" stroke="white" stroke-width="3"></line>
-                                            <line x1="0" y1="18" x2="18" y2="0" stroke="white" stroke-width="3"></line>
-                                        </svg>
-                                    </label>
-                                </div>
-                            </div>
-                        </li>
-                        <!-- <a href="#"><span>ABOUT</span><br>サイトについて</a></li> -->
-                        <li><a href="#search"><span>SEARCH</span><br>さがす</a></li>
-                        <li><a href="{{ route('user.newpost') }}"><span>POST</span><br>投稿する</a></li>
-                        <li><a href="{{ route('user.contact') }}"><span>CONTACT</span><br>お問い合わせ</a></li>
+                        @livewire('popup')
+                        <li><a href="#search" class="btn"><span>SEARCH</span><br>さがす</a></li>
+                        <li><a href="{{ route('user.newpost') }}" class="btn"><span>POST</span><br>投稿する</a></li>
+                        <li><a href="{{ route('user.contact') }}" class="btn"><span>CONTACT</span><br>お問い合わせ</a></li>
                     </ul>
                 </div>
                 <div>
