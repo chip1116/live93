@@ -9,8 +9,6 @@ use App\Models\Like;
 use App\Models\StoreCategory;
 use App\Models\Category;
 use App\Models\Member;
-use App\Models\Post;
-
 
 
 class Store extends Model
@@ -18,7 +16,7 @@ class Store extends Model
     use HasFactory;
     protected $fillable = [
         'location_id',
-        'tel',
+        'address_level3',
         'member_id',
     ];
 
@@ -41,8 +39,5 @@ class Store extends Model
     }
     public function member() {
         return $this->belongsTo(Member::class);
-    }
-    public function Post() {
-        return $this->hasMany(Post::class);
     }
 }

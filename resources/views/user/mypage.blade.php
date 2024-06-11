@@ -12,7 +12,7 @@
                     <dt>アカウント名</dt>
                     <dd>{{ $items->name }}</dd>
                     <dt>メールアドレス</dt>
-                    <dd>{{ $items->mail }}</dd>
+                    <dd>{{ $items->email }}</dd>
                     <dt>じゃが数&#9825;</dt>
                     <dd class="heart">54じゃが&#9825;</dd>
                     <dt>お気に入り&#9825;</dt>
