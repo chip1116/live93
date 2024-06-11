@@ -32,6 +32,7 @@ class PostController extends Controller
         'date' => $dt,
         'store_id' => $id,
         'member_id' => 2,
+        'name' => $request->name,
         'post_image' => $imageName
         
     ]); 

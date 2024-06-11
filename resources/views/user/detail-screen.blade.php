@@ -9,6 +9,8 @@
         <h2 class="cityname">{{ $items[0]->category[0]->category_name }}</h2>
         @elseif (Request::routeIs('user.recent'))
         <h2 class="cityname">新着投稿</h2>
+        @elseif (Request::routeIs('user.search'))
+        <h2 class="cityname">キーワード検索</h2>
         @endif
         </div>
        
@@ -54,9 +56,15 @@
         <h3 class="side-title"><span>ジャンル:{{ $items[0]->category[0]->category_name }}</span></h3>
         @elseif (Request::routeIs('user.recent'))
         <h3 class="side-title"><span>新着投稿一覧</span></h3>
+        @elseif (Request::routeIs('user.search'))
+            <h3 class="side-title"><span>キーワード:{{ request()->query('search') }}</span></h3>
         @endif
         <div class="wrapper">
             <ul class="col2">
+                @if (Request::routeIs('user.search') && count($items) <= 0) 
+                <p>検索結果がありません。</p>
+                @endif
+                
                 @foreach($items as $item)
                 <li><a href="{{ route('user.detail-main', [$item->id]) }}">
                     <div class="container">
@@ -96,7 +104,7 @@
         </section>
         
         <div id="return">
-            <a href="{{ 'user.detail-main' }} "><p>戻る</p></a>
+            <a href="{{ route('user.index') }} "><p>戻る</p></a>
         </div>
         
     </main>

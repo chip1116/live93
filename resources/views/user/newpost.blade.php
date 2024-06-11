@@ -12,14 +12,17 @@
                 <form action="{{ route('post.newstore') }}" class="form" id="form1" method="POST">
                 @csrf
                     <p>名称</p>
-                    <input type="search" name="name" class="input-bg">
-
+                    <input type="search" name="name" list="keyword-list" placeholder="名称を入力してください" class="input-bg">
+                    <datalist id="keyword-list">
+                        @foreach(App\Models\Store::all() as $store)
+                        <option value="{{ $store->name }}">
+                        @endforeach
+                    </datalist>
                     <p>ジャンル</p>
-                    <select name="category_name" class="input-bg">
                     @foreach(App\Models\Category::all() as $category)
-                        <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                    <input type="checkbox" name="category_name" class="input-bg">
+                    {{ $category->id }}.{{ $category->category_name }}
                     @endforeach
-                    </select>
 
                     <p>市・郡</p>
                     <select name="location_id" class="input-bg">
@@ -27,8 +30,8 @@
                         <option value="{{ $location->id }}">{{ $location->name }}</option>
                     @endforeach
                     </select>
-                    <p>町・村・番地</p>
-                    <input type="text" name="address_level3" class="input-bg">
+                    <p>電話番号<span class="required">*必須</span></p>
+                    <input type="text" name="tel" class="input-bg">
 
                     <p>写真</p>
                     <div class="deco-file">
@@ -44,7 +47,7 @@
                 </form>
             </div>
             <button type="submit" form="form1" class="post-button">投稿</button>
-            <a href="toppage">
+            <a href="{{ route('user.index') }}">
                 <h2 class="buck">戻る</h2>
             </a>
 

@@ -10,7 +10,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\RecentPostController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\NewPostController;
-use App\Http\Controllers\ImageController;
+
 
 
 Route::get('/', function () {
@@ -32,7 +32,8 @@ Route::middleware([
 Route::controller(DetailScreenController::class)->group(function(){
     
     Route::get('/place/area/{id}', [DetailScreenController::class,'show'])->name('user.detail-screen');
-   
+    Route::get('/place/search', [DetailScreenController::class,'search'])->name('user.search');
+
 });
 
 Route::controller(CategoryController::class)->group(function(){
@@ -57,13 +58,9 @@ Route::controller(DetailMainController::class)->group(function(){
 });
 
 Route::controller(MypageController::class)->group(function(){
-    Route::get('/mypage/{id}', 'show')->name('user.mypage');
+    Route::get('/mypage', 'show')->name('user.mypage');
+    Route::get('/mypage/logout', 'logout')->name('user.logout');
 });
-
-
-Route::get('/mypage',function(){
-    return view('user.mypage');
-})->name('user.mypage');
 
 Route::controller(IndexController::class)->group(function(){
     Route::get('/toppage', [IndexController::class, 'show'])->name('user.index');
@@ -95,4 +92,7 @@ Route::get('/user-register',function(){
     return view('user.register');
 })->name('user.register');
 
-
+// ポップアップで表示されるabout作成。ビュー確認のため、一旦about.blade.phpを作成
+Route::get('about', function() {
+    return view('user.about');
+})->name('user.about');

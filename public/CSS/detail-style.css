@@ -87,18 +87,18 @@ text-shadow:
 
 /* エリア表示 */
 .h2-taitle{
-   text-align: right;
+   text-align: center;
    margin-bottom: 40px;
 }
 /* 宮崎市 */
 .cityname {
-display: block;
-padding: 10px;
+display: inline-block;
+padding: 10px 30px;
 height: 25px;
 background-color: #AAE139;
 border-radius: 20px;
 /* 宮崎市テキスト */
-width: 160px;
+width: inherit;
 font-family:'Consolas',sans-serif;;
 font-style: normal;
 font-weight: 800;
