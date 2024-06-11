@@ -103,6 +103,10 @@ dt {
     padding-left: 40%;
 }
 
+.logout {
+    margin: 5% auto;
+}
+
 h2 {
     font-family: var(--main-font-family);
     background-color: #f93;

@@ -1,0 +1,31 @@
+@charset "utf8";
+
+body {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.base-wrapper {
+    background-color: var(--base-color);
+    padding-top: 0;
+    padding-bottom: 150px;
+}
+.main {
+    width: 1000px;
+    position: relative;
+    margin: 50px auto;
+    background-color: white;
+    height: 950px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+.section {
+    position: absolute;
+    top: 1%;
+    right: 30%;
+    border-color: #F5EC6F;
+    border-width: thin;
+    border-style: solid;
+    border-radius: 20px;
+    padding: 10px;
+    width: 680px;
+}

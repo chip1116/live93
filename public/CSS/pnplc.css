@@ -57,12 +57,13 @@ body {
     margin-bottom: 25px;
 }
 
-input:not([type="radio"], [type="file"]),
+input:not([type="checkbox"], [type="file"]),
 textarea {
     width: 100%;
     box-sizing: border-box;
 
 }
+
 
 textarea {
     resize: none;

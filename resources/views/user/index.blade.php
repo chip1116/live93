@@ -1,7 +1,14 @@
 
     <x-base>
         <div class="toppage">
+           
+            <p>ようこそ{{ Session::get('member_id') }}さん</p>
+        
+
             {{ Session::get('member_id') }}
+            @if (session('message_logout'))
+                {{ session('message_logout') }}
+            @endif
             <div class="top_img">
                 <!-- <img src="/img/img.png" alt="top_img" class="back"> -->
                 <div class="menu_tab">

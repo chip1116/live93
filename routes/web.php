@@ -53,16 +53,14 @@ Route::get('/contact',function(){
 
 Route::controller(DetailMainController::class)->group(function(){
     Route::get('/detail/{id}', [DetailMainController::class,'show'])->name('user.detail-main');
+   
+
 });
 
 Route::controller(MypageController::class)->group(function(){
-    Route::get('/mypage/{id}', 'show')->name('user.mypage');
+    Route::get('/mypage', 'show')->name('user.mypage');
+    Route::get('/mypage/logout', 'logout')->name('user.logout');
 });
-
-
-Route::get('/mypage',function(){
-    return view('user.mypage');
-})->name('user.mypage');
 
 Route::controller(IndexController::class)->group(function(){
     Route::get('/toppage', [IndexController::class, 'show'])->name('user.index');
@@ -93,6 +91,10 @@ Route::controller(MemberController::class)->group(function(){
 Route::get('/user-register',function(){
     return view('user.register');
 })->name('user.register');
-
  
 Route::get('/modal', [ModalController::class, 'modal']);
+
+// ポップアップで表示されるabout作成。ビュー確認のため、一旦about.blade.phpを作成
+Route::get('about', function() {
+    return view('user.about');
+})->name('user.about');
