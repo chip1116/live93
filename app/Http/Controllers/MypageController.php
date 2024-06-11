@@ -18,15 +18,16 @@ class MypageController extends Controller
         $this->location = $location;
     }
 
-    public function show(){
+    public function show() {
         if (session()->get('member_id') !== null) 
-        {
+        { 
             $id = session()->get('member_id');
             $items = $this->member->find($id);
             $items2 = $this->store
                 ->where('location_id', '=', $id)
                 ->get();
-            return view('user.mypage', compact('items'));
+                
+            return view('user.mypage', compact('items', 'items2'));
         } else {
             session()->flash('message', 'ログインしてください。');
             return redirect()->route('user.login');
