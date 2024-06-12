@@ -25,6 +25,7 @@ class PostController extends Controller
         'date' => $dt,
         'store_id' => $id,
         'member_id' => 2,
+        'post_img' => $request->upload
     ]); 
     session()->flash('message', '投稿できました！');
     return redirect()->route('user.detail-main', ['id' => $id]);

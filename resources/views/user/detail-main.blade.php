@@ -26,7 +26,7 @@
         ])
         </div>
      </div>
-        <div class="magazin-image"><img src="{{ asset('storage/storage/'.$item->image) }}" alt="Image" class="image"></div>
+        <div class="magazin-image"><img src="{{ asset('storage/storage/'.$item->store_img) }}" alt="Image" class="image"></div>
         
         <div class="detail">
         <div class="detail-wrapper">
@@ -51,7 +51,7 @@
     
     <div class="section">
         @foreach($item->post as $post)
-               <img src="{{ asset('storage/storage/'.$item->post_image) }}" class="img-box"><div class="text-box"><p>user名</p><p>{{$post->comment}}</p></div>
+               <img src="{{ asset('storage/storage/'.$post->post_img) }}" class="img-box"><div class="text-box"><p>user名</p><p>{{$post->comment}}</p></div>
                
             @endforeach
     </div>

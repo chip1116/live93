@@ -36,7 +36,7 @@
                     <p>写真</p>
                     <div class="deco-file">
                         <label>
-                            <input type="file" name="uploads[]" multiple>
+                            <input type="file" name="upload" multiple>
                         </label>
                         <p class="file-names"></p>
                         ＋ファイルを追加
