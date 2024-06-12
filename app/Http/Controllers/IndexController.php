@@ -6,17 +6,20 @@ use Illuminate\Http\Request;
 use App\Models\Store;
 use App\Models\Location;
 use App\Models\Category;
+use App\Models\Member;
 
 class IndexController extends Controller
 {
     public function __construct(
         Store $store,
         Location $location,
-        Category $category
+        Category $category,
+        Member $member
     ) {
         $this->store = $store;
         $this->location = $location;
         $this->category = $category;
+        $this->member = $member;
     }
 
     public function show(){
@@ -30,9 +33,11 @@ class IndexController extends Controller
                    ->orderBy('member_count', 'desc')
                    ->limit(3)
                    ->get();
+        
+        $user = $this->member->find(session()->get('member_id'));        
 
-        // dd( $rank);
-        return view('user.index', compact('items','locations', 'categories','rank'));
+        // dd( $user);
+        return view('user.index', compact('items','locations', 'categories','rank', 'user'));
     }
 
     public function popup()
