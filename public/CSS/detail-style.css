@@ -190,6 +190,9 @@ hr {
     justify-content:space-between;
 }
     /* 名称 */
+.container-title {
+    color: #AAE139;
+}
 .container-title span{
     font-size: 50px;
     margin-top: 10px;
@@ -287,7 +290,7 @@ hr {
 
 /* detail-main */
 /* 詳細のBOX */
-.ditail-title{
+.detail-title{
     margin: 20px auto;
     padding: 10px;
    
@@ -322,6 +325,7 @@ hr {
     margin: 20px auto;
     width: 500px;
     border: 5px solid #AAE139;
+    border-radius: 5%;
     max-width: 1000px;
     }
 
@@ -334,18 +338,27 @@ hr {
 .section {
     top: 1%;
     right: 30%;
-    border-color: #F5EC6F;
+    border: #AAE139 solid;
     border-width: thin;
-    border-style: solid;
     border-radius: 20px;
-    padding: 10px;
-    width: 680px;
+    padding: 1em;
+    margin: 1%;
     display: flex;
+    gap: 5%;
 }
 .section .img-box {
-    width: 30%;
+    width: 200px;
     height: 150px;
+    background: silver;
 }
 .section .text-box {
     width: 70%;
+    color: #AAE139;
+}
+.text-box .member {
+    display: inline-block;
+    padding: .4em;
+    border-radius: 5%;
+    background: #F5EC6F;
+    color: #fff;
 }

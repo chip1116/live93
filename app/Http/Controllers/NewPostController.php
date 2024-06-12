@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use App\Models\Post;
 use App\Models\Store;
 use App\Models\Category;
+use App\Models\StoreCategory;
 
 
 class NewPostController extends Controller
@@ -44,25 +45,30 @@ class NewPostController extends Controller
         if (!$validator->fails()) {
 // バリデーションが成功した場合の処理
         // 投稿内容保存処理
-        $post = Post::create([
-            'comment' => $request->comment,
-            'date' => $dt,
-            'store_id' => $id,
-            'member_id' => $memberId,
-            'store_comment' => $request->newpostComment
-        ]); 
+        // $post = Post::create([
+        //     'comment' => $request->comment,
+        //     'date' => $dt,
+        //     'store_id' => $id,
+        //     'member_id' => $memberId,
+        // ]); 
 
         $address = Store::create([
             'name' => $request->name,
             'location_id' => $request->location_id,
             'tel' => $request->tel,
             'member_id' => $memberId,
+            'store_comment' => $request->newpostComment,
+            'store_img' => $request->upload
         ]);
 
-        $category = Category::create([
-            'category_name' => $request->category_name,
-        ]);
-        session()->flash('message', '投稿できました！');
+        foreach($request->category_id as $categoryID) {
+            $category = StoreCategory::create([
+                'category_id' => $categoryID,
+                'store_id' =>$address->id
+            ]);
+        }
+        session()->flash('message
+        ', '投稿できました！');
         return redirect()->route('user.detail-main', ['id' => $memberId]);
         }
     

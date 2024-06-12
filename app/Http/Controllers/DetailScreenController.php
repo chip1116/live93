@@ -6,16 +6,15 @@ use Illuminate\Http\Request;
 use App\Models\Store;
 use App\Models\Location;
 
-
 class DetailScreenController extends Controller
 {
        
-        public function __construct(
-            Store $store,
-            Location $location)
-        {
-        $this->store = $store;
-        $this->location = $location;
+    public function __construct(
+        Store $store,
+        Location $location,
+    ){
+    $this->store = $store;
+    $this->location = $location;
     }
 
     public function show($id)
