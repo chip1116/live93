@@ -26,7 +26,7 @@
         ])
         </div>
      </div>
-        <div class="magazin-image"><img src="{{ asset('storage/storage/'.$item->store_img) }}" alt="Image" class="image"></div>
+        <div class="magazin-image"><img src="{{ asset('storage/images/'.$item->store_img) }}" alt="Image" class="image"></div>
         
         <div class="detail">
         <div class="detail-wrapper">
