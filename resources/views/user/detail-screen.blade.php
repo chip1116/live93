@@ -21,11 +21,13 @@
                     @foreach($rank as $item)
                     <li><p class="lank">{{$loop->iteration}}位</p><a href="{{ route('user.detail-main', [$item->id]) }}">
                         <div class="container">
-                            <div class="magazin-image"><img src="{{ asset('img/'.$item->store_img) }}" alt="Image" class="image"></div>
+                            <div class="magazin-image"><img src="{{ asset('storage/storage/'.$item->store_img) }}" alt="Image" class="image"></div>
                            
                             <div class="container-wrapper">
                             <h3 class="container-title"><span>{{$item->name}}</span></h3>
-                            <p class="category">観光地</p>
+                            @foreach($item->category as $category)
+                            <p class="category">{{ $category->category_name }}</p>
+                            @endforeach
                             </div>
                             <div class="detail">
                            
@@ -67,10 +69,12 @@
                 @foreach($items as $item)
                 <li><a href="{{ route('user.detail-main', [$item->id]) }}">
                     <div class="container">
-                        <div class="magazin-image"><img src="{{ asset('img/'.$item->post_image) }}" alt="Image" class="image"></div>
+                        <div class="magazin-image"><img src="{{ asset('storage/images/'.$item->post_img) }}" alt="Image" class="image"></div>
                         <div class="container-wrapper">
                         <h3 class="container-title"><span>{{ $item->name }}</span></h3>
-                        <p class="category">観光地</p>
+                        @foreach($item->category as $category)
+                        <p class="category">{{ $category->category_name }}</p>
+                        @endforeach
                         </div>
                         <div class="detail">
                             <div><p class="button"><button><img src="/img/bookmark02@2x.png" alt="お気に入りボタン"></button></p>

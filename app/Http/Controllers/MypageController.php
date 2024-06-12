@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
+use App\Models\Member;
 use App\Models\Store;
-use App\Models\Location;
 class MypageController extends Controller
 {
     public function __construct(
         Member $member,
         Store $store,
-        Location $location
+        Post $post
     ) {
         $this->member = $member;
         $this->store = $store;
-        $this->location = $location;
+        $this->post = $post;
     }
 
     public function show() {
@@ -22,11 +23,11 @@ class MypageController extends Controller
         { 
             $id = session()->get('member_id');
             $items = $this->member->find($id);
-            $items2 = $this->store
-                ->where('location_id', '=', $id)
-                ->get();
+            $posts = $this->post
+                        ->where('member_id',  '=', $id)
+                        ->get();
                 
-            return view('user.mypage', compact('items', 'items2'));
+            return view('user.mypage', compact('items', 'posts'));
         } else {
             session()->flash('message', 'ログインしてください。');
             return redirect()->route('user.login');

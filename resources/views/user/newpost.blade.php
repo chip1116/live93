@@ -18,9 +18,12 @@
                         <option value="{{ $store->name }}">
                         @endforeach
                     </datalist>
+                    @if($errors->first('name'))
+                        error
+                    @endif
                     <p>ジャンル</p>
                     @foreach(App\Models\Category::all() as $category)
-                    <input type="checkbox" name="category_name" class="input-bg">
+                    <input type="checkbox" name="category_id[]" class="input-bg" value="{{$category->id}}">
                     {{ $category->id }}.{{ $category->category_name }}
                     @endforeach
 

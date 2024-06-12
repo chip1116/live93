@@ -41,7 +41,7 @@ img {
 }
 
 .mypage_content {
-    height: 800px;
+    height: 100%;
     width: 800px;
     margin: 0 auto;
     margin-bottom: 60px;
@@ -83,16 +83,15 @@ dt {
 }
 
 .flex {
-    width: 100%;justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
     display: flex;
     align-items: center;
 
 }
 
 .flex_item {
-    width: 48%;
-    border: 1px solid var(--sub-color);
-    height: 300px;
+    
 }
 
 .back {
@@ -116,4 +115,118 @@ h2 {
     border-radius: 30px;
     color: #fff;
     text-align: center;
-}   
+}
+
+
+/* 投稿ログ */
+.col3 >*{
+    width: 30%;
+}
+.col2 >*{
+    width: 45%;
+}
+.col2 > *:nth-child(n + 3){
+    margin-top: 40px;
+}
+/* 真ん中の点線 */
+hr {
+    margin: 30px auto;
+    width: 930px;
+    height: 0px;
+    border: 1px dashed #FF9933;
+
+}
+
+/* 宮崎市周辺のお店 */
+#main {
+    text-align: center;
+}
+
+#main .side-title {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+
+/* 投稿 */
+/* 外枠 */
+
+.container {
+    padding: 10px;
+    border: 3px solid #AAE139;
+    /* transform: scale(0.70); 縮小 */
+    /* transform-origin: top left; 縮小の基準点を左上に設定 */
+    /* width: 100%; /* 元の幅を維持 */
+    /* height: auto; /* 元の高さを維持 */
+    /* position: relative; */ 
+  } 
+    /* 写真 */
+.magazin-image{
+    margin-top: 10px;
+}
+
+    /* 横並びに */
+
+.detail-wrapper {
+
+    display:flex;
+    align-items: center; 
+    justify-content:space-between;
+}
+    /* 名称 */
+.container-title span{
+    font-size: 50px;
+    margin-top: 10px;
+    margin: 0 auto;
+    background: linear-gradient(transparent 60%, #F5EC6F 60%);
+    }
+
+
+.button{
+    width: 50px;}
+ button { background-color: transparent;
+             border: none; 
+             cursor: pointer; 
+             outline: none; 
+             padding: 0; 
+             appearance: none; 
+            }
+
+.span {
+     background: linear-gradient(transparent 60%, #F5EC6F 60%);
+     margin-top: 0;     
+    }
+
+.side-title span{
+    font-family:  "ab-tombo-bold", sans-serif;
+}
+    /* 観光地 */
+.category{
+    width: 100px;
+    background: #AAE139;
+    border-radius: 40px;
+    color:#FFFFFF;
+    text-align: center;
+    margin-bottom: 90px;
+    }
+        /* 詳細 */
+    .wrapper .access {
+        display: block;
+        padding: 0;
+        
+   
+    }
+  /* おすすめポイント */
+  .coment-title {
+    
+    margin: 0;
+    color: #AAE139;
+  }
+
+.comment-box {
+    border: 2px solid #FF9933;
+    margin: 10px 0 0 0;
+}
+.comment-box p {
+    padding: 5px;
+}
