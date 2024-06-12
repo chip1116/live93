@@ -92,7 +92,4 @@ Route::get('/user-register',function(){
     return view('user.register');
 })->name('user.register');
 
-// ポップアップで表示されるabout作成。ビュー確認のため、一旦about.blade.phpを作成
-Route::get('about', function() {
-    return view('user.about');
-})->name('user.about');
+

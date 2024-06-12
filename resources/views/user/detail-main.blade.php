@@ -49,10 +49,12 @@
     </div>
     </div>
     
-
-    @foreach($item->post as $post) 
-           <p><img src="{{ asset('storage/storage/'.$item->post_image) }}">{{$post->comment}}</p>
-        @endforeach
+    <div class="section">
+        @foreach($item->post as $post)
+               <img src="{{ asset('storage/storage/'.$item->post_image) }}" class="img-box"><div class="text-box"><p>user名</p><p>{{$post->comment}}</p></div>
+               
+            @endforeach
+    </div>
         </section>
     <div id="return">
         <a href="{{ route('user.index') }}"><p>戻る</p></a></div>
