@@ -26,7 +26,7 @@
         ])
         </div>
      </div>
-        <div class="magazin-image"><img src="{{ asset('storage/storage/'.$item->store_img) }}" alt="Image" class="image"></div>
+        <div class="magazin-image"><img src="{{ asset('storage/images/'.$item->store_img) }}" alt="Image" class="image"></div>
         
         <div class="detail">
         <div class="detail-wrapper">
@@ -51,7 +51,11 @@
     
         @foreach($item->post as $post)
         <div class="section">
-               <img src="{{ asset('storage/images/'.$post->post_img) }}" class="img-box"><div class="text-box"><p>user名</p><p>{{$post->comment}}</p></div>
+               <img src="{{ asset('storage/images/'.$post->post_img) }}" class="img-box">
+               <div class="text-box">
+                <p> ユーザー{{ \App\Models\Member::find($post->member_id)->name }}</p>
+                <p>{{$post->comment}}</p></div>
+               {{-- {{dd($member->name)}} --}}
             </div>
                
             @endforeach
