@@ -338,14 +338,21 @@ hr {
     border-width: thin;
     border-style: solid;
     border-radius: 20px;
-    padding: 10px;
-    width: 680px;
+    padding: 1em;
     display: flex;
+    gap: 5%;
 }
 .section .img-box {
     width: 30%;
     height: 150px;
+    background: silver;
 }
 .section .text-box {
     width: 70%;
+}
+.text-box .member {
+    display: inline-block;
+    padding: .5em;
+    border-radius: 20%;
+    background: #F5EC6F;
 }
