@@ -1,11 +1,10 @@
 
     <x-base>
         <div class="toppage">
-           
-            <p>ようこそ{{ Session::get('member_id') }}さん</p>
-        
-
-            {{ Session::get('member') }}
+        @if ($user !== null)       
+            <p>ようこそ{{ $user->name }}さん</p>
+        @endif
+            
             @if (session('message_logout'))
                 {{ session('message_logout') }}
             @endif
