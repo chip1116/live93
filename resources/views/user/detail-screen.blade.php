@@ -21,7 +21,7 @@
                     @foreach($rank as $item)
                     <li><p class="lank">{{$loop->iteration}}位</p><a href="{{ route('user.detail-main', [$item->id]) }}">
                         <div class="container">
-                            <div class="magazin-image"><img src="{{ asset('img/'.$item->store_img) }}" alt="Image" class="image"></div>
+                            <div class="magazin-image"><img src="{{ asset('storage/storage/'.$item->store_img) }}" alt="Image" class="image"></div>
                            
                             <div class="container-wrapper">
                             <h3 class="container-title"><span>{{$item->name}}</span></h3>
@@ -69,7 +69,7 @@
                 @foreach($items as $item)
                 <li><a href="{{ route('user.detail-main', [$item->id]) }}">
                     <div class="container">
-                        <div class="magazin-image"><img src="{{ asset('img/'.$item->post_image) }}" alt="Image" class="image"></div>
+                        <div class="magazin-image"><img src="{{ asset('storage/images/'.$item->post_img) }}" alt="Image" class="image"></div>
                         <div class="container-wrapper">
                         <h3 class="container-title"><span>{{ $item->name }}</span></h3>
                         @foreach($item->category as $category)

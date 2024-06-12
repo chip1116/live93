@@ -3,7 +3,7 @@
 
 <main>
     <div class="h2-taitle">
-        <h2 class="ditail-title margin">詳細情報</h2>
+        <h2 class="detail-title margin">詳細情報</h2>
         </div>
 
     <section id="detail-top">
@@ -49,12 +49,12 @@
     </div>
     </div>
     
-    <div class="section">
         @foreach($item->post as $post)
-               <img src="{{ asset('storage/storage/'.$post->post_img) }}" class="img-box"><div class="text-box"><p>user名</p><p>{{$post->comment}}</p></div>
+        <div class="section">
+               <img src="{{ asset('storage/images/'.$post->post_img) }}" class="img-box"><div class="text-box"><p>user名</p><p>{{$post->comment}}</p></div>
+            </div>
                
             @endforeach
-    </div>
         </section>
     <div id="return">
         <a href="{{ route('user.index') }}"><p>戻る</p></a></div>
