@@ -25,7 +25,9 @@
                            
                             <div class="container-wrapper">
                             <h3 class="container-title"><span>{{$item->name}}</span></h3>
-                            <p class="category">観光地</p>
+                            @foreach($item->category as $category)
+                            <p class="category">{{ $category->category_name }}</p>
+                            @endforeach
                             </div>
                             <div class="detail">
                            
@@ -70,7 +72,9 @@
                         <div class="magazin-image"><img src="{{ asset('img/'.$item->post_image) }}" alt="Image" class="image"></div>
                         <div class="container-wrapper">
                         <h3 class="container-title"><span>{{ $item->name }}</span></h3>
-                        <p class="category">観光地</p>
+                        @foreach($item->category as $category)
+                        <p class="category">{{ $category->category_name }}</p>
+                        @endforeach
                         </div>
                         <div class="detail">
                             <div><p class="button"><button><img src="/img/bookmark02@2x.png" alt="お気に入りボタン"></button></p>

@@ -37,7 +37,7 @@ class IndexController extends Controller
         $user = $this->member->find(session()->get('member_id'));        
 
         // dd( $user);
-        return view('user.index', compact('items','locations', 'categories','rank', 'user'));
+        return view('user.index', compact('items', 'locations', 'categories', 'rank', 'user'));
     }
 
     public function popup()
