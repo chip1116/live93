@@ -28,6 +28,7 @@ class NewPostController extends Controller
             'date' => $dt,
             'store_id' => $id,
             'member_id' => $memberId,
+            'store_comment' => $request->newpostComment
         ]); 
 
         $address = Store::create([

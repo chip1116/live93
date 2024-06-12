@@ -35,7 +35,7 @@
         ])
        
         <ul class="access">
-            <li>アクセス:{{ $item->access}}</li>`````````````````````````````````````````````````
+            <li>アクセス:{{ $item->access}}</li>
             <li>住所:{{ $item->postal_code }}{{ $item->location->name }}{{ $item->address_level3 }}</li>
             <li>TEL:{{ $item->tel }}</li>
         </ul>
@@ -43,7 +43,7 @@
 
         <h4 class="coment-title"><span>てげよかポイント</span></h4>
         <div class="comment-box">
-            <p>{{ $item2->comment }}</p>
+            <p>{{ $item->store_comment }}</p>
         </div>
         
     </div>

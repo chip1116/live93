@@ -8,7 +8,9 @@ use App\Models\Location;
 use App\Models\Like;
 use App\Models\StoreCategory;
 use App\Models\Category;
+use App\Models\Post;
 use App\Models\Member;
+use App\Models\NewPost;
 
 
 class Store extends Model
@@ -39,5 +41,12 @@ class Store extends Model
     }
     public function member() {
         return $this->belongsTo(Member::class);
+    }
+
+    public function post() {
+        return $this->hasMany(Post::class);
+    }
+    public function newpost() {
+        return $this->hasMany(NewPost::class);
     }
 }
