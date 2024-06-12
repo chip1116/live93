@@ -32,8 +32,9 @@ class NewPostController extends Controller
         ]); 
 
         $address = Store::create([
+            'name' => $request->name,
             'location_id' => $request->location_id,
-            'address_level3' => $request->address_level3,
+            'tel' => $request->tel,
             'member_id' => $memberId,
         ]);
 
