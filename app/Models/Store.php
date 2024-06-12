@@ -21,6 +21,7 @@ class Store extends Model
         'tel',
         'member_id',
         'name',
+        'store_comment'
     ];
 
     public function location() {
