@@ -94,7 +94,4 @@ Route::get('/user-register',function(){
  
 Route::get('/modal', [ModalController::class, 'modal']);
 
-// ポップアップで表示されるabout作成。ビュー確認のため、一旦about.blade.phpを作成
-Route::get('about', function() {
-    return view('user.about');
-})->name('user.about');
+

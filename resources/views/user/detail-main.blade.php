@@ -35,7 +35,7 @@
         ])
        
         <ul class="access">
-            <li>アクセス:{{ $item->access}}</li>`````````````````````````````````````````````````
+            <li>アクセス:{{ $item->access}}</li>
             <li>住所:{{ $item->postal_code }}{{ $item->location->name }}{{ $item->address_level3 }}</li>
             <li>TEL:{{ $item->tel }}</li>
         </ul>
@@ -43,16 +43,18 @@
 
         <h4 class="coment-title"><span>てげよかポイント</span></h4>
         <div class="comment-box">
-            <p>{{ $item2->comment }}</p>
+            <p>{{ $item->store_comment }}</p>
         </div>
         
     </div>
     </div>
     
-
-    @foreach($item->post as $post) 
-           <p><img src="{{ asset('storage/storage/'.$item->post_image) }}">{{$post->comment}}</p>
-        @endforeach
+    <div class="section">
+        @foreach($item->post as $post)
+               <img src="{{ asset('storage/storage/'.$item->post_image) }}" class="img-box"><div class="text-box"><p>user名</p><p>{{$post->comment}}</p></div>
+               
+            @endforeach
+    </div>
         </section>
     <div id="return">
         <a href="{{ route('user.index') }}"><p>戻る</p></a></div>

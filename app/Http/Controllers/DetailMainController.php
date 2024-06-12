@@ -17,8 +17,9 @@ class DetailMainController extends Controller
     }
     public function show($id){
         $item = $this->store->find($id);
-        $item2 = $this->post->find($id);
-        return view('user.detail-main', compact('item', 'item2'));
+        // $item2 = $this->post->find($id);
+        // return view('user.detail-main', compact('item', 'item2'));
+        return view('user.detail-main', compact('item'));
     }
 }
 
