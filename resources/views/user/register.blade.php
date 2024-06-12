@@ -8,12 +8,13 @@
             </div>
 
             <div class="content">
-                <form action="#" class="form">
+                <form action="{{ route('regist') }}" class="form" method="post">
+                    @csrf
                     <p>アカウント名<span class="required">*必須</span></p>
                     <input type="text" name="name" class="input-bg" required>
 
                     <p>メールアドレス<span class="required">*必須</span></p>
-                    <input type="email" name="mail" class="input-bg" required>
+                    <input type="email" name="email" class="input-bg" required>
 
                     <p>パスワード<span class="required">*必須</span></p>
                     <input type="password" name="password" class="input-bg" required>
