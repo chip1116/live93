@@ -51,7 +51,11 @@
     
         @foreach($item->post as $post)
         <div class="section">
-               <img src="{{ asset('storage/storage/'.$post->post_img) }}" class="img-box"><div class="text-box"><p>user名</p><p>{{$post->comment}}</p></div>
+               <img src="{{ asset('storage/storage/'.$post->post_img) }}" class="img-box">
+               <div class="text-box">
+                <p> ユーザー{{ \App\Models\Member::find($post->member_id)->name }}</p>
+                <p>{{$post->comment}}</p></div>
+               {{-- {{dd($member->name)}} --}}
             </div>
                
             @endforeach
