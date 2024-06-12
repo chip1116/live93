@@ -11,6 +11,7 @@ use App\Http\Controllers\RecentPostController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\NewPostController;
 use App\Http\Controllers\ModalController;
+use App\Http\Controllers\RegisterController;
 
 
 Route::get('/', function () {
@@ -88,9 +89,11 @@ Route::controller(MemberController::class)->group(function(){
     Route::post('/user-login', [MemberController::class, 'login'])->name('login');
 });
 
-Route::get('/user-register',function(){
-    return view('user.register');
-})->name('user.register');
+// 新規登録処理
+Route::controller(RegisterController::class)->group(function(){
+    Route::get('/user-register', [RegisterController::class, 'index'])->name('user.register');
+    Route::post('/user-register', [RegisterController::class, 'regist'])->name('regist');
+});
  
 Route::get('/modal', [ModalController::class, 'modal']);
 

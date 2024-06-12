@@ -10,4 +10,9 @@ class Member extends Authenticatable
 {
     use HasFactory;
 protected $guarded = ['id'];
+protected $fillable = [
+    'name',
+    'email',
+    'password',
+];
 }
