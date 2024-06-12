@@ -5,7 +5,7 @@
             <p>ようこそ{{ Session::get('member_id') }}さん</p>
         
 
-            {{ Session::get('member_id') }}
+            {{ Session::get('member') }}
             @if (session('message_logout'))
                 {{ session('message_logout') }}
             @endif

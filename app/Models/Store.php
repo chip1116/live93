@@ -16,8 +16,9 @@ class Store extends Model
     use HasFactory;
     protected $fillable = [
         'location_id',
-        'address_level3',
+        'tel',
         'member_id',
+        'name',
     ];
 
     public function location() {
