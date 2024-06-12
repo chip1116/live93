@@ -12,6 +12,7 @@ class Post extends Model
         'date',
         'comment',
         'store_id',
-        'member_id'
+        'member_id',
+        'store_comment'
     ];
 }

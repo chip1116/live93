@@ -36,14 +36,14 @@
                     <p>写真</p>
                     <div class="deco-file">
                         <label>
-                            <input type="file" name="uploads[]" multiple>
+                            <input type="file" name="upload" multiple>
                         </label>
                         <p class="file-names"></p>
                         ＋ファイルを追加
                     </div>
 
                     <p>コメント</p>
-                    <textarea name="comment" class="area-bg"></textarea>
+                    <textarea name="newpostComment" class="area-bg"></textarea>
                 </form>
             </div>
             <button type="submit" form="form1" class="post-button">投稿</button>

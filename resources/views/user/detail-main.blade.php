@@ -3,7 +3,7 @@
 
 <main>
     <div class="h2-taitle">
-        <h2 class="ditail-title margin">詳細情報</h2>
+        <h2 class="detail-title margin">詳細情報</h2>
         </div>
 
     <section id="detail-top">
@@ -26,7 +26,7 @@
         ])
         </div>
      </div>
-        <div class="magazin-image"><img src="{{ asset('storage/storage/'.$item->image) }}" alt="Image" class="image"></div>
+        <div class="magazin-image"><img src="{{ asset('storage/storage/'.$item->store_img) }}" alt="Image" class="image"></div>
         
         <div class="detail">
         <div class="detail-wrapper">
@@ -35,7 +35,7 @@
         ])
        
         <ul class="access">
-            <li>アクセス:{{ $item->access}}</li>`````````````````````````````````````````````````
+            <li>アクセス:{{ $item->access}}</li>
             <li>住所:{{ $item->postal_code }}{{ $item->location->name }}{{ $item->address_level3 }}</li>
             <li>TEL:{{ $item->tel }}</li>
         </ul>
@@ -43,16 +43,18 @@
 
         <h4 class="coment-title"><span>てげよかポイント</span></h4>
         <div class="comment-box">
-            <p>{{ $item2->comment }}</p>
+            <p>{{ $item->store_comment }}</p>
         </div>
         
     </div>
     </div>
     
-
-    @foreach($item->post as $post) 
-           <p><img src="{{ asset('storage/storage/'.$item->post_image) }}">{{$post->comment}}</p>
-        @endforeach
+        @foreach($item->post as $post)
+        <div class="section">
+               <img src="{{ asset('storage/storage/'.$post->post_img) }}" class="img-box"><div class="text-box"><p>user名</p><p>{{$post->comment}}</p></div>
+            </div>
+               
+            @endforeach
         </section>
     <div id="return">
         <a href="{{ route('user.index') }}"><p>戻る</p></a></div>

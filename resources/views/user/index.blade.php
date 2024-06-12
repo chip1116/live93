@@ -1,11 +1,10 @@
 
     <x-base>
         <div class="toppage">
-           
-            <p>ようこそ{{ Session::get('member_id') }}さん</p>
-        
-
-            {{ Session::get('member_id') }}
+        @if ($user !== null)       
+            <p>ようこそ{{ $user->name }}さん</p>
+        @endif
+            
             @if (session('message_logout'))
                 {{ session('message_logout') }}
             @endif
@@ -80,7 +79,7 @@
                         <ul class="new_post_detail">
                             @foreach($items as $item)
                             <li>
-                                <img src="" alt="img1">
+                                <img src="{{ asset('storage/'.$item->store_img) }}" alt="img1">
                                 <p>{{ $item->created_at->format('Y.n.j') }}</p>
                                 <p>{{ $item->name }}</p>
                                 <p>〒{{ $item->postal_code }} {{ $item->location->name }}{{ $item->address_level3 }}</p>

@@ -23,17 +23,19 @@ class NewPostController extends Controller
         $memberId = session()->get('member_id');
     
         // 投稿内容保存処理
-        $post = Post::create([
-            'comment' => $request->comment,
-            'date' => $dt,
-            'store_id' => $id,
-            'member_id' => $memberId,
-        ]); 
+        // $post = Post::create([
+        //     'comment' => $request->comment,
+        //     'date' => $dt,
+        //     'store_id' => $id,
+        //     'member_id' => $memberId,
+        // ]); 
 
         $address = Store::create([
+            'name' => $request->name,
             'location_id' => $request->location_id,
-            'address_level3' => $request->address_level3,
+            'tel' => $request->tel,
             'member_id' => $memberId,
+            'store_comment' => $request->newpostComment
         ]);
 
         $category = Category::create([
