@@ -3,7 +3,7 @@
 
 <main>
     <div class="h2-taitle">
-        <h2 class="ditail-title margin">詳細情報</h2>
+        <h2 class="detail-title margin">詳細情報</h2>
         </div>
 
     <section id="detail-top">
