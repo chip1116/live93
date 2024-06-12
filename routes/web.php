@@ -10,7 +10,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\RecentPostController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\NewPostController;
-
+use App\Http\Controllers\ModalController;
 
 
 Route::get('/', function () {
@@ -91,5 +91,7 @@ Route::controller(MemberController::class)->group(function(){
 Route::get('/user-register',function(){
     return view('user.register');
 })->name('user.register');
+ 
+Route::get('/modal', [ModalController::class, 'modal']);
 
 

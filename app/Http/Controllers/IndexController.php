@@ -35,4 +35,9 @@ class IndexController extends Controller
         return view('user.index', compact('items','locations', 'categories','rank'));
     }
 
+    public function popup()
+    {
+        return view('user.index');
+    }
+
 }
