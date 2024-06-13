@@ -6,16 +6,19 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Member;
 use App\Models\Store;
+use App\Models\Favorite;
 class MypageController extends Controller
 {
     public function __construct(
         Member $member,
         Store $store,
-        Post $post
+        Post $post,
+        Favorite $favorite
     ) {
         $this->member = $member;
         $this->store = $store;
         $this->post = $post;
+        $this->favorite = $favorite;
     }
 
     public function show() {
@@ -23,11 +26,12 @@ class MypageController extends Controller
         { 
             $id = session()->get('member_id');
             $items = $this->member->find($id);
-            $posts = $this->post
+            $posts = $this->post::with('store')
                         ->where('member_id',  '=', $id)
                         ->get();
-                
-            return view('user.mypage', compact('items', 'posts'));
+            $favorite = $this->favorite->find($id);
+
+            return view('user.mypage', compact('items', 'posts', 'favorite'));
         } else {
             session()->flash('message', 'ログインしてください。');
             return redirect()->route('user.login');
