@@ -18,8 +18,8 @@
                         <option value="{{ $store->name }}">
                         @endforeach
                     </datalist>
-                    @if($errors->first('name'))
-                        error
+                    @if (session('message'))
+                    {{ session('message') }}
                     @endif
                     <p>ジャンル</p>
                     @foreach(App\Models\Category::all() as $category)

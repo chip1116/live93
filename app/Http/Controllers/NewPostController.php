@@ -31,7 +31,7 @@ class NewPostController extends Controller
     
         if ($validator->fails()) {
         $store = Store::where('tel', '=', $request->tel)->first();
-        session()->flash('message', '既に登録されています！');
+        session()->flash('message', '既に登録されているのでクチコミ投稿をお願いします！');
         return redirect()->route('user.detail-main', ['id' => $store->id]);
         }
     
@@ -43,6 +43,7 @@ class NewPostController extends Controller
         
     
         if (!$validator->fails()) {
+        
 // バリデーションが成功した場合の処理
         // 投稿内容保存処理
         $address = Store::create([
@@ -60,11 +61,10 @@ class NewPostController extends Controller
                 'store_id' =>$address->id
             ]);
         }
-        session()->flash('message
-        ', '投稿できました！');
-        return redirect()->route('user.detail-main', ['id' => $memberId]);
+        session()->flash('message', '投稿できました！');
+        return redirect()->route('user.detail-main', ['id' => $address->id]);
         }
-    
+        session()->flash('message', '名称が未入力です');
         return  redirect()->route('user.newpost');
         // return  view('user.newpost');
     }
