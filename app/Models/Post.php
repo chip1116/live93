@@ -17,7 +17,7 @@ class Post extends Model
         'store_comment'
     ];
     
-    public function member() {
-        return $this->belongsTo(Member::class);
+    public function store() {
+        return $this->belongsTo(Store::class);
     }
 }

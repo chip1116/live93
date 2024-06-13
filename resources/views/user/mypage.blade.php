@@ -19,32 +19,23 @@
                        <dd class="heart">5件登録済み</dd>
                        <button class="logout"><a href="{{ route('user.logout') }}">ログアウト</a></button>
 
+                       
                        <div class="wrapper">
+                       <h3>投稿ログ</h3>
                            <ul class="col2 flex">
-                               <!-- @foreach($items as $item) -->
-                               <li class="flex_item"><a href="">
+                               @foreach($posts as $item)
+                               <li class="flex_item"><a href="{{ route('user.detail-main', [$item->store->id]) }}">
                                        <div class="container">
                                            <div class="magazin-image"><img src="" alt="Image" class="image"></div>
                                            <div class="container-wrapper">
-                                               <h3 class="container-title"><span></span></h3>
-                                               <p class="category">観光地</p>
-                                           </div>
-                                           <div class="detail">
-                                               <ul class="access">
-                                                   <li>アクセス:</li>
-                                                   <li>住所:〒</li>
-                                                   <li></li>
-                                               </ul>
-
-                                           </div>
-                                           <h4 class="coment-title"><span>てげよかポイント</span></h4>
-                                           <div class="comment-box">
-                                               <p>とっても珍しい鍾乳洞の中にある鵜戸神宮は
-                                                   めちゃくちゃオーラのあるパワースポットです！</p>
-                                           </div>
+                                               <h3 class="container-title"><span>{{ $item->store->name }}</span></h3>
+                                               @foreach($item->store->category as $category)
+                                                <p class="category">{{ $category->category_name }}</p>
+                                            @endforeach
+                                           </div>                        
                                        </div>
                                    </a></li>
-                               <!-- @endforeach -->
+                               @endforeach
                            </ul>
                        </div>
                    </dl>
