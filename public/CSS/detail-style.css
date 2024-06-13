@@ -15,8 +15,10 @@ body {
 }
 li{
     list-style: none;
+    padding-left: 0;   
+}
+ul {
     padding-left: 0;
-    
 }
 p{
    
@@ -187,7 +189,7 @@ hr {
 
     display:flex;
     align-items: center; 
-    justify-content:space-between;
+    justify-content:center;
 }
     /* 名称 */
 .container-title {
@@ -200,9 +202,13 @@ hr {
     background: linear-gradient(transparent 60%, #F5EC6F 60%);
     }
 
-
+.likebotton {
+    width: 50%;
+}
 .button{
-    width: 50px;}
+    width: 50px;
+}
+
  button { background-color: transparent; 
              border: none; 
              cursor: pointer; 
@@ -231,13 +237,30 @@ hr {
         /* 詳細 */
     .wrapper .access {
         display: block;
-        padding: 0;
-        
-   
+        padding: 0;  
     }
+
+    .access li {
+        font-size: 1.3rem; 
+    }
+
+    .like-wrapper {
+        display: flex;
+        gap: 1em;
+    }
+    .likecount p {
+        line-height: 150px;
+        display: block;
+        margin-bottom: 0;
+        font-family:  "ab-tombo-bold", sans-serif;
+        font-size: 1.3rem;
+        color: hsl(336, 100%, 60%);
+        text-decoration:underline;
+    }
+
   /* おすすめポイント */
   .coment-title {
-    
+    font-family:  "ab-tombo-bold", sans-serif;
     margin: 0;
     color: #AAE139;
   }

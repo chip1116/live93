@@ -17,7 +17,7 @@ class RegisterController extends Controller
         $this->member = Member::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => password_hash($request->password, PASSWORD_DEFAULT),
         ]); 
         
         session()->flash('message', '投稿できました！');

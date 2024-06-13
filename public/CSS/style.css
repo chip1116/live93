@@ -82,14 +82,21 @@ h2 {
         ヘッダー
 ------------------------ */
 #header {
-    position: relative;
+    /* position: relative; */
+    background: linear-gradient(to Bottom, var(--base-color) 50%, var(--fourth-color) 50%);
+    padding: 20px;
 }
 
 #header img {
-    position: absolute;
-    height: 60px;
+    /* position: absolute;
     top: 30px;
-    left: 30px;
+    left: 30px; */
+    height: 60px;
+}
+
+#header a {
+    padding: 0;
+    display: inline-block;
 }
 
 .header_top {

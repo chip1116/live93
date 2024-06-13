@@ -36,9 +36,8 @@ class Favorite extends Component
         return view('livewire.favorite');
 
     }
-
-    public function toggleFavorite(){
-        // Favoriteモデルからmember_idとstore_idが一致するデータを取得　... ①
+    public function toggleFavorite() { 
+    // Favoriteモデルからmember_idとstore_idが一致するデータを取得　... ①
         $memberID = session()->get('member_id'); 
 
     // ログインしているときにお気に入りしたとき
@@ -67,12 +66,13 @@ class Favorite extends Component
 
             $this->file = $this->isFavorite() ? 'bookmark02@2x.png' : 'bookmark01@2x.png';
 
-    // ログインしていない時にお気に入りしたときのエラー回避
-        } else {
-            session()->flash('message', 'お気に入りに登録する場合はログインしてください。');
-            return redirect()->route('user.detail-main', ['id' => $this->storeID]);
-        }
-    }
+        // ログインしていない時にお気に入りしたときのエラー回避
+            } else {
+                session()->flash('message', 'お気に入りに登録する場合はログインしてください。');
+                return redirect()->route('user.detail-main', ['id' => $this->storeID]);
+            }
+
+    }   
 
     private function isFavorite(): bool
     {

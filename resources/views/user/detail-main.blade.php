@@ -14,7 +14,9 @@
 
     <div class="container-wrapper">
     <div>
-        <p class="category">観光地</p>
+    @foreach($item->category as $category)
+        <p class="category">{{ $category->category_name }}</p>
+    @endforeach
         </div>
         <div>
         <h3 class="container-title"><span>{{ $item->name }}</span></h3>
