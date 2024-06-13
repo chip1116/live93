@@ -14,9 +14,9 @@ use App\Http\Controllers\ModalController;
 use App\Http\Controllers\RegisterController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::middleware([
     'auth:sanctum',
@@ -64,7 +64,7 @@ Route::controller(MypageController::class)->group(function(){
 });
 
 Route::controller(IndexController::class)->group(function(){
-    Route::get('/toppage', [IndexController::class, 'show'])->name('user.index');
+    Route::get('/', [IndexController::class, 'show'])->name('user.index');
 });
 
 Route::get('/newpost',function(){
@@ -96,5 +96,3 @@ Route::controller(RegisterController::class)->group(function(){
 });
  
 Route::get('/modal', [ModalController::class, 'modal']);
-
-
