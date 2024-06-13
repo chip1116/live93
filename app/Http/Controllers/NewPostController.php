@@ -15,7 +15,15 @@ class NewPostController extends Controller
 {
     public function create()
     {
-        return view('user.newpost');
+            // ログインしてない人が新規投稿を押下したらログインページに遷移するようにする機能
+        if (session()->get('member_id') !== null)  {
+            // 存在する場合
+            return view('user.newpost');
+        } 
+            // 存在しない場合
+            session()->flash('message', 'ログイン後に投稿してください！');
+            return view('user.login');
+            
     }
 
     public function store(Request $request)
@@ -31,7 +39,7 @@ class NewPostController extends Controller
     
         if ($validator->fails()) {
         $store = Store::where('tel', '=', $request->tel)->first();
-        session()->flash('message', '既に登録されています！');
+        session()->flash('message', '既に登録されているのでクチコミ投稿をお願いします！');
         return redirect()->route('user.detail-main', ['id' => $store->id]);
         }
     
@@ -43,15 +51,9 @@ class NewPostController extends Controller
         
     
         if (!$validator->fails()) {
+        
 // バリデーションが成功した場合の処理
         // 投稿内容保存処理
-        // $post = Post::create([
-        //     'comment' => $request->comment,
-        //     'date' => $dt,
-        //     'store_id' => $id,
-        //     'member_id' => $memberId,
-        // ]); 
-
         $address = Store::create([
             'name' => $request->name,
             'location_id' => $request->location_id,
@@ -67,11 +69,10 @@ class NewPostController extends Controller
                 'store_id' =>$address->id
             ]);
         }
-        session()->flash('message
-        ', '投稿できました！');
-        return redirect()->route('user.detail-main', ['id' => $memberId]);
+        session()->flash('message', '投稿できました！');
+        return redirect()->route('user.detail-main', ['id' => $address->id]);
         }
-    
+        session()->flash('message', '名称が未入力です');
         return  redirect()->route('user.newpost');
         // return  view('user.newpost');
     }
