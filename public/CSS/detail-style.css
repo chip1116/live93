@@ -116,7 +116,8 @@ color: #FFFFFF;
 .side-title{
     display: inline-block;
     margin-top: 30px;
-    width: 300px;
+    margin-left: 20px;
+    width: 260px;
     font-family: 'Ifont-family:  "ab-tombo-bold", sans-serif;';
     font-style: normal;
     font-weight: 400;
@@ -128,6 +129,21 @@ color: #FFFFFF;
     letter-spacing: 0.1em;
     background: linear-gradient(transparent 60%, #F5EC6F 60%);
 
+}
+
+.main-title {
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 20px;
+    font-family: 'Ifont-family:  "ab-tombo-bold", sans-serif;';
+    font-style: normal;
+    font-size: 32px;
+    line-height: 35px;
+    /* ボックスの高さと同一 */
+    text-align: center;
+    color: #AAE139;
+    letter-spacing: 0.1em;
+    background: linear-gradient(transparent 60%, #F5EC6F 60%);
 }
 
 .list ul li a {

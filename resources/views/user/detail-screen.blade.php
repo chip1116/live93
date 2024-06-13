@@ -52,13 +52,13 @@
     
         <section id="main">
         @if (Request::routeIs('user.detail-screen'))
-        <h3 class="side-title"><span>{{ $items[0]->location->name }}周辺のお店</span></h3>
+        <h3 class="main-title"><span>{{ $items[0]->location->name }}周辺のお店</span></h3>
         @elseif (Request::routeIs('user.category'))
-        <h3 class="side-title"><span>ジャンル:{{ $items[0]->category[0]->category_name }}</span></h3>
+        <h3 class="main-title"><span>ジャンル:{{ $items[0]->category[0]->category_name }}</span></h3>
         @elseif (Request::routeIs('user.recent'))
-        <h3 class="side-title"><span>新着投稿一覧</span></h3>
+        <h3 class="main-title"><span>新着投稿一覧</span></h3>
         @elseif (Request::routeIs('user.search'))
-            <h3 class="side-title"><span>キーワード:{{ request()->query('search') }}</span></h3>
+            <h3 class="main-title"><span>キーワード:{{ request()->query('search') }}</span></h3>
         @endif
         <div class="wrapper">
             <ul class="col2">
