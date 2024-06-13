@@ -38,8 +38,11 @@ class Favorite extends Component
         return view('livewire.favorite');
 
     }
-    public function toggleFavorite(){
-
+    public function toggleFavorite() {
+      // ログインしてない人がブックマークを押下したらログインページに遷移するようにする機能
+        if (session()->get('member_id') !== null)  {
+        // 存在する場合
+        
         // Favoriteモデルからmember_idとstore_idが一致するデータを取得　... ①
         $memberID = session()->get('member_id'); 
         $favorite = FavoriteModel::withTrashed()->where('member_id', $memberID)
@@ -65,6 +68,12 @@ class Favorite extends Component
         }
 
         $this->file = $this->isFavorite() ? 'bookmark02@2x.png' : 'bookmark01@2x.png';
+
+        } else{
+            // 存在しない場合
+            session()->flash('message', '先にログインしてください！');
+            return redirect()->route('user.login');            
+        }
     }
 
     private function isFavorite(): bool

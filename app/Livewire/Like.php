@@ -45,7 +45,11 @@ class Like extends Component
     }
 
         public function toggleLike() {
-        
+
+        // ログインしてない人イイネを押下したらログインページに遷移するようにする機能
+        if (session()->get('member_id') !== null)  {
+        // 存在する場合
+
         // 1. Likeモデルからmember_idとstore_idが一致するデータを取得
         $memberID = session()->get('member_id');
         $like = LikeModel::withTrashed()->where('member_id', $memberID)
@@ -71,7 +75,15 @@ class Like extends Component
             }
 
         $this->file = $this->isLike() ? 'moai03@2x.png' : 'moai@2x.png';
-        $this->count++ ;
+        $this->count++ ;    
+
+        } else {
+            // 存在しない場合
+            session()->flash('message', '先にログインしてください！');
+            return redirect()->route('user.login');
+        }
+
+
     }
 
     private function isLike(): bool
