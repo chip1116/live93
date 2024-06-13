@@ -78,9 +78,11 @@ h3 {
 }
 .toppage {
     background: url(../img/img.png) no-repeat;
+    /* bottom -70px center; */
     background-size: cover;
     /* position: relative; */
     height: 900px;
+    /* padding-bottom: 130px; heightを消す */
 }
 .top_img {
     margin: auto;
@@ -256,33 +258,6 @@ ol {
 .more {
     display: block;
     margin: 0 auto;    
-}
-
-/* ABOUTのポップアップ */
-.modal {
-    /* background-color: white; */
-    position: absolute;
-    top: 10%;
-    /* transform: translateY(-50%); */
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    /* padding: 50px; */
-    width: 1000px;
-    z-index: 100;
-    height: 600px;
-    overflow: scroll;
-}
-#bg_layer {
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    opacity: 0.3;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
 }
 
 

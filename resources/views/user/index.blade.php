@@ -79,7 +79,7 @@
                         <ul class="new_post_detail">
                             @foreach($items as $item)
                             <li>
-                                <img src="{{ asset('storage/images'.$item->store_img) }}" alt="img1">
+                                <img src="{{ asset('storage/images/'.$item->store_img) }}" alt="img1">
                                 <p>{{ $item->created_at->format('Y.n.j') }}</p>
                                 <p>{{ $item->name }}</p>
                                 <p>〒{{ $item->postal_code }} {{ $item->location->name }}{{ $item->address_level3 }}</p>
@@ -103,7 +103,7 @@
 
                         <li class="ranking_detail">
                             <p>{{$loop->iteration}}位:</p>
-                            <p><img src="/img/no_img@2x.png" alt="thumbnail"></p>
+                            <p><img src="{{ asset('storage/images/'.$item->member->thumbnail) }}" alt="thumbnail"></p>
                             <div>
                                 <p>{{ $item->member->name }}</p>
                                 <p>{{ $item->member_count }}件投稿！</p>
