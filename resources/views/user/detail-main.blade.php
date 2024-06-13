@@ -51,7 +51,8 @@
     
         @foreach($item->post as $post)
         <div class="section">
-               <img src="{{ asset('storage/images/'.$post->post_img) }}" class="img-box"><div class="text-box"><p>user名</p><p>{{$post->comment}}</p></div>
+               <img src="{{ asset('storage/images/'.$post->post_img) }}" class="img-box"><div class="text-box">
+                <p>user名</p><p>{{$post->comment}}</p></div>
             </div>
                
             @endforeach

@@ -15,4 +15,5 @@ class Post extends Model
         'member_id',
         'store_comment'
     ];
+
 }
