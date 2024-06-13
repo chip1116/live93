@@ -15,7 +15,15 @@ class NewPostController extends Controller
 {
     public function create()
     {
-        return view('user.newpost');
+            // ログインしてない人が新規投稿を押下したらログインページに遷移するようにする機能
+        if (session()->get('member_id') !== null)  {
+            // 存在する場合
+            return view('user.newpost');
+        } 
+            // 存在しない場合
+            session()->flash('message', 'ログイン後に投稿してください！');
+            return view('user.login');
+            
     }
 
     public function store(Request $request)
