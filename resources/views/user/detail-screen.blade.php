@@ -21,7 +21,7 @@
                     @foreach($rank as $item)
                     <li><p class="lank">{{$loop->iteration}}位</p><a href="{{ route('user.detail-main', [$item->id]) }}">
                         <div class="container">
-                            <div class="magazin-image"><img src="{{ asset('storage/storage/'.$item->store_img) }}" alt="Image" class="image"></div>
+                            <div class="magazin-image"><img src="{{ asset('storage/images/'.$item->store_img) }}" alt="Image" class="image"></div>
                            
                             <div class="container-wrapper">
                             <h3 class="container-title"><span>{{$item->name}}</span></h3>
@@ -52,13 +52,13 @@
     
         <section id="main">
         @if (Request::routeIs('user.detail-screen'))
-        <h3 class="side-title"><span>{{ $items[0]->location->name }}周辺のお店</span></h3>
+        <h3 class="main-title"><span>{{ $items[0]->location->name }}周辺のお店</span></h3>
         @elseif (Request::routeIs('user.category'))
-        <h3 class="side-title"><span>ジャンル:{{ $items[0]->category[0]->category_name }}</span></h3>
+        <h3 class="main-title"><span>ジャンル:{{ $items[0]->category[0]->category_name }}</span></h3>
         @elseif (Request::routeIs('user.recent'))
-        <h3 class="side-title"><span>新着投稿一覧</span></h3>
+        <h3 class="main-title"><span>新着投稿一覧</span></h3>
         @elseif (Request::routeIs('user.search'))
-            <h3 class="side-title"><span>キーワード:{{ request()->query('search') }}</span></h3>
+            <h3 class="main-title"><span>キーワード:{{ request()->query('search') }}</span></h3>
         @endif
         <div class="wrapper">
             <ul class="col2">
@@ -69,7 +69,7 @@
                 @foreach($items as $item)
                 <li><a href="{{ route('user.detail-main', [$item->id]) }}">
                     <div class="container">
-                        <div class="magazin-image"><img src="{{ asset('storage/images/'.$item->post_img) }}" alt="Image" class="image"></div>
+                        <div class="magazin-image"><img src="{{ asset('storage/images/'.$item->store_img) }}" alt="Image" class="image"></div>
                         <div class="container-wrapper">
                         <h3 class="container-title"><span>{{ $item->name }}</span></h3>
                         @foreach($item->category as $category)
@@ -77,8 +77,6 @@
                         @endforeach
                         </div>
                         <div class="detail">
-                            <div><p class="button"><button><img src="/img/bookmark02@2x.png" alt="お気に入りボタン"></button></p>
-                            </div>
                         <ul class="access">
                             <li>アクセス:{{ $item->access }}</li>
                             <li>住所:〒{{ $item->postal_code }}{{ $item->name }}{{ $item->address_level3 }}</li>
@@ -97,12 +95,13 @@
         </div>
         </section>
 
-    <ul class="pagination">
-        <li><a href="#">1</a></li>
+    <!-- <ul class="pagination"> -->
+        <!-- <li><a href="#">1</a></li>
         <li><a href="#">2</a></li>
         <li><a href="#">3</a></li>
-        <li><a href="#">></a></li>
-      </ul>
+        <li><a href="#">></a></li> -->
+        {{ $items->links('pagination::bootstrap-4') }}
+      <!-- </ul> -->
         </section>
         
         <div id="return">

@@ -15,8 +15,10 @@ body {
 }
 li{
     list-style: none;
+    padding-left: 0;   
+}
+ul {
     padding-left: 0;
-    
 }
 p{
    
@@ -114,7 +116,8 @@ color: #FFFFFF;
 .side-title{
     display: inline-block;
     margin-top: 30px;
-    width: 300px;
+    margin-left: 20px;
+    width: 260px;
     font-family: 'Ifont-family:  "ab-tombo-bold", sans-serif;';
     font-style: normal;
     font-weight: 400;
@@ -126,6 +129,21 @@ color: #FFFFFF;
     letter-spacing: 0.1em;
     background: linear-gradient(transparent 60%, #F5EC6F 60%);
 
+}
+
+.main-title {
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 20px;
+    font-family: 'Ifont-family:  "ab-tombo-bold", sans-serif;';
+    font-style: normal;
+    font-size: 32px;
+    line-height: 35px;
+    /* ボックスの高さと同一 */
+    text-align: center;
+    color: #AAE139;
+    letter-spacing: 0.1em;
+    background: linear-gradient(transparent 60%, #F5EC6F 60%);
 }
 
 .list ul li a {
@@ -187,7 +205,7 @@ hr {
 
     display:flex;
     align-items: center; 
-    justify-content:space-between;
+    justify-content:center;
 }
     /* 名称 */
 .container-title {
@@ -200,9 +218,13 @@ hr {
     background: linear-gradient(transparent 60%, #F5EC6F 60%);
     }
 
-
+.likebotton {
+    width: 50%;
+}
 .button{
-    width: 50px;}
+    width: 50px;
+}
+
  button { background-color: transparent; 
              border: none; 
              cursor: pointer; 
@@ -231,13 +253,30 @@ hr {
         /* 詳細 */
     .wrapper .access {
         display: block;
-        padding: 0;
-        
-   
+        padding: 0;  
     }
+
+    .access li {
+        font-size: 1.3rem; 
+    }
+
+    .like-wrapper {
+        display: flex;
+        gap: 1em;
+    }
+    .likecount p {
+        line-height: 150px;
+        display: block;
+        margin-bottom: 0;
+        font-family:  "ab-tombo-bold", sans-serif;
+        font-size: 1.3rem;
+        color: hsl(336, 100%, 60%);
+        text-decoration:underline;
+    }
+
   /* おすすめポイント */
   .coment-title {
-    
+    font-family:  "ab-tombo-bold", sans-serif;
     margin: 0;
     color: #AAE139;
   }
@@ -270,6 +309,39 @@ hr {
     font-family: 'ab-tombo-bold", sans-seri';
     font-weight: 800;
  }
+/* pagination */
+
+.active .page-link {
+    color: #AAE140;
+    text-align: center;
+    width: 30px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    line-height: 30px;
+    display: block;
+    font-family: 'ab-tombo-bold", sans-seri';
+    font-weight: 800;
+    font-size: 1.5rem;
+
+}
+
+span.page-link {
+    color: #AAE140;
+    text-align: center;
+    width: 30px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    line-height: 30px;
+    display: block;
+    font-family: 'ab-tombo-bold", sans-seri';
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
 
   /* 戻るボタン */
 #return a p {

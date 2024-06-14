@@ -35,9 +35,9 @@
 </head>
 <body>
     <header id="header">
-        <div class="header_top"></div>
-        <div class="header_bottom"></div>
-        <div><a href="{{ route('user.index') }} "><img src="/img/logo.png" alt="じゃがじゃがみやざき"></a></div>
+        <!-- <div class="header_top"></div>
+        <div class="header_bottom"></div> -->
+        <a href="{{ route('user.index') }} "><img src="/img/logo.png" alt="じゃがじゃがみやざき"></a>
     </header>
     <div class="base-wrapper">
 {{ $slot }}
