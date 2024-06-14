@@ -1,4 +1,4 @@
-@charset "UTF-8";   
+@charset "UTF-8";
 
 html {
     font-size: 100%;
@@ -55,6 +55,7 @@ h2 {
     color: #fff;
     text-align: center;
 }
+
 /* ------------------------
         h3
 ------------------------ */
@@ -115,8 +116,8 @@ h2 {
         main
 ------------------------ */
 .base-wrapper {
-     background-color: var(--base-color);
-     padding: 60px 0; 
+    background-color: var(--base-color);
+    padding: 60px 0;
 }
 
 main {
@@ -138,7 +139,7 @@ main {
 /* ------------------------
         フッター
 ------------------------ */
-.footer_top {
+/* .footer_top {
     height: 60px;
     background-color: var(--fourth-color);
 }
@@ -146,26 +147,36 @@ main {
 .footer_bottom {
     height: 60px;
     background-color: var(--base-color);
-}
+} */
 
 #footer {
-    position: relative;
+    /* position: relative; */
+    background: linear-gradient(to Bottom, var(--fourth-color) 50%, var(--base-color) 50%);
+    padding: 60px;
 }
+
 /* テキスト中に画像を埋め込む
 #footer .text_img {
     width: 100%;
     vertical-align: middle;
 } */
 .copyright {
-    position: absolute;
+    /* position: absolute; */
     font-size: 1rem;
     color: var(--base-font-color);
     top: 40px;
     right: 2rem;
 }
-.copyright p {
-    position: absolute;
-    top: 20px;
+
+.copyright {
+    /* position: absolute; */
+    /* top: 20px; */
+    display: flex;
+    justify-content: center;
+}
+
+.copyright img {
+    width: 15%;
 }
 
 /* ======================= 
@@ -177,16 +188,21 @@ main {
         top: 20px;
         left: 20px;
     }
-    .header_top, .header_bottom {
+
+    .header_top,
+    .header_bottom {
         height: 50px;
     }
+
     .base-wrapper {
         padding: 30px 0;
     }
+
     h2 {
         width: 90px;
         font-size: 1rem;
     }
+
     .copyright {
         font-size: .8rem;
     }
