@@ -71,7 +71,7 @@ class Favorite extends Component
 
         } else{
             // 存在しない場合
-            session()->flash('message', '先にログインしてください！');
+            session()->flash('message', '※先にログインしてください！');
             return redirect()->route('user.login');            
         }
     }
