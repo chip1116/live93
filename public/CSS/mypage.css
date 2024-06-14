@@ -83,15 +83,15 @@ dt {
 }
 
 .flex {
-    width: 100%;
+    /* width: 100%; */
     flex-wrap: wrap;
     display: flex;
-    align-items: center;
+    align-content: space-between;
 
 }
 
 .flex_item {
-    
+    margin: 0 auto ;
 }
 
 .back {
@@ -230,3 +230,29 @@ hr {
 .comment-box p {
     padding: 5px;
 }
+
+
+/* ログアウトボタン */
+a.btn-border {
+    color: #fff;
+    border: 2px solid var(--sub-color);
+    border-radius: 0;
+    background: var(--sub-color);
+    padding: 1rem;
+    margin: 2rem auto 0 auto;
+    font-family: var(--main-font-family);
+  }
+  
+  a.btn-border:hover {
+    color: #fff;
+    background: #FF9933;
+    border: 2px solid #f93
+  }
+  
+  hr {
+    border: none;
+    background-color: #fff;
+    border-width: 1px 0 0 0;
+    border-top: solid;
+    border-color: var(--sub-color);
+  }

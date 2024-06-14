@@ -44,15 +44,14 @@ class Like extends Component
         return view('livewire.like');
     }
 
-        public function toggleLike() {
-
-        // ログインしてない人イイネを押下したらログインページに遷移するようにする機能
-        if (session()->get('member_id') !== null)  {
-        // 存在する場合
-
-        // 1. Likeモデルからmember_idとstore_idが一致するデータを取得
+    public function toggleLike() {
         $memberID = session()->get('member_id');
-        $like = LikeModel::withTrashed()->where('member_id', $memberID)
+
+    // ログインしている時にいいねを押したとき
+        if ($memberID !== null) {
+    
+        // 1. Likeモデルからmember_idとstore_idが一致するデータを取得
+            $like = LikeModel::withTrashed()->where('member_id', $memberID)
                 ->where('store_id', $this->storeID)->first();
                 
         // 2. 1のデータが存在しない場合
@@ -74,16 +73,14 @@ class Like extends Component
                 $like->restore();
             }
 
-        $this->file = $this->isLike() ? 'moai03@2x.png' : 'moai@2x.png';
-        $this->count++ ;    
-
+            $this->file = $this->isLike() ? 'moai03@2x.png' : 'moai@2x.png';
+            $this->count++ ;
+    
+    // ログインしてない時にいいねを押したときのエラー回避
         } else {
-            // 存在しない場合
-            session()->flash('message', '※先にログインしてください！');
-            return redirect()->route('user.login');
+            session()->flash('message', 'いいねする場合はログインしてください。');
+            return redirect()->route('user.detail-main', ['id' => $this->storeID]);
         }
-
-
     }
 
     private function isLike(): bool
