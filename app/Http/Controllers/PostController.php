@@ -17,6 +17,15 @@ class PostController extends Controller
 {
     $id = $request->store_id;
 
+    
+    // 画像のファイル名を変更
+    $postImage = $request->file('upload');
+    $imageName = time().'.'.$postImage->getClientOriginalExtension();
+
+    // 画像のアップロード
+    $path = $postImage->storeAs('public/images', $imageName);
+    
+
     $dt = new Carbon();
 
     // 投稿内容保存処理
@@ -25,7 +34,7 @@ class PostController extends Controller
         'date' => $dt,
         'store_id' => $id,
         'member_id' => 2,
-        'post_img' => $request->upload
+        'post_img' => $imageName
     ]); 
     session()->flash('message', '投稿できました！');
     return redirect()->route('user.detail-main', ['id' => $id]);

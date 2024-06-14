@@ -55,6 +55,13 @@ class NewPostController extends Controller
         if (!$validator->fails()) {
         
 // バリデーションが成功した場合の処理
+// 画像のファイル名を変更
+$postImage = $request->file('upload');
+$imageName = time().'.'.$postImage->getClientOriginalExtension();
+
+// 画像のアップロード
+$path = $postImage->storeAs('public/images', $imageName);
+
         // 投稿内容保存処理
         $address = Store::create([
             'name' => $request->name,
@@ -62,8 +69,8 @@ class NewPostController extends Controller
             'tel' => $request->tel,
             'member_id' => $memberId,
             'store_comment' => $request->newpostComment,
-            'store_img' => $request->upload
-        ]);
+            'store_img' =>  $imageName
+                ]);
 
         foreach($request->category_id as $categoryID) {
             $category = StoreCategory::create([
