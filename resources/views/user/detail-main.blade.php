@@ -51,8 +51,9 @@
     </div>
     </div>
         <h2 class="buck">クチコミ投稿</h2>
-        <div class="section">
+        <div class="post-section">
         <div class="content">
+                
                 <form action="{{ route('post.store') }}" enctype="multipart/form-data" class="form" id="form1" method="POST">
                     @csrf
                     <input type="hidden" name="store_id" value="1">

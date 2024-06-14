@@ -405,6 +405,18 @@ span.page-link {
     margin-bottom: 20px;
 }
 
+.post-section {
+    top: 1%;
+    right: 30%;
+    border: #AAE139 solid;
+    border-width: thin;
+    border-radius: 20px;
+    padding: 1em;
+    margin: 1%;
+    gap: 5%;
+
+}
+
 
 /* ======comments===== */
 .section {

@@ -24,6 +24,7 @@ class DetailScreenController extends Controller
             ->where('location_id', '=', $id)
             ->paginate(4);
             
+
        $locations = $this->location->find($id)->toArray();
         return view('user.detail-screen', compact('items','rank','locations'));
 
@@ -32,7 +33,7 @@ class DetailScreenController extends Controller
     public function search(Request $request) {
         $rank = $this->store->withCount('like')->orderBy('like_count', 'desc')->limit(3)->get();
         $locations = $this->location->toArray();
-        $items = $this->store->where("name", "LIKE", "%{$request->search}%")->get();
+        $items = $this->store->where("name", "LIKE", "%{$request->search}%")->paginate(4);
         // $message = '';
         //     if (count($items) <= 0) {
         //         $message = ('検索結果がありません。');

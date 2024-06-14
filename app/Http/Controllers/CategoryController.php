@@ -24,7 +24,7 @@ class CategoryController extends Controller
         $items = $this->store
         ->whereHas('category', function($query) use ($id){
             $query->where('category_id', $id);
-        })->get();
+        })->paginate(4);
         return view('user.detail-screen', compact('items','rank'));
 
     }
