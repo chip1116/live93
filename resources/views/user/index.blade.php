@@ -2,7 +2,7 @@
     <x-base>
         <div class="toppage">
         @if ($user !== null)       
-            <p>ようこそ{{ $user->name }}さん</p>
+            <p class="welcome">ようこそ&nbsp;<span class="welcome_name">{{ $user->name }}</span>&nbsp;さん</p>
         @endif
             
             @if (session('message_logout'))
