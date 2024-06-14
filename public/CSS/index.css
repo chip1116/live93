@@ -31,6 +31,18 @@ h3 {
     color: #54B435;
 }
 
+.welcome {
+    margin-left: 20px;
+    font-size: 1em;
+    color: var(--base-font-color);
+    font-family: "ab-tombo-bold", sans-serif;
+}
+
+.welcome_name {
+    font-size: 2em;
+    color: var(--base-font-color);
+    font-family: "ab-tombo-bold", sans-serif;
+}
 
 .mypage {
     text-align: right;
@@ -77,12 +89,12 @@ h3 {
     margin: 0 auto;
 }
 .toppage {
-    background: url(../img/img.png) no-repeat;
-    /* bottom -70px center; */
+    background: url(../img/img.png) no-repeat bottom -70px center;
     background-size: cover;
     /* position: relative; */
-    height: 900px;
-    /* padding-bottom: 130px; heightを消す */
+    /* height: 900px; */
+    padding-bottom: 130px; 
+    /* heightを消す */
 }
 .top_img {
     margin: auto;
@@ -260,6 +272,32 @@ ol {
     margin: 0 auto;    
 }
 
+/* ABOUTのポップアップ */
+.modal {
+    /* background-color: white; */
+    position: absolute;
+    top: 10%;
+    /* transform: translateY(-50%); */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    /* padding: 50px; */
+    width: 1000px;
+    z-index: 100;
+    height: 600px;
+    overflow: scroll;
+}
+#bg_layer {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
 
 @media screen and (max-width:960px) {
     .top, .menu_list, .main, .section, .submenu, .top_img {

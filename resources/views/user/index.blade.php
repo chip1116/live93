@@ -2,7 +2,7 @@
     <x-base>
         <div class="toppage">
         @if ($user !== null)       
-            <p>ようこそ{{ $user->name }}さん</p>
+            <p class="welcome">ようこそ&nbsp;<span class="welcome_name">{{ $user->name }}</span>&nbsp;さん</p>
         @endif
             
             @if (session('message_logout'))
@@ -78,12 +78,14 @@
                         <h3>新着投稿&emsp;NEW!</h3>
                         <ul class="new_post_detail">
                             @foreach($items as $item)
-                            <li>
-                                <img src="{{ asset('storage/images/'.$item->store_img) }}" alt="img1">
-                                <p>{{ $item->created_at->format('Y.n.j') }}</p>
-                                <p>{{ $item->name }}</p>
-                                <p>〒{{ $item->postal_code }} {{ $item->location->name }}{{ $item->address_level3 }}</p>
-                            </li>
+                                <a href="{{ route('user.detail-main', [$item->id]) }}">
+                                    <li>
+                                        <img src="{{ asset('storage/images/'.$item->store_img) }}" alt="img1">
+                                        <p>{{ $item->name }}</p>
+                                        <p>{{ $item->location->name }}</p>
+                                        <p>{{ $item->created_at->format('Y.n.j') }} UP!</p>
+                                    </li>
+                                </a>
                             @endforeach
                         </ul>
                         <button class="more search_button" onclick="location.href='{{ route('user.recent') }}'">もっと見る</button>

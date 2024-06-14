@@ -21,7 +21,7 @@ class NewPostController extends Controller
             return view('user.newpost');
         } 
             // 存在しない場合
-            session()->flash('message', 'ログイン後に投稿してください！');
+            session()->flash('message', '※ログイン後に投稿してください！');
             return view('user.login');
             
     }
@@ -34,25 +34,34 @@ class NewPostController extends Controller
 
         // 名称検索のバリデート
         $validator = Validator::make($request->all(), [
-            'tel' => 'required|unique:stores,tel',
+            'tel' => 'unique:stores,tel',
         ]);
     
         if ($validator->fails()) {
         $store = Store::where('tel', '=', $request->tel)->first();
-        session()->flash('message', '既に登録されているのでクチコミ投稿をお願いします！');
-        return redirect()->route('user.detail-main', ['id' => $store->id]);
+        session()->flash('message', '※既に登録されているのでクチコミ投稿をお願いします！');
+        return redirect()->route('user.detail-main', ['id' => $store->id])->withInput();
         }
     
         $validator = Validator::make($request->all(), [
+            'tel' => 'required',
             'name' => 'required',
-        ], [
-            'name.required' => '名称は必須項目です'
+            'location_id' => 'nullable',
+            'upload' => 'nullable',
+            'newpostComment' => 'nullable',
         ]);
         
     
         if (!$validator->fails()) {
         
 // バリデーションが成功した場合の処理
+// 画像のファイル名を変更
+$postImage = $request->file('upload');
+$imageName = time().'.'.$postImage->getClientOriginalExtension();
+
+// 画像のアップロード
+$path = $postImage->storeAs('public/images', $imageName);
+
         // 投稿内容保存処理
         $address = Store::create([
             'name' => $request->name,
@@ -60,8 +69,8 @@ class NewPostController extends Controller
             'tel' => $request->tel,
             'member_id' => $memberId,
             'store_comment' => $request->newpostComment,
-            'store_img' => $request->upload
-        ]);
+            'store_img' =>  $imageName
+                ]);
 
         foreach($request->category_id as $categoryID) {
             $category = StoreCategory::create([
@@ -72,8 +81,8 @@ class NewPostController extends Controller
         session()->flash('message', '投稿できました！');
         return redirect()->route('user.detail-main', ['id' => $address->id]);
         }
-        session()->flash('message', '名称が未入力です');
-        return  redirect()->route('user.newpost');
+        session()->flash('message', '※必須項目が未入力です');
+        return  redirect()->route('user.newpost')->withInput();
         // return  view('user.newpost');
     }
 }

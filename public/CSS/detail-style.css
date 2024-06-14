@@ -116,7 +116,8 @@ color: #FFFFFF;
 .side-title{
     display: inline-block;
     margin-top: 30px;
-    width: 300px;
+    margin-left: 20px;
+    width: 260px;
     font-family: 'Ifont-family:  "ab-tombo-bold", sans-serif;';
     font-style: normal;
     font-weight: 400;
@@ -128,6 +129,21 @@ color: #FFFFFF;
     letter-spacing: 0.1em;
     background: linear-gradient(transparent 60%, #F5EC6F 60%);
 
+}
+
+.main-title {
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 20px;
+    font-family: 'Ifont-family:  "ab-tombo-bold", sans-serif;';
+    font-style: normal;
+    font-size: 32px;
+    line-height: 35px;
+    /* ボックスの高さと同一 */
+    text-align: center;
+    color: #AAE139;
+    letter-spacing: 0.1em;
+    background: linear-gradient(transparent 60%, #F5EC6F 60%);
 }
 
 .list ul li a {
@@ -293,6 +309,39 @@ hr {
     font-family: 'ab-tombo-bold", sans-seri';
     font-weight: 800;
  }
+/* pagination */
+
+.active .page-link {
+    color: #AAE140;
+    text-align: center;
+    width: 30px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    line-height: 30px;
+    display: block;
+    font-family: 'ab-tombo-bold", sans-seri';
+    font-weight: 800;
+    font-size: 1.5rem;
+
+}
+
+span.page-link {
+    color: #AAE140;
+    text-align: center;
+    width: 30px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    line-height: 30px;
+    display: block;
+    font-family: 'ab-tombo-bold", sans-seri';
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
 
   /* 戻るボタン */
 #return a p {
@@ -354,6 +403,18 @@ hr {
 
 .margin {
     margin-bottom: 20px;
+}
+
+.post-section {
+    top: 1%;
+    right: 30%;
+    border: #AAE139 solid;
+    border-width: thin;
+    border-radius: 20px;
+    padding: 1em;
+    margin: 1%;
+    gap: 5%;
+
 }
 
 
