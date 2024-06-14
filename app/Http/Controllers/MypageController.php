@@ -28,18 +28,25 @@ class MypageController extends Controller
             $items = $this->member->find($id);
             $posts = $this->post::with('store')
                         ->where('member_id',  '=', $id)
+                        ->whereNull('deleted_at')
                         ->get();
+
             $store = $this->store::with('like')
-                        ->where('member_id', '=', $id);
+                        ->where('member_id', '=', $id)
+                        ->whereNull('deleted_at')
+                        ->withCount('like')
+                        ->get();
+                        // dd($store);
             
             $likeCount = 0;
             foreach ($store as $row) {
-                $likeCount += $row;
+                $likeCount += $row->like_count;
+                // dd($row);
             } 
-            dd($likeCount);
             
             $favorite = $this->favorite::with('store')
-                        ->where('member_id', '=', $id);
+                        ->where('member_id', '=', $id)
+                        ->get();
 
 
             return view('user.mypage', compact('items', 'posts', 'favorite', 'likeCount'));
