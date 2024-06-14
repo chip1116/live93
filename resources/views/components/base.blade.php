@@ -46,8 +46,7 @@
         <div class="footer_top"></div>
         <div class="footer_bottom"></div>
         <div class="copyright">
-          <p><img class="text_img" src="/img/logo93_1@2x.png" alt=""></p>
-          <small>&copy;live93 2024</small>
+          <img class="text_img" src="/img/copyright@2x.png" alt="copyright">
         </div>
     </footer>
     @livewireScripts
