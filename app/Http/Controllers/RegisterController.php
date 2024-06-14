@@ -16,6 +16,15 @@ class RegisterController extends Controller
     public function regist(Request $request)
     {
         $validator = Validator::make($request->all(), [
+            'email' => 'unique:members',
+        ]);
+        
+        if ($validator->fails()) {
+            session()->flash('message', '既に登録されているメールアドレスです');
+            return  redirect()->route('user.register')->withInput();
+        }  
+
+        $validator = Validator::make($request->all(), [
             'password' => ['required','confirmed'],
         ]);
 
@@ -26,7 +35,7 @@ class RegisterController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required'
+            'email' => 'required',
         ]);
 
         if (!$validator->fails()) {
