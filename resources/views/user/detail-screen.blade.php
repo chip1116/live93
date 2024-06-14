@@ -95,12 +95,13 @@
         </div>
         </section>
 
-    <ul class="pagination">
-        <li><a href="#">1</a></li>
+    <!-- <ul class="pagination"> -->
+        <!-- <li><a href="#">1</a></li>
         <li><a href="#">2</a></li>
         <li><a href="#">3</a></li>
-        <li><a href="#">></a></li>
-      </ul>
+        <li><a href="#">></a></li> -->
+        {{ $items->links('pagination::bootstrap-4') }}
+      <!-- </ul> -->
         </section>
         
         <div id="return">

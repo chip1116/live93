@@ -22,7 +22,7 @@ class DetailScreenController extends Controller
         $rank = $this->store->withCount('like')->orderBy('like_count', 'desc')->limit(3)->get();
         $items = $this->store
             ->where('location_id', '=', $id)
-            ->get();
+            ->paginate(4);
        $locations = $this->location->find($id)->toArray();
         return view('user.detail-screen', compact('items','rank','locations'));
 
