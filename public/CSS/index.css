@@ -77,12 +77,12 @@ h3 {
     margin: 0 auto;
 }
 .toppage {
-    background: url(../img/img.png) no-repeat;
-    /* bottom -70px center; */
+    background: url(../img/img.png) no-repeat bottom -70px center;
     background-size: cover;
     /* position: relative; */
-    height: 900px;
-    /* padding-bottom: 130px; heightを消す */
+    /* height: 900px; */
+    padding-bottom: 130px; 
+    /* heightを消す */
 }
 .top_img {
     margin: auto;
