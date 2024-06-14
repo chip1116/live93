@@ -50,7 +50,27 @@
         
     </div>
     </div>
-    
+        <h2 class="buck">クチコミ投稿</h2>
+        <div class="section">
+        <div class="content">
+                <form action="{{ route('post.store') }}" enctype="multipart/form-data" class="form" id="form1" method="POST">
+                    @csrf
+                    <input type="hidden" name="store_id" value="1">
+                    <p>写真</p>
+                    <div class="deco-file">
+                        <label>
+                            <input type="file" name="upload">
+                        </label>
+                        <p class="file-names"></p>
+                        ＋ファイルを追加
+                    </div>
+
+                    <p>コメント</p>
+                    <textarea name="comment" class="area-bg"></textarea>
+                </form>
+            </div>
+            <button type="submit" form="form1" class="post-button">投稿</button>
+        </div>
         @foreach($item->post as $post)
         <div class="section">
                <img src="{{ asset('storage/images/'.$post->post_img) }}" class="img-box">
