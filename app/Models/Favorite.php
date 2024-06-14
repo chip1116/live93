@@ -15,4 +15,8 @@ class Favorite extends Model
     public function member() {
         return $this->belongsTo(Member::class);
     }
+
+    public function store() {
+        return $this->belongsTo(Store::class);
+    }
 }
