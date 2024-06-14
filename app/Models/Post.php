@@ -14,7 +14,8 @@ class Post extends Model
         'comment',
         'store_id',
         'member_id',
-        'store_comment'
+        'store_comment',
+        'post_img'
     ];
     
     public function store() {

@@ -23,6 +23,7 @@ class DetailScreenController extends Controller
         $items = $this->store
             ->where('location_id', '=', $id)
             ->paginate(4);
+            
        $locations = $this->location->find($id)->toArray();
         return view('user.detail-screen', compact('items','rank','locations'));
 
