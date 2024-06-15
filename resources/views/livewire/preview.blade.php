@@ -1,8 +1,15 @@
 <div>
-    @php($key = 'form.file')
-    @if ($form['file'])
-        <img class="h-[300px] object-fit mx-auto" src="{{ $form['file']->temporaryUrl() }}" alt="">  
-    @else
-        <input type="file" wire:model.defer="{{ $key }}" accept="image/*">
-    @endif
+<input type="file" wire:model="image">
+    @error('image') <span class="error">{{ $message }}</span> @enderror
+            @if ($image)
+                @php
+                    try {
+                        $url = $image->temporaryUrl();
+                        $photoStatus = true;
+                    }catch (RuntimeException $e){
+                        $this->photoStatus = false;
+                    }
+                @endphp
+                @if($photoStatus) <img src="{{ $url }}" class="w-auto h-64"> @endif
+            @endif
 </div>
