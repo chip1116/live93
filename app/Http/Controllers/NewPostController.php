@@ -21,7 +21,7 @@ class NewPostController extends Controller
             return view('user.newpost');
         } 
             // 存在しない場合
-            session()->flash('message', 'ログイン後に投稿してください！');
+            session()->flash('message', '※ログイン後に投稿してください！');
             return view('user.login');
             
     }
@@ -39,7 +39,7 @@ class NewPostController extends Controller
     
         if ($validator->fails()) {
         $store = Store::where('tel', '=', $request->tel)->first();
-        session()->flash('message', '既に登録されているのでクチコミ投稿をお願いします！');
+        session()->flash('message', '※既に登録されているのでクチコミ投稿をお願いします！');
         return redirect()->route('user.detail-main', ['id' => $store->id])->withInput();
         }
     
@@ -81,7 +81,7 @@ $path = $postImage->storeAs('public/images', $imageName);
         session()->flash('message', '投稿できました！');
         return redirect()->route('user.detail-main', ['id' => $address->id]);
         }
-        session()->flash('message', '必須項目が未入力です');
+        session()->flash('message', '※必須項目が未入力です');
         return  redirect()->route('user.newpost')->withInput();
         // return  view('user.newpost');
     }

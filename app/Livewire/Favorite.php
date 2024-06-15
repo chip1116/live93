@@ -3,8 +3,6 @@
 namespace App\Livewire;
 use App\Models\Favorite as FavoriteModel;
 use Livewire\Component;
-use Auth;
-
 class Favorite extends Component
 {
     public $file, $storeID;
@@ -38,43 +36,43 @@ class Favorite extends Component
         return view('livewire.favorite');
 
     }
-    public function toggleFavorite() {
-      // ログインしてない人がブックマークを押下したらログインページに遷移するようにする機能
-        if (session()->get('member_id') !== null)  {
-        // 存在する場合
-        
-        // Favoriteモデルからmember_idとstore_idが一致するデータを取得　... ①
+    public function toggleFavorite() { 
+    // Favoriteモデルからmember_idとstore_idが一致するデータを取得　... ①
         $memberID = session()->get('member_id'); 
-        $favorite = FavoriteModel::withTrashed()->where('member_id', $memberID)
-                  ->where('store_id', $this->storeID)->first();
 
-        // ①のデータが存在しない場合
-            // 新規作成（INSERT）
-            if ($favorite === null) {
-                FavoriteModel::create([
-                    'member_id' => $memberID,
-                    'store_id' => $this->storeID,
-                ]);
-                
-        // ①が存在する&&deleted_atがnullの場合 ... ②
-            // 現在日時をセットする（UPDATE）→ 削除扱い
-        } elseif (!$favorite->trashed()) {
-            $favorite->delete();
+    // ログインしているときにお気に入りしたとき
+        if ($memberID !== null) {
+            $favorite = FavoriteModel::withTrashed()->where('member_id', $memberID)
+                    ->where('store_id', $this->storeID)->first();
 
-        // ②以外の場合
-            // deletedt_atをnullにする（UPDATE）→ 再度ブックマークした扱い
-        } else {
-            $favorite->restore();
-        }
+            // ①のデータが存在しない場合
+                // 新規作成（INSERT）
+                if ($favorite === null) {
+                    FavoriteModel::create([
+                        'member_id' => $memberID,
+                        'store_id' => $this->storeID,
+                    ]);
+                    
+            // ①が存在する&&deleted_atがnullの場合 ... ②
+                // 現在日時をセットする（UPDATE）→ 削除扱い
+            } elseif (!$favorite->trashed()) {
+                $favorite->delete();
 
-        $this->file = $this->isFavorite() ? 'bookmark02@2x.png' : 'bookmark01@2x.png';
+            // ②以外の場合
+                // deletedt_atをnullにする（UPDATE）→ 再度ブックマークした扱い
+            } else {
+                $favorite->restore();
+            }
 
-        } else{
-            // 存在しない場合
-            session()->flash('message', '先にログインしてください！');
-            return redirect()->route('user.login');            
-        }
-    }
+            $this->file = $this->isFavorite() ? 'bookmark02@2x.png' : 'bookmark01@2x.png';
+
+        // ログインしていない時にお気に入りしたときのエラー回避
+            } else {
+                session()->flash('message', 'お気に入りに登録する場合はログインしてください。');
+                return redirect()->route('user.detail-main', ['id' => $this->storeID]);
+            }
+
+    }   
 
     private function isFavorite(): bool
     {

@@ -28,10 +28,28 @@ class MypageController extends Controller
             $items = $this->member->find($id);
             $posts = $this->post::with('store')
                         ->where('member_id',  '=', $id)
+                        ->whereNull('deleted_at')
                         ->get();
-            $favorite = $this->favorite->find($id);
 
-            return view('user.mypage', compact('items', 'posts', 'favorite'));
+            $store = $this->store::with('like')
+                        ->where('member_id', '=', $id)
+                        ->whereNull('deleted_at')
+                        ->withCount('like')
+                        ->get();
+                        // dd($store);
+            
+            $likeCount = 0;
+            foreach ($store as $row) {
+                $likeCount += $row->like_count;
+                // dd($row);
+            } 
+            
+            $favorite = $this->favorite::with('store')
+                        ->where('member_id', '=', $id)
+                        ->get();
+
+
+            return view('user.mypage', compact('items', 'posts', 'favorite', 'likeCount'));
         } else {
             session()->flash('message', 'ログインしてください。');
             return redirect()->route('user.login');
