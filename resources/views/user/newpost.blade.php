@@ -39,6 +39,7 @@
 
                     <p>写真</p>
                     <div class="deco-file">
+                    @livewire('preview')
                         <label>
                             <input type="file" name="upload" value="{{ old('upload') }}" multiple>
                         </label>
