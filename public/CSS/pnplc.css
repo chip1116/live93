@@ -61,7 +61,6 @@ input:not([type="checkbox"], [type="file"]),
 textarea {
     width: 100%;
     box-sizing: border-box;
-
 }
 
 

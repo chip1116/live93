@@ -179,6 +179,21 @@ main {
     width: 15%;
 }
 
+/* ------------------------
+    flash_messageのCSS
+------------------------ */
+
+.message {
+    font-size: 1.2em;
+    color: red;
+    font-family: "ab-tombo-bold", sans-serif;
+    margin-left: 20px;
+}
+
+.font {
+    font-family: "ab-tombo-bold", sans-serif;
+}
+
 /* ======================= 
     レスポンシブ
 ======================== */
