@@ -11,6 +11,9 @@
             <div class="content">
                 <form action="{{ route('post.newstore') }}" class="form" id="form1" method="POST" enctype="multipart/form-data" >
                 @csrf
+                    @if (session('message'))
+                        <p class="message">{{ session('message') }}</p>
+                    @endif
                     <p>名称</p>
                     <input type="search" name="name" list="keyword-list" placeholder="名称を入力してください" class="input-bg" value="{{ old('name') }}">
                     <datalist id="keyword-list">
@@ -18,14 +21,13 @@
                         <option value="{{ $store->name }}">
                         @endforeach
                     </datalist>
-                    @if (session('message'))
-                    {{ session('message') }}
-                    @endif
                     <p>ジャンル</p> 
                     @foreach(App\Models\Category::all() as $category)
-                    <input type="checkbox" name="category_id[]" class="input-bg" value="{{$category->id}}" {{ old('category_id') !== null && in_array($category->id, old('category_id')) ? 'checked': '' }}>
-                    <!-- <input type="checkbox" name="category_id[]" class="input-bg" value="{{$category->id}}" {{ !(old('category_id') !== null && in_array($category->id, old('category_id'))) ?:'checked' }}> -->
-                    {{ $category->id }}.{{ $category->category_name }}
+                    <label class="font">
+                        <input type="checkbox" name="category_id[]" class="input-bg" value="{{$category->id}}" {{ old('category_id') !== null && in_array($category->id, old('category_id')) ? 'checked': '' }}>
+                        <!-- <input type="checkbox" name="category_id[]" class="input-bg" value="{{$category->id}}" {{ !(old('category_id') !== null && in_array($category->id, old('category_id'))) ?:'checked' }}> -->
+                        {{ $category->id }}.{{ $category->category_name }}
+                    </label>
                     @endforeach
 
                     <p>市・郡</p>

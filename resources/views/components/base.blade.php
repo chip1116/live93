@@ -43,8 +43,8 @@
 {{ $slot }}
     </div>
     <footer id="footer">
-        <div class="footer_top"></div>
-        <div class="footer_bottom"></div>
+        <!-- <div class="footer_top"></div>
+        <div class="footer_bottom"></div> -->
         <div class="copyright">
           <img class="text_img" src="/img/copyright@2x.png" alt="copyright">
         </div>

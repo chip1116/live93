@@ -95,4 +95,3 @@ Route::controller(RegisterController::class)->group(function(){
     Route::post('/user-register', [RegisterController::class, 'regist'])->name('regist');
 });
  
-Route::get('/modal', [ModalController::class, 'modal']);

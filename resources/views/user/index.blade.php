@@ -6,7 +6,7 @@
         @endif
             
             @if (session('message_logout'))
-                {{ session('message_logout') }}
+                <p class="message">{{ session('message_logout') }}</p>
             @endif
             <div class="top_img">
                 <!-- <img src="/img/img.png" alt="top_img" class="back"> -->
@@ -112,9 +112,9 @@
                             </div>
                         </li>
                         @endforeach
-
                     </ol>
                 </div>
+                    @livewire('banner')
             </aside>
         </div>
     </x-base>

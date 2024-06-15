@@ -6,7 +6,7 @@ body {
 .base-wrapper {
     background-color: var(--base-color);
     padding-top: 0;
-    padding-bottom: 150px;
+    padding-bottom: 70px;
 }
 
 ul,
@@ -228,7 +228,7 @@ ol {
     padding-left: 0;
 }
 .ranking {
-    margin-top: 50px;
+    margin-top: 80px;
 } 
 .ranking_detail {
     display: flex;
@@ -297,6 +297,37 @@ ol {
     top: 0;
     left: 0;
     bottom: 0;
+}
+
+/* Bannerのポップアップ */
+.banner_p {
+    /* background-color: white; */
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    /* padding: 50px; */
+    width: 1000px;
+    z-index: 100;
+    /* height: 600px; */
+    /* overflow: scroll; */
+}
+#banner_layer {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.banner_bg {
+    margin-top: 50px;
 }
 
 @media screen and (max-width:960px) {
