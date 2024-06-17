@@ -5,7 +5,7 @@ html {
 body {
     color: #000;
     font-size: 0.9rem;
-    font-family: '', '', serif;
+    font-family: var(--main-font-family);
     margin: 0;
 }
 
@@ -54,6 +54,7 @@ img {
 }
 .mypage_content dd {
     border-bottom: 0.1em solid var(--sub-color);
+    font-family: var(--main-font-family);
 }
 
 .mypage_content a {
@@ -109,12 +110,15 @@ dt {
 h2 {
     font-family: var(--main-font-family);
     background-color: #f93;
-    width: 300px;
+    width: 35%;
     margin: 0 auto;
     padding: 1em;
     border-radius: 30px;
     color: #fff;
     text-align: center;
+}
+h3 {
+    font-family: var(--main-font-family);
 }
 
 
@@ -124,6 +128,7 @@ h2 {
 }
 .col2 >*{
     width: 45%;
+    font-family: var(--main-font-family);
 }
 .col2 > *:nth-child(n + 3){
     margin-top: 40px;
@@ -175,7 +180,7 @@ hr {
 }
     /* 名称 */
 .container-title span{
-    font-size: 50px;
+    font-size: 1.5em;
     margin-top: 10px;
     margin: 0 auto;
     background: linear-gradient(transparent 60%, #F5EC6F 60%);
@@ -194,7 +199,7 @@ hr {
 
 .span {
      background: linear-gradient(transparent 60%, #F5EC6F 60%);
-     margin-top: 0;     
+     margin-top: 0;
     }
 
 .side-title span{
@@ -208,6 +213,7 @@ hr {
     color:#FFFFFF;
     text-align: center;
     margin-bottom: 90px;
+    font-family: var(--main-font-family);
     }
         /* 詳細 */
     .wrapper .access {
@@ -256,3 +262,39 @@ a.btn-border {
     border-top: solid;
     border-color: var(--sub-color);
   }
+
+
+  /* レスポンシブデザイン */
+
+@media screen and (max-width: 960px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+    .mypage_content,
+    dl {
+        width: 90%;
+    }
+
+    .flex_item {
+        width: 47%;
+    }
+    .flex_item span {
+        width: 30%;
+    }
+    .container-title span {
+        font-size: 1em;
+    }
+}
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+    .flex {
+        display: unset;
+        width: 100%;
+    }
+    .flex_item {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+
+    }
+    .container {
+        max-width: 480px;
+    }

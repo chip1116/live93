@@ -221,4 +221,14 @@ main {
     .copyright {
         font-size: .8rem;
     }
+
+    .copyright img {
+        width: 25%;
+    }
+}
+
+@media (max-width:480px) {
+    .copyright img {
+        width: 40%;
+    }
 }

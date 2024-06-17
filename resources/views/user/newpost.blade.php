@@ -40,10 +40,10 @@
                     <input type="text" name="tel" class="input-bg" value="{{ old('tel') }}">
 
                     <p>写真</p>
-                    <div class="deco-file">
                     @livewire('preview')
+                    <div class="deco-file">
                         <label>
-                            <input type="file" name="upload" value="{{ old('upload') }}" multiple>
+                            <input type="file" name="upload" value="{{ old('upload') }}" wire:model="photo">
                         </label>
                         <p class="file-names"></p>
                         ＋ファイルを追加
