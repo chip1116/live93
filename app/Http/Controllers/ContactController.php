@@ -16,6 +16,14 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required',
+            'title' => 'nullable',
+            'comment' => 'required',
+        ]);
+
+        if (!$validator->fails()) {
 
         // 投稿内容保存処理
         $this->post = Contact::create([
@@ -26,5 +34,8 @@ class ContactController extends Controller
         ]); 
         session()->flash('message', '送信されました！');
         return redirect()->route('user.index');
+    }
+        session()->flash('message', '※必須項目が未入力です');
+        return  redirect()->route('user.contact')->withInput();
     }
 }

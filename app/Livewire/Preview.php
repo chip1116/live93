@@ -19,7 +19,7 @@ class Preview extends Component
     {
         // バリデーション（例：画像で最大1MBまで）
         $this->validate([
-            'photo' => 'image|max:1024', 
+            'upload' => 'image|max:1024', 
         ]);
 
         // 画像が選択された場合、一時的なURLを取得してプレビューに使用する
