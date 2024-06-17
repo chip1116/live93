@@ -99,8 +99,8 @@
                     <div class="detail">
                         <ul class="access">
                             <li>アクセス:{{ $item->access }}</li>
-                            <li>住所:〒{{ $item->postal_code }}{{ $item->name }}{{ $item->address_level3 }}</li>
-                            <li>{{ $item->tel}}</li>
+                            <li>住所:〒{{ $item->postal_code }}{{ $item->address_level3 }}</li>
+                            <li>TEL:{{ $item->tel}}</li>
                         </ul>
                 
                     </div>
