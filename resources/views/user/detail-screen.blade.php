@@ -20,14 +20,19 @@
                 <ul class="col3">
                     @foreach($rank as $item)
                     <li><p class="lank">{{$loop->iteration}}位</p><a href="{{ route('user.detail-main', [$item->id]) }}">
-                        <div class="container">
+
+<!-- ここから投稿表示 -->
+                    <div class="container">
                             <div class="magazin-image"><img src="{{ asset('storage/images/'.$item->store_img) }}" alt="Image" class="image"></div>
                            
-                            <div class="container-wrapper">
-                            <h3 class="container-title"><span>{{$item->name}}</span></h3>
+                            <div class="list-category">
                             @foreach($item->category as $category)
                             <p class="category">{{ $category->category_name }}</p>
                             @endforeach
+                            </div>
+                            <div class="container-wrapper">
+                            <h3 class="container-title"><span>{{$item->name}}</span></h3>
+                            
                             </div>
                             <div class="detail">
                            
@@ -45,11 +50,13 @@
                             </div>
                         </div>
                         </a></li>
-                        @endforeach
+                    @endforeach
+   
                 </ul>
             </div>
-    <hr>
-    
+  <!-- 投稿終わり -->
+        <hr>
+<!-- ここからジャンル別一覧 -->
         <section id="main">
         @if (Request::routeIs('user.detail-screen'))
         <h3 class="main-title"><span>{{ $items[0]->location->name }}周辺のお店</span></h3>
@@ -68,32 +75,45 @@
                 
                 @foreach($items as $item)
                 <li><a href="{{ route('user.detail-main', [$item->id]) }}">
-                    <div class="container">
-                        <div class="magazin-image"><img src="{{ asset('storage/images/'.$item->store_img) }}" alt="Image" class="image"></div>
-                        <div class="container-wrapper">
-                        <h3 class="container-title"><span>{{ $item->name }}</span></h3>
-                        @foreach($item->category as $category)
-                        <p class="category">{{ $category->category_name }}</p>
-                        @endforeach
-                        </div>
-                        <div class="detail">
+
+<!-- ここから投稿一覧始まる -->
+                <div class="container">
+                    <div class="magazin-image">
+                        <img src="{{ asset('storage/images/'.$item->store_img) }}" alt="Image" class="image">
+                    </div>
+                       
+                    <div class="list-category">
+                      @foreach($item->category as $category)
+                        <p class="category">{{ $category->category_name }}
+                        </p>
+                      @endforeach
+                    </div>
+                    <div class="container-wrapper">
+                        <h3 class="container-title">
+                            <span>{{ $item->name }}</span>
+                        </h3>
+                    </div>
+                    <div class="detail">
                         <ul class="access">
                             <li>アクセス:{{ $item->access }}</li>
                             <li>住所:〒{{ $item->postal_code }}{{ $item->name }}{{ $item->address_level3 }}</li>
                             <li>{{ $item->tel}}</li>
                         </ul>
                 
-                        </div>
-                        <h4 class="coment-title"><span>てげよかポイント</span></h4>
-                        <div class="comment-box">
-                        <p>{{ $item->store_comment }}</p>
-                        </div>
                     </div>
+                        <h4 class="coment-title">
+                            <span>てげよかポイント</span>
+                        </h4>
+                    <div class="comment-box">
+                        <p>{{ $item->store_comment }}</p>
+                    </div>
+                 </div>
                 </a></li>
                 @endforeach
             </ul>
         </div>
-        </section>
+
+    </section>
 
     <!-- <ul class="pagination"> -->
         <!-- <li><a href="#">1</a></li>
@@ -102,7 +122,9 @@
         <li><a href="#">></a></li> -->
         {{ $items->links('pagination::bootstrap-4') }}
       <!-- </ul> -->
-        </section>
+      <!-- 投稿一覧終わり -->
+</section>
+
         
         <div id="return">
             <a href="{{ route('user.index') }} "><p>戻る</p></a>
