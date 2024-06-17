@@ -26,6 +26,8 @@ class DetailScreenController extends Controller
             
 
        $locations = $this->location->find($id)->toArray();
+            // dd($locations);
+
         return view('user.detail-screen', compact('items','rank','locations'));
 
     }
@@ -33,6 +35,7 @@ class DetailScreenController extends Controller
     public function search(Request $request) {
         $rank = $this->store->withCount('like')->orderBy('like_count', 'desc')->limit(3)->get();
         $locations = $this->location->toArray();
+            dd($locations);
         $items = $this->store->where("name", "LIKE", "%{$request->search}%")->paginate(4);
         // $message = '';
         //     if (count($items) <= 0) {

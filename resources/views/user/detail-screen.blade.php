@@ -70,7 +70,10 @@
         <div class="wrapper">
             <ul class="col2">
                 @if (Request::routeIs('user.search') && count($items) <= 0) 
-                <p>検索結果がありません。</p>
+                    <p>検索結果がありません。</p>
+                @elseif (Request::routeIs('user.search') && count($locations) <= 0)
+                    <p>検索結果がありません。</p>
+
                 @endif
                 
                 @foreach($items as $item)
