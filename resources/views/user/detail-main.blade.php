@@ -19,7 +19,7 @@
     @endforeach
         </div>
         <div>
-        <h3 class="container-title"><span>{{ $item->name }}</span></h3>
+        <h3 class="maincontainer-title"><span>{{ $item->name }}</span></h3>
         </div>
         
         <div>
