@@ -5,7 +5,7 @@ html {
 body {
     color: #000;
     font-size: 0.9rem;
-    font-family: '', '', serif;
+    font-family: var(--main-font-family);
     margin: 0;
 }
 
@@ -54,6 +54,7 @@ img {
 }
 .mypage_content dd {
     border-bottom: 0.1em solid var(--sub-color);
+    font-family: var(--main-font-family);
 }
 
 .mypage_content a {
@@ -109,12 +110,15 @@ dt {
 h2 {
     font-family: var(--main-font-family);
     background-color: #f93;
-    width: 300px;
+    width: 35%;
     margin: 0 auto;
     padding: 1em;
     border-radius: 30px;
     color: #fff;
     text-align: center;
+}
+h3 {
+    font-family: var(--main-font-family);
 }
 
 
@@ -124,6 +128,7 @@ h2 {
 }
 .col2 >*{
     width: 45%;
+    font-family: var(--main-font-family);
 }
 .col2 > *:nth-child(n + 3){
     margin-top: 40px;
@@ -208,6 +213,7 @@ hr {
     color:#FFFFFF;
     text-align: center;
     margin-bottom: 90px;
+    font-family: var(--main-font-family);
     }
         /* 詳細 */
     .wrapper .access {
@@ -266,9 +272,7 @@ a.btn-border {
     dl {
         width: 90%;
     }
-    h2 {
-        width: 90%;
-    }
+
     .flex_item {
         width: 47%;
     }

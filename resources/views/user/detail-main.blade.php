@@ -12,7 +12,7 @@
 @endif
     <div class="detail-container">
 
-    <div class="container-wrapper">
+    <div class="maincontainer-wrapper">
     <div>
     @foreach($item->category as $category)
         <p class="category">{{ $category->category_name }}</p>
@@ -72,6 +72,7 @@
             </div>
             <button type="submit" form="form1" class="post-button">投稿</button>
         </div>
+        <h2 class="buck">クチコミ一覧</h2>
         @foreach($item->post as $post)
         <div class="section">
                <img src="{{ asset('storage/images/'.$post->post_img) }}" class="img-box">
