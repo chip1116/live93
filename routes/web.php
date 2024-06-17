@@ -12,6 +12,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\NewPostController;
 use App\Http\Controllers\ModalController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ContactController;
 
 
 // Route::get('/', function () {
@@ -51,6 +52,11 @@ Route::controller(RecentPostController::class)->group(function(){
 Route::get('/contact',function(){
     return view('user.contact');
 })->name('user.contact');
+
+Route::controller(ContactController::class)->group(function(){
+    Route::get('/contact', [ContactController::class, 'create'])->name('user.contact');
+    Route::post('/contact', [ContactController::class, 'store'])->name('post.contact');
+});
 
 Route::controller(DetailMainController::class)->group(function(){
     Route::get('/detail/{id}', [DetailMainController::class,'show'])->name('user.detail-main');

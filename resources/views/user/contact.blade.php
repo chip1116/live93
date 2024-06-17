@@ -8,7 +8,8 @@
             </div>
 
             <div class="content">
-                <form action="#" class="form">
+                <form action="{{ route('post.contact') }}" class="form" method="POST">
+                    @csrf
                     <p>お名前<span class="required">&emsp;*必須</span></p>
                     <input type="text" name="name" class="input-bg" required>
 
@@ -20,7 +21,7 @@
                     
                     <p>お問い合わせ内容<span class="required">&emsp;*必須</span></p>
                     <textarea name="comment" class="area-bg"></textarea>
-                    <p class="submit"><button type="submit" class="button">登 録</button></p>
+                    <p class="submit"><button type="submit" class="button">送 信</button></p>
                 </form>
             </div>
 

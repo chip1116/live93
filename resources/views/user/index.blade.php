@@ -4,6 +4,10 @@
         @if ($user !== null)       
             <p class="welcome">ようこそ&nbsp;<span class="welcome_name">{{ $user->name }}</span>&nbsp;さん</p>
         @endif
+
+        @if (session('message'))
+                <p class="message">{{ session('message') }}</p>
+            @endif
             
             @if (session('message_logout'))
                 <p class="message">{{ session('message_logout') }}</p>
