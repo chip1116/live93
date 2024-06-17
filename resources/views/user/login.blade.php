@@ -12,6 +12,7 @@
             <div class="content">
                 <form action="{{ route('login') }}" class="form" method="post">
                     @csrf
+                    {{-- <p>メールアドレス<span class="required">*必須</span></p> --}}
                     <p>メールアドレス<span class="required">*必須</span></p>
                     <input type="email" name="email" class="input-bg" required>
 
