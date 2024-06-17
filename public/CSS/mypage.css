@@ -175,7 +175,7 @@ hr {
 }
     /* 名称 */
 .container-title span{
-    font-size: 50px;
+    font-size: 1.5em;
     margin-top: 10px;
     margin: 0 auto;
     background: linear-gradient(transparent 60%, #F5EC6F 60%);
@@ -194,7 +194,7 @@ hr {
 
 .span {
      background: linear-gradient(transparent 60%, #F5EC6F 60%);
-     margin-top: 0;     
+     margin-top: 0;
     }
 
 .side-title span{
@@ -256,3 +256,41 @@ a.btn-border {
     border-top: solid;
     border-color: var(--sub-color);
   }
+
+
+  /* レスポンシブデザイン */
+
+@media screen and (max-width: 960px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+    .mypage_content,
+    dl {
+        width: 90%;
+    }
+    h2 {
+        width: 90%;
+    }
+    .flex_item {
+        width: 47%;
+    }
+    .flex_item span {
+        width: 30%;
+    }
+    .container-title span {
+        font-size: 1em;
+    }
+}
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+    .flex {
+        display: unset;
+        width: 100%;
+    }
+    .flex_item {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+
+    }
+    .container {
+        max-width: 480px;
+    }

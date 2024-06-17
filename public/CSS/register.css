@@ -128,7 +128,7 @@ a {
 .reg1-button {
     background-color: #AAE139;
     width: 150px;
-    margin: 10px 0 10px 0;
+    margin: 5px 0 5px 0;
     padding: .5em .5em;
     border-radius: 30px;
     color: #fff;
@@ -142,11 +142,19 @@ a {
 .reg2-button {
     background-color: #21C9F3;
     width: 55px;
-    margin: 10px 0 10px 0;
+    margin: 5px 0 5px 0;
     border-radius: 30px;
     color: #fff;
     border: none;
 }
 .reg2-button:hover {
     background: #F5EC6F;
+}
+
+/* =================== */
+/* =================== */
+@media screen and (max-width:720px) {
+    .flex {
+        flex-direction: column;
+    }
 }
