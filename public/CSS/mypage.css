@@ -256,3 +256,35 @@ a.btn-border {
     border-top: solid;
     border-color: var(--sub-color);
   }
+
+
+  /* レスポンシブデザイン */
+
+@media screen and (max-width: 960px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+    .mypage_content,
+    dl {
+        width: 90%;
+    }
+    h2 {
+        width: 90%;
+    }
+    .flex_item {
+        width: 47%;
+    }
+}
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+    .flex {
+        display: unset;
+        width: 100%;
+    }
+    .flex_item {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+
+    }
+    .container {
+        max-width: 480px;
+    }
