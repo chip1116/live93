@@ -275,6 +275,11 @@ ol {
 .new_post_detail p {
     text-align: center;
     color: #54B435;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 14rem;
+    display: inline-block;
 }
 .new_post_detail p:nth-child(4) {
     font-family: "ab-tombo-bold", sans-serif;

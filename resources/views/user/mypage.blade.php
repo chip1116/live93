@@ -22,7 +22,7 @@
                                @foreach($favorite as $favorites)
                                <li class="flex_item"><a href="{{ route('user.detail-main', [$favorites->store->id]) }}">
                                        <div class="container">
-                                           <div class="magazin-image"><img src="{{ asset('storage/images/'.$favorites->store->image) }}" alt="Image" class="image"></div>
+                                           <div class="magazin-image"><img src="{{ asset('storage/images/'.$favorites->store->store_img) }}" alt="Image" class="image"></div>
                                            <div class="container-wrapper">
                                                <h3 class="container-title"><span>{{ $favorites->store->name }}</span></h3>
                                                @foreach($favorites->store->category as $category)
@@ -43,7 +43,7 @@
                                @foreach($posts as $item)
                                <li class="flex_item"><a href="{{ route('user.detail-main', [$item->store->id]) }}">
                                        <div class="container">
-                                           <div class="magazin-image"><img src="{{ asset('storage/images/'.$item->store->image) }}" alt="Image" class="image"></div>
+                                           <div class="magazin-image"><img src="{{ asset('storage/images/'.$item->store->store_img) }}" alt="Image" class="image"></div>
                                            <div class="container-wrapper">
                                                <h3 class="container-title"><span>{{ $item->store->name }}</span></h3>
                                                @foreach($item->store->category as $category)
