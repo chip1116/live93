@@ -87,12 +87,12 @@ text-shadow:
     display: flex;
     justify-content: flex-end;
 }
-/* 
-.container-wrapper { */
-    /* 縦に並べるに変更 */
-    /* display:flex;
+
+.maincontainer-wrapper { 
+     display:flex;
     align-items: center; 
-    justify-content:space-between; }*/
+    justify-content:space-between; 
+    }
 
 /* エリア表示 */
 .h2-taitle{
@@ -207,7 +207,7 @@ hr {
     margin: auto;
     display: block;
     object-fit: cover;
-    height: 160px;
+    /* height: 160px; */
 }
 
     /* 横並びに */
@@ -222,11 +222,16 @@ hr {
 .container-title {
     color: #AAE139;
     margin: 0;
+    
 }
 .container-title span{
-    font-size: 2rem;
-    
+    font-size: 1.2rem;
     background: linear-gradient(transparent 60%, #F5EC6F 60%);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 14rem;
+    display: inline-block;
     }
 
 .likebotton {
@@ -268,7 +273,7 @@ hr {
     }
 
     .access li {
-        font-size: 1.3rem; 
+        font-size: 1rem; 
     }
 
     .like-wrapper {
@@ -457,4 +462,10 @@ span.page-link {
     border-radius: 5%;
     background: #F5EC6F;
     color: #fff;
+}
+
+.file-names {
+    font-family: 'ab-tombo-bold", sans-seri';
+    font-weight: 800;
+    
 }
