@@ -16,7 +16,7 @@ class PostController extends Controller
     public function store(Request $request)
 {
     $id = $request->store_id;
-
+    $memberId = session()->get('member_id');
     
     // 画像のファイル名を変更
     $postImage = $request->file('upload');
@@ -33,7 +33,7 @@ class PostController extends Controller
         'comment' => $request->comment,
         'date' => $dt,
         'store_id' => $id,
-        'member_id' => 2,
+        'member_id' => $memberId,
         'post_img' => $imageName
     ]); 
     session()->flash('message', '投稿できました！');
