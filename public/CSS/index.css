@@ -106,8 +106,9 @@ img {
 .place-top, .place-bottom {
     display: flex;
     margin-left: 35px;
+    flex-wrap: wrap;
 }
-.place-top li:nth-child(-n+3) {
+.place-top li:nth-child(-n+5) {
     background-color: #F5EC6F;
     border-radius: 20px;
     padding: 10px;
@@ -273,7 +274,7 @@ img {
     padding-left: 0;
 }
 .new_post_detail img {
-    background-color: #C8DBEA;
+    /* background-color: #C8DBEA; */
     width: 200px;
     height: 150px;
     border: 1px solid #54B435;
@@ -284,7 +285,7 @@ img {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 14rem;
+    width: 13rem;
     display: inline-block;
 }
 .new_post_detail p:nth-child(4) {
