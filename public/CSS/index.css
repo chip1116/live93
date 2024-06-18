@@ -1,15 +1,14 @@
+/* ページ全体の設定 */
 body {
     color: black;
     background-color: #F5EC6F;
     font-family: "ab-tombo-bold", sans-serif;
 }
-
 .base-wrapper {
     background-color: var(--base-color);
     padding-top: 0;
     padding-bottom: 70px;
 }
-
 ul,
 ol {
     padding: 0;
@@ -34,20 +33,19 @@ h3 {
 img {
     max-width: 100%;
   }
-
+/* ログイン後のユーザ名表示 */
 .welcome {
     margin-left: 20px;
     font-size: 1em;
     color: var(--base-font-color);
     font-family: "ab-tombo-bold", sans-serif;
 }
-
 .welcome_name {
     font-size: 2em;
     color: var(--base-font-color);
     font-family: "ab-tombo-bold", sans-serif;
 }
-
+/* メニュータブ */
 .mypage {
     text-align: right;
     padding-top: 20px;
@@ -62,7 +60,6 @@ img {
     line-height: 40px;
     font-family: "ab-tombo-bold", sans-serif;
 }
-
 .menu_list ul {
     display: flex;
     justify-content: space-between;
@@ -78,7 +75,20 @@ img {
     padding: 5px;
     font-family: "ab-tombo-bold", sans-serif;
 }
-
+/* トップページの画像 */
+.toppage {
+    background: url(../img/img.png) no-repeat bottom -70px center;
+    background-size: cover;
+    /* position: relative; */
+    /* height: 900px; */
+    padding-bottom: 130px; 
+    /* heightを消す */
+}
+.top_img {
+    margin: auto;
+    width: 1000px;
+}
+/* メインメニュー */
 .main {
     width: 1000px;
     position: relative;
@@ -92,19 +102,7 @@ img {
 .main img {
     margin: 0 auto;
 }
-.toppage {
-    background: url(../img/img.png) no-repeat bottom -70px center;
-    background-size: cover;
-    /* position: relative; */
-    /* height: 900px; */
-    padding-bottom: 130px; 
-    /* heightを消す */
-}
-.top_img {
-    margin: auto;
-    width: 1000px;
-}
-
+/* 「エリアから探す」欄 */
 .place-top, .place-bottom {
     display: flex;
     margin-left: 35px;
@@ -115,6 +113,7 @@ img {
     padding: 10px;
     margin-right: 10px;
 }
+/* 「ジャンルから探す」欄 */
 .category ul {
     display: flex;
     margin-left: 35px;
@@ -125,7 +124,7 @@ img {
     padding: 10px;
     margin-right: 10px;
 }
-.scene ul {
+/* .scene ul {
     display: flex;
 }
 .scene li {
@@ -133,7 +132,8 @@ img {
     border-radius: 20px;
     padding: 10px;
     margin-right: 10px;
-}
+} */
+/* 各セクションの枠線 */
 .section {
     position: absolute;
     top: 1%;
@@ -162,6 +162,7 @@ img {
     border-radius: 20px;
     color: #54B435;
 }
+/* ログインボタン */
 .login {
     display       : inline-block;
     border-radius : 5px;          /* 角丸       */
@@ -182,6 +183,7 @@ img {
     color         : #FF9933;     /* 背景色     */
     background    : #ffffff;     /* 文字色     */
 }
+/* 新規登録ボタン */
 .signin {
     display       : inline-block;
     border-radius : 5px;          /* 角丸       */
@@ -202,6 +204,7 @@ img {
     color         : #AAE139;     /* 背景色     */
     background    : #ffffff;     /* 文字色     */
 }
+/* 「キーワード検索」ボタン */
 .search_button {
     font-family: "ab-tombo-bold", sans-serif;
     font-weight: 400;
@@ -220,6 +223,7 @@ img {
     margin-right: 15px;
     margin-left: 40px;
 }
+/* アイコンの設定 */
 .small_logo{
     margin-bottom: 40px;
 }
@@ -228,9 +232,10 @@ img {
     width: 40px;
     vertical-align: middle;
 }
-ol {
+/* ol {
     padding-left: 0;
-}
+} */
+/* ユーザランキング */
 .ranking {
     margin-top: 80px;
 } 
@@ -258,9 +263,10 @@ ol {
     color: #FF9933;
 
 }
-.align {
+/* .align {
     align-self: center;
-}
+} */
+/* 新着投稿 */
 .new_post_detail {
     display: flex;
     justify-content: space-around;
@@ -284,7 +290,6 @@ ol {
 .new_post_detail p:nth-child(4) {
     font-family: "ab-tombo-bold", sans-serif;
 }
-
 .more {
     display: block;
     margin: 0 auto;    
@@ -343,7 +348,7 @@ ol {
 .banner_bg {
     margin-top: 50px;
 }
-
+/* レスポンシブデザイン */
 @media screen and (max-width:960px) {
     .top, .menu_list, .main, .section, .submenu, .top_img {
         width: 100%;
