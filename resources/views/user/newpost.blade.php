@@ -41,14 +41,6 @@
 
                     <p>写真</p>
                     @livewire('preview')
-                    <div class="deco-file">
-                        <label>
-                            <input type="file" name="upload" value="{{ old('upload') }}" wire:model="photo">
-                        </label>
-                        <p class="file-names"></p>
-                        ＋ファイルを追加
-                    </div>
-
                     <p>コメント</p>
                     <textarea name="newpostComment" class="area-bg">{{ old('newpostComment') }}</textarea>
                 </form>

@@ -224,14 +224,20 @@ hr {
     margin: 0;
     
 }
-.container-title span{
+.maincontainer-title span{
     font-size: 1.2rem;
     background: linear-gradient(transparent 60%, #F5EC6F 60%);
+    color: #aae139;
+
+}
+.container-title span{
+    font-size: 1.2rem;
+   
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 14rem;
     display: inline-block;
+    width: 80%;
     }
 
 .likebotton {
@@ -426,7 +432,6 @@ span.page-link {
     top: 1%;
     right: 30%;
     border: #AAE139 solid;
-    border-width: thin;
     border-radius: 20px;
     padding: 1em;
     margin: 1%;
@@ -466,6 +471,31 @@ span.page-link {
 
 .file-names {
     font-family: 'ab-tombo-bold", sans-seri';
+    font-weight: 800;   
+}
+.post-text{
+    color: #AAE139;
+    font-family: 'ab-tombo-bold", sans-seri';
     font-weight: 800;
+}
+
+.post-button{
+    background-color: #AAE139;
+    width: 50px;
+    border-radius: 30px;
+    color: #fff;
+    text-align: center;
+    margin-left: 70%;
+    font-weight: 800;
+    display: inline-block;
+}
+
+.comment-wrapper{
+    display: flex;
+    gap: 4rem;
     
+}
+
+.area-bg {
+    width: 50%;
 }

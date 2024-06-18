@@ -19,7 +19,7 @@
     @endforeach
         </div>
         <div>
-        <h3 class="container-title"><span>{{ $item->name }}</span></h3>
+        <h3 class="maincontainer-title"><span>{{ $item->name }}</span></h3>
         </div>
         
         <div>
@@ -57,20 +57,23 @@
                 <form action="{{ route('post.store') }}" enctype="multipart/form-data" class="form" id="form1" method="POST">
                     @csrf
                     <input type="hidden" name="store_id" value="1">
-                    <p>写真</p>
+                    <p class="post-text">写真</p>
                     <div class="deco-file">
                         <label>
                             <input type="file" name="upload">
                         </label>
                         <p class="file-names"></p>
-                        ＋ファイルを追加
+                    
                     </div>
-
-                    <p>コメント</p>
-                    <textarea name="comment" class="area-bg"></textarea>
+                    <div class="comment-wrapper">
+                        <p class="post-text">コメント</p>
+                        <textarea name="comment" class="area-bg"></textarea>
+                    </div>
                 </form>
+            
             </div>
             <button type="submit" form="form1" class="post-button">投稿</button>
+
         </div>
         <h2 class="buck">クチコミ一覧</h2>
         @foreach($item->post as $post)
