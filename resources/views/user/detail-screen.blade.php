@@ -4,11 +4,17 @@
     <main>
         <div class="h2-taitle">
         @if (Request::routeIs('user.detail-screen'))
-            @if(count($items) > 0)
+            @if (count($items) > 0)
                 <h2 class="cityname">{{ $items[0]->location->name }}</h2>
+            @elseif (count($items) <= 0)
+                <h2 class="cityname">{{ $location_none->name }}</h2>
             @endif
         @elseif (Request::routeIs('user.category'))
-        <h2 class="cityname">{{ $items[0]->category[0]->category_name }}</h2>
+            @if (count($items) > 0)
+                <h2 class="cityname">{{ $items[0]->category[0]->category_name }}</h2>
+            @elseif (count($items) <= 0)
+                <h2 class="cityname">{{ $category->category_name }}</h2>
+            @endif    
         @elseif (Request::routeIs('user.recent'))
         <h2 class="cityname">新着投稿</h2>
         @elseif (Request::routeIs('user.search'))
@@ -63,11 +69,17 @@
         @if (Request::routeIs('user.detail-screen'))
             @if(count($items) > 0)
                 <h3 class="main-title"><span>{{ $items[0]->location->name }}周辺のお店</span></h3>
-            @else
+            @elseif (count($items) <= 0)
+                <h3 class="main-title"><span>{{ $location_none->name }}周辺のお店</span></h3>
                 <p>まだ投稿がありません</p>
             @endif
         @elseif (Request::routeIs('user.category'))
-        <h3 class="main-title"><span>ジャンル:{{ $items[0]->category[0]->category_name }}</span></h3>
+            @if (count($items) > 0)
+                <h3 class="main-title"><span>ジャンル:{{ $items[0]->category[0]->category_name }}</span></h3>
+            @elseif (count($items) <= 0)
+                <h3 class="main-title"><span>ジャンル:{{ $category->category_name }}</span></h3>
+                <p>まだ投稿がありません</p>
+            @endif
         @elseif (Request::routeIs('user.recent'))
         <h3 class="main-title"><span>新着投稿一覧</span></h3>
         @elseif (Request::routeIs('user.search'))
