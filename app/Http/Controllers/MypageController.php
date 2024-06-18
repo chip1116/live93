@@ -26,10 +26,10 @@ class MypageController extends Controller
         { 
             $id = session()->get('member_id');
             $items = $this->member->find($id);
-            $posts = $this->post::with('store')
-                        ->where('member_id',  '=', $id)
-                        ->whereNull('deleted_at')
-                        ->get();
+            // $posts = $this->post::with('store')
+            //             ->where('member_id',  '=', $id)
+            //             ->whereNull('deleted_at')
+            //             ->get();
 
             $store = $this->store::with('like')
                         ->where('member_id', '=', $id)
@@ -49,7 +49,7 @@ class MypageController extends Controller
                         ->get();
 
 
-            return view('user.mypage', compact('items', 'posts', 'favorite', 'likeCount'));
+            return view('user.mypage', compact('store', 'items', 'favorite', 'likeCount'));
         } else {
             session()->flash('message', 'ログインしてください。');
             return redirect()->route('user.login');

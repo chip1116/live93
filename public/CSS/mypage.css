@@ -169,6 +169,9 @@ hr {
 .magazin-image{
     margin-top: 10px;
 }
+.magazin-image img{
+    height: 12em;
+}
 
     /* 横並びに */
 

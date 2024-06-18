@@ -13,8 +13,8 @@
                        <dd>{{ $items->name }}</dd>
                        <dt>メールアドレス</dt>
                        <dd>{{ $items->email }}</dd>
-                       <dt>じゃが数&#9825;</dt>
-                       <dd class="heart">{{ $likeCount }}じゃが&#9825;</dd>
+                       <dt>獲得モアイ</dt>
+                       <dd class="heart">{{ $likeCount }}🗿</dd>
                        <dt>お気に入り&#9825;</dt>
                        <dd class="heart">{{ count($favorite) }}件登録済み</dd>
                        <div class="wrapper">
@@ -40,13 +40,13 @@
                        <div class="wrapper">
                        <h3>投稿ログ</h3>
                            <ul class="col2 flex">
-                               @foreach($posts as $item)
-                               <li class="flex_item"><a href="{{ route('user.detail-main', [$item->store->id]) }}">
+                               @foreach($store as $item)
+                               <li class="flex_item"><a href="{{ route('user.detail-main', [$item->id]) }}">
                                        <div class="container">
-                                           <div class="magazin-image"><img src="{{ asset('storage/images/'.$item->store->store_img) }}" alt="Image" class="image"></div>
+                                           <div class="magazin-image"><img src="{{ asset('storage/images/'.$item->store_img) }}" alt="Image" class="image"></div>
                                            <div class="container-wrapper">
-                                               <h3 class="container-title"><span>{{ $item->store->name }}</span></h3>
-                                               @foreach($item->store->category as $category)
+                                               <h3 class="container-title"><span>{{ $item->name }}</span></h3>
+                                               @foreach($item->category as $category)
                                                 <p class="category">{{ $category->category_name }}</p>
                                             @endforeach
                                            </div>                        
