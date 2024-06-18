@@ -48,26 +48,14 @@
                     <h3>エリアからさがす<img src="/img/jagaアイコン02.png" alt="img"></h3>
                     <div class="background-square"></div>
                     <ul class="place-top">
-                        @for($i = 0; $i < 3; $i++)
+                        @for($i = 0; $i < 5; $i++)
                         <li><a href="{{ route('user.detail-screen', [$locations[$i]['id']]) }}">{{ $locations[$i]['name'] }}</a></li>
                         @endfor
                     </ul>
                     <ul class="place-bottom">
-                        @for($i = 3; $i < count($locations); $i++)
+                        @for($i = 5; $i < count($locations); $i++)
                         <li><a href="{{ route('user.detail-screen', [$locations[$i]['id']]) }}">{{ $locations[$i]['name'] }}</a></li>
                         @endfor
-                        <!-- <li><a href="">日南市</a></li>
-                        <li><a href="">新富町</a></li>
-                        <li><a href="">日向市</a></li>
-                        <li><a href="">西都市</a></li>
-                        <li><a href="">小林市</a></li>
-                        <li><a href="">えびの市</a></li>
-                        <li><a href="">国富町</a></li>
-                        <li><a href="">木城町</a></li>
-                        <li><a href="">門川町</a></li>
-                        <li><a href="">都農町</a></li>
-                        <li><a href="">観光地</a></li> -->
-
                     </ul>
                 </section>
                 <section class="category small_logo">
