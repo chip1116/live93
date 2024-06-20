@@ -13,7 +13,18 @@
           h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
         })(document);
       </script>
-    <title>じゃがじゃがみやざき</title>
+    @if (request()->route()->getName() === 'user.search')
+    <title>さがす｜じゃがじゃがみやざき</title>
+    @elseif (request()->route()->getName() === 'user.contact')
+      <title>お問い合わせ｜じゃがじゃがみやざき</title>
+    @elseif (request()->route()->getName() === 'user.login')
+      <title>ログイン｜じゃがじゃがみやざき</title>
+    @elseif (request()->route()->getName() === 'user.register')
+      <title>新規登録｜じゃがじゃがみやざき</title>
+    @else
+    <title>じゃがじゃがみやざき｜宮崎県のニッチでリアルな口コミサイト</title>
+    @endif
+    <meta name="description" content="県内の隠れた名スポットを発見！地元の口コミでリアルな情報満載。デートや週末のお出かけにぴったりの場所を探してみませんか？">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/style.css">
