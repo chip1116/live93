@@ -152,7 +152,7 @@ main {
 #footer {
     /* position: relative; */
     background: linear-gradient(to Bottom, var(--fourth-color) 50%, var(--base-color) 50%);
-    padding: 60px;
+    padding: 40.5px;
 }
 
 /* テキスト中に画像を埋め込む
