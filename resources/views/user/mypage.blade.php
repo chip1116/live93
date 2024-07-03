@@ -49,7 +49,7 @@
                                                @foreach($item->category as $category)
                                                 <p class="category">{{ $category->category_name }}</p>
                                             @endforeach
-                                           </div>                        
+                                           </div>
                                        </div>
                                    </a></li>
                                @endforeach
